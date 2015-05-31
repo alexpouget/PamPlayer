@@ -33,6 +33,7 @@ public class SynchroMusic {
 		String nomfichier2="";
 		int diffNbFichier=0;
 		boolean testSame=true;
+		
 		boolean RepSupRep2 = false;
 		int parcours=0;
 		listefichiers=repertoire.listFiles();
@@ -56,7 +57,7 @@ public class SynchroMusic {
 
 		}
 
-		// on parcours la liste de fichiers mp3 du repertoire 2 et on remplie la liste avec les noms des fichiers Mp3
+		// on parcours la liste de fichiers mp3 du repertoire 2 et on remplie la liste avec les noms des fichiers mp3
 		for(int i=0;i<listefichiers2.length;i++)
 		{
 			if(listefichiers2[i].getName().endsWith(".mp3"))
