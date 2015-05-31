@@ -99,7 +99,8 @@ public class SynchroMusic {
 
 				}
 			}
-
+			
+			// si le second dossier contient plus de fichier que le premier
 			if(nomsFichier1.size()<nomsFichier2.size())
 			{
 				if(!nomsFichier1.contains(nomsFichier2.get(i)))
