@@ -115,7 +115,7 @@ public class SynchroMusic {
 			}
 		}
 
-
+		// si les deux dossiers n'ont pas le meme contenue
 		if(testSame==false)
 		{
 			System.out.println("Musiques à ajouter "+musiqueAAjouter);
