@@ -22,7 +22,7 @@ public class SynchroMusic {
 		File [] listefichiers;
 		File [] listefichiers2;
 
-		// on stocke le nom des fichiers mp3 dans des lists
+		// on stocke le nom des fichiers mp3 dans des lists de string
 		List<String> nomsFichier1 = new ArrayList<String>();
 		List<String> nomsFichier2 = new ArrayList<String>(); 
 
@@ -33,6 +33,7 @@ public class SynchroMusic {
 		String nomfichier2="";
 		int diffNbFichier=0;
 		boolean testSame=true;
+		
 		boolean RepSupRep2 = false;
 		int parcours=0;
 		listefichiers=repertoire.listFiles();
@@ -56,7 +57,7 @@ public class SynchroMusic {
 
 		}
 
-		// on parcours la liste de fichiers mp3 du repertoire 2 et on remplie la liste avec les noms des fichiers Mp3
+		// on parcours la liste de fichiers mp3 du repertoire 2 et on remplie la liste avec les noms des fichiers mp3
 		for(int i=0;i<listefichiers2.length;i++)
 		{
 			if(listefichiers2[i].getName().endsWith(".mp3"))
@@ -116,7 +117,7 @@ public class SynchroMusic {
 			}
 		}
 
-
+		// si les deux dossiers n'ont pas le même contenue
 		if(testSame==false)
 		{
 			System.out.println("Musiques ï¿½ ajouter "+musiqueAAjouter);
@@ -151,7 +152,11 @@ public class SynchroMusic {
 		}
 		else
 		{
+<<<<<<< HEAD
 			System.out.println("Les dossiers sont-ils les memes: "+testSame+ " Aucune musique ï¿½ ajouter");
+=======
+			System.out.println("Les dossiers sont-ils les mêmes: "+testSame+ " Aucune musique à ajouter ");
+>>>>>>> 11c12805ad9317a356a259dd450e4fd9c8a7d969
 		}
 
 		/*
@@ -169,4 +174,15 @@ public class SynchroMusic {
 	}
 
 
+<<<<<<< HEAD
 }
+=======
+
+	public static void main(String[] args) throws IOException
+	{
+		System.out.println("Liste des fichiers mp3 : ");
+		ComparerMusique(new File("C:/Users/Public/Music/Sample Music"),(new File("D:/Users/bmichau/Pictures/Sample Music/")));
+	}
+
+}
+>>>>>>> 11c12805ad9317a356a259dd450e4fd9c8a7d969
