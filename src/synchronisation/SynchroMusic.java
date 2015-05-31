@@ -87,7 +87,7 @@ public class SynchroMusic {
 		for(int i=0; i<parcours;i++)
 		{
 			
-			// si le premier dossier contient plus de fichiers que le second
+			// si le premier dossier contient plus de fichiers que le second dossier
 			if(nomsFichier1.size()>nomsFichier2.size())
 			{
 				if(!nomsFichier2.contains(nomsFichier1.get(i)))
@@ -100,7 +100,7 @@ public class SynchroMusic {
 				}
 			}
 			
-			// si le second dossier contient plus de fichier que le premier
+			// si le second dossier contient plus de fichier que le premier dossier
 			if(nomsFichier1.size()<nomsFichier2.size())
 			{
 				if(!nomsFichier1.contains(nomsFichier2.get(i)))
