@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 import synchronisation.SynchroMusic;
-import synchronisation.SynchroMusic.ComparerMusique;
+
 
 public class Main {
     public static PlayerThread thread;
