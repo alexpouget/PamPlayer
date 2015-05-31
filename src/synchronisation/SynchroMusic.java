@@ -16,7 +16,7 @@ import java.util.List;
 public class SynchroMusic {
 
 
-	public static void ComparerMusique(File repertoire, File repertoire2) throws IOException{
+	public void ComparerMusique(File repertoire, File repertoire2) throws IOException{
 
 		// liste des fichiers du repertoire 1 et 2
 		File [] listefichiers;
@@ -26,7 +26,7 @@ public class SynchroMusic {
 		List<String> nomsFichier1 = new ArrayList<String>();
 		List<String> nomsFichier2 = new ArrayList<String>(); 
 
-		// on prépare une liste pour mémoriser les musiques à ajouter
+		// on prï¿½pare une liste pour mï¿½moriser les musiques ï¿½ ajouter
 		List<String> musiqueAAjouter = new ArrayList<String>(); 
 
 		String nomfichier="";
@@ -70,7 +70,7 @@ public class SynchroMusic {
 		System.out.println("Liste nom des fichiers du dossier 1: "+nomsFichier1);
 		System.out.println("Liste nom des fichiers du dossier 2: "+nomsFichier2);
 
-		// on compare les deux listes des fichiers mp3 afin de savoir si deux dossier sont les mêmes et on mémorise les musiques à ajouter
+		// on compare les deux listes des fichiers mp3 afin de savoir si deux dossier sont les mï¿½mes et on mï¿½morise les musiques ï¿½ ajouter
 
 		if(nomsFichier1.size()>nomsFichier2.size())
 		{
@@ -95,7 +95,7 @@ public class SynchroMusic {
 					testSame=false;
 					musiqueAAjouter.add(nomsFichier1.get(i));
 					RepSupRep2=true;
-					System.out.println("Il n'y pas la méme chose dans les deux dossiers");
+					System.out.println("Il n'y pas la mï¿½me chose dans les deux dossiers");
 
 				}
 			}
@@ -109,7 +109,7 @@ public class SynchroMusic {
 					testSame=false;
 					musiqueAAjouter.add(nomsFichier2.get(i));
 					RepSupRep2=false;
-					System.out.println("Il n'y pas la méme chose dans les deux dossiers");
+					System.out.println("Il n'y pas la mï¿½me chose dans les deux dossiers");
 
 
 				}
@@ -119,7 +119,7 @@ public class SynchroMusic {
 
 		if(testSame==false)
 		{
-			System.out.println("Musiques à ajouter "+musiqueAAjouter);
+			System.out.println("Musiques ï¿½ ajouter "+musiqueAAjouter);
 
 			// si il y a plus fichiers dans le repertoire 1 alors on copie les fichiers manquants dans le dossier 2
 			if(RepSupRep2==true)
@@ -151,7 +151,7 @@ public class SynchroMusic {
 		}
 		else
 		{
-			System.out.println("Les dossiers sont-ils les memes: "+testSame+ " Aucune musique à ajouter");
+			System.out.println("Les dossiers sont-ils les memes: "+testSame+ " Aucune musique ï¿½ ajouter");
 		}
 
 		/*
@@ -168,12 +168,5 @@ public class SynchroMusic {
 
 	}
 
-
-
-	public static void main(String[] args) throws IOException
-	{
-		System.out.println("Liste des fichiers mp3: ");
-		ComparerMusique(new File("C:/Users/Public/Music/Sample Music"),(new File("D:/Users/bmichau/Pictures/Sample Music/")));
-	}
 
 }
