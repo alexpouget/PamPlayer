@@ -151,7 +151,7 @@ public class SynchroMusic {
 		}
 		else
 		{
-			System.out.println("Les dossiers sont-ils les mêmes: "+testSame+ " Aucune musique à ajouter");
+			System.out.println("Les dossiers sont-ils les mêmes: "+testSame+ " Aucune musique à ajouter ");
 		}
 
 		/*
