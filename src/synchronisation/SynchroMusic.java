@@ -22,7 +22,7 @@ public class SynchroMusic {
 		File [] listefichiers;
 		File [] listefichiers2;
 
-		// on stocke le nom des fichiers mp3 dans des lists
+		// on stocke le nom des fichiers mp3 dans des lists de strin
 		List<String> nomsFichier1 = new ArrayList<String>();
 		List<String> nomsFichier2 = new ArrayList<String>(); 
 
