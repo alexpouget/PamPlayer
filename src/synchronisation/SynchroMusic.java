@@ -171,7 +171,7 @@ public class SynchroMusic {
 
 	public static void main(String[] args) throws IOException
 	{
-		System.out.println("Liste des fichiers mp3: ");
+		System.out.println("Liste des fichiers mp3 : ");
 		ComparerMusique(new File("C:/Users/Public/Music/Sample Music"),(new File("D:/Users/bmichau/Pictures/Sample Music/")));
 	}
 
