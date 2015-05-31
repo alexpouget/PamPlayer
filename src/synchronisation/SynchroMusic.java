@@ -86,7 +86,7 @@ public class SynchroMusic {
                     testSame = false;
                     musiqueAAjouter.add(nomsFichier1.get(i));
                     RepSupRep2 = true;
-                    System.out.println("Il n'y pas la m�me chose dans les deux dossiers");
+                    System.out.println("Il n'y pas la meme chose dans les deux dossiers");
 
                 }
             }
