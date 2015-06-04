@@ -136,7 +136,7 @@ public class SynchroMusic {
 
             System.out.println("Les dossiers sont-ils les memes: " + testSame + " Aucune musique � ajouter");
 
-            System.out.println("Les dossiers sont-ils les m�mes: " + testSame + " Aucune musique � ajouter ");
+//            System.out.println("Les dossiers sont-ils les m�mes: " + testSame + " Aucune musique � ajouter ");
 
         }
 
