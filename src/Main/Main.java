@@ -1,24 +1,23 @@
 package Main;
 
-
 import Graphique.MyWindow;
-import Player.Mp3Player;
+/*import Player.Mp3Player;
 import Player.PlayerThread;
 
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
-import synchronisation.SynchroMusic;
+import synchronisation.SynchroMusic;*/
 
 
 public class Main {
-    public static PlayerThread thread;
-    public static Mp3Player player;
+    /*public static PlayerThread thread;
+    public static Mp3Player player;*/
 
 
     public static void main(String[] args) {
-        System.out.println("Liste des fichiers mp3: ");
+        /*System.out.println("Liste des fichiers mp3: ");
         SynchroMusic synchroMusic = new SynchroMusic();
         try {
             synchroMusic.ComparerMusique(new File("C:/Users/Public/Music/Sample Music"), (new File("D:/Users/bmichau/Pictures/Sample Music/")));
@@ -33,7 +32,8 @@ public class Main {
             }
         };
         SwingUtilities.invokeLater(runnable);
-
+*/
+    	MyWindow fen = new MyWindow();
 
     }
 }

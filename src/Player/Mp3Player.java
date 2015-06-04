@@ -35,7 +35,7 @@ public class Mp3Player{
                     System.out.println(event.getFrame());
                     System.out.println(event.getId());
                 }
-                @Override
+                
                 public void playbackFinished(PlaybackEvent event) {
                     pausedOnFrame = event.getFrame();
                     PlayerThread.pause = event.getFrame();
