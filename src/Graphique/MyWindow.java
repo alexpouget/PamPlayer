@@ -22,7 +22,7 @@ public class MyWindow extends JFrame {
 	setTitle("PamPlayer");
     setSize(1000, 725);
     setLocationRelativeTo(null);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
     Container cp = getContentPane();
 	JPanel biblio = new JPanel(); 
 	JPanel music = new JPanel();
