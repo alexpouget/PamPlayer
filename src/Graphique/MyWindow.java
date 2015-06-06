@@ -3,6 +3,7 @@ package Graphique;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,8 +22,10 @@ public class MyWindow extends JFrame {
 	public MyWindow(){
 	setTitle("PamPlayer");
     setSize(1000, 725);
+    setResizable(false);
     setLocationRelativeTo(null);
-    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    addWindowListener(new MyEvent());
+    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     Container cp = getContentPane();
 	JPanel biblio = new JPanel(); 
 	JPanel music = new JPanel();
@@ -47,28 +50,28 @@ public class MyWindow extends JFrame {
 	recherche.setLocation(760, 0);
 
 	/*---------------BARRE DE MENU----------------*/
-			/* Bar de menu */
+			//Bar de menu
 	JMenuBar menu_bar1 = new JMenuBar();
-			/* différents menus */
+			//différents menus 
 	JMenu menu1 = new JMenu("Fichier");
 	JMenu menu2 = new JMenu("Edition");
-			/* differents choix de chaque menu */
+			//differents choix de chaque menu
 	JMenuItem demarrer = new JMenuItem("Démarrer");
 	JMenuItem fin = new JMenuItem("Fin");
 	JMenuItem annuler = new JMenuItem("Annuler");
 	JMenuItem copier = new JMenuItem("Copier");
 	JMenuItem coller = new JMenuItem("Coller");
 	
-			/* Ajouter les choix au menu  */
+			//Ajouter les choix au menu
 	menu1.add(demarrer);
 	menu1.add(fin);
 	menu2.add(annuler);
 	menu2.add(copier);
 	menu2.add(coller);
-			/* Ajouter les menu sur la bar de menu */
+			//Ajouter les menu sur la bar de menu
 	menu_bar1.add(menu1);
 	menu_bar1.add(menu2);
-			/* Ajouter la bar du menu à la frame */
+			//Ajouter la bar du menu à la frame 
 	setJMenuBar(menu_bar1);
 	 /*-------------FIN BARRE DE MENU--------*/
 	
@@ -82,6 +85,7 @@ public class MyWindow extends JFrame {
 	
 	String[] lesMusiques = {"uneChanson", "uneAutreChanson", "encoreUne"};
 	JList lstMusic = new JList(lesMusiques);
+    lstMusic.addMouseListener(new MyMouse());
 	JScrollPane spMusic = new JScrollPane(lstMusic); 
 	tab1.add(spMusic);
 	
@@ -97,10 +101,10 @@ public class MyWindow extends JFrame {
 	  DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Bibliothèque");
 	      
 	  //ajout des branches à la racine
-	  for(int i = 1; i < 6; i++){
+	  for(int i = 1; i < 15; i++){
 	    DefaultMutableTreeNode artiste = new DefaultMutableTreeNode("Artiste");
 	         
-	    //On rajoute 6 branches
+	    //On rajoute 15 branches
 	    if(i < 15){   
 	      DefaultMutableTreeNode album = new DefaultMutableTreeNode("Album");
 	      artiste.add(album);
@@ -110,6 +114,7 @@ public class MyWindow extends JFrame {
 	  }
 	  //création de l'arbre avec la taille par défaut
 	  JTree arbre = new JTree(laBiblio);
+	  arbre.addMouseListener(new MyMouse());
 	   JScrollPane tree = new JScrollPane(arbre);
 	   tree.setPreferredSize(new Dimension(240, 547)); 
 	  biblio.add(tree);
