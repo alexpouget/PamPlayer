@@ -1,5 +1,7 @@
 package Graphique;
 
+import Mp3Player.PlayerController;
+
 import Main.Main;
 import Mp3Player.PlayerController;
 import Mp3Player.Status;
@@ -11,6 +13,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -21,7 +24,12 @@ public class MyEvent  extends WindowAdapter implements ActionListener{
     private static PlayerController player;
     private int maxLen;
 
-
+    @Override
+    public void windowClosing(WindowEvent e) {
+        int rep = JOptionPane.showConfirmDialog(null, "Quitter PamPlayer ?");
+        if(rep==0)
+            System.exit(0);
+    }
 
         public void actionPerformed(ActionEvent e) {
             System.out.println(e.getActionCommand());
@@ -82,3 +90,6 @@ public class MyEvent  extends WindowAdapter implements ActionListener{
         MyWindow.play.setText("pause");
     }
 }
+
+
+

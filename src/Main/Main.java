@@ -1,18 +1,20 @@
 package Main;
 
-
 import Graphique.MyWindow;
+import synchronisation.SynchroMusic;
 
 
 import javax.swing.*;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
-import synchronisation.SynchroMusic;
 
 
 public class Main {
+
+    /*public static PlayerThread thread;
+    public static Mp3Player player;*/
+
 
 public static String fileName;
 
@@ -32,6 +34,7 @@ public static String fileName;
             }
         };
         SwingUtilities.invokeLater(runnable);
+
 
 
     }
