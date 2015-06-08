@@ -20,32 +20,7 @@ public class MyWindow extends JFrame {
 
     public MyWindow() {
 
-      /*  play = new JButton("play");
-        stop = new JButton("stop");
 
-        play.setPreferredSize(new Dimension(60, 30));
-        stop.setPreferredSize(new Dimension(60, 30));
-
-        play.addActionListener(new MyEvent());
-        stop.addActionListener(new MyEvent());
-
-        jSlider = new JSlider(0, 100, 0);
-        //jSlider.addMouseListener();
-
-        JPanel jPanel1 = new JPanel();
-        jPanel1.add(play);
-        jPanel1.add(stop);
-
-        JPanel jPanel = new JPanel();
-        jPanel.add(jSlider);
-
-        JPanel mainControl = new JPanel(new GridLayout(1, 2));
-
-        mainControl.add(jPanel);
-        mainControl.add(jPanel1);
-
-        add(mainControl, BorderLayout.CENTER);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);*/
         setTitle("PamPlayer");
         setSize(1000, 725);
         setResizable(false);
@@ -74,6 +49,26 @@ public class MyWindow extends JFrame {
         music.setLocation(255, 105);
         recherche.setSize(220, 100);
         recherche.setLocation(760, 0);
+
+    /*---------------Player ----------------*/
+
+    /*---------------fin Player----------------*/
+        play = new JButton("play");
+        stop = new JButton("stop");
+
+        play.addActionListener(new MyEvent());
+        stop.addActionListener(new MyEvent());
+
+        jSlider = new JSlider(0, 100, 0);
+        jSlider.addMouseListener(new MyEvent());
+
+
+        player.add(play);
+        player.add(stop);
+
+
+        player.add(jSlider);
+
 
 	/*---------------BARRE DE MENU----------------*/
         //Bar de menu

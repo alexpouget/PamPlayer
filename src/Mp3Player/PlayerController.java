@@ -1,5 +1,6 @@
 package Mp3Player;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
@@ -11,12 +12,12 @@ import java.io.FileNotFoundException;
  * Created by alex on 06/06/2015.
  */
 public class PlayerController implements Runnable {
-    private PlayerListener listener;
     private SongPlayer player;
-    private int currentPos;
+    private int position;
     private Status status = Status.INACTIVE;
     private Thread t;
     private String music;
+    private PlayerListener listener;
 
     public PlayerController(String fileName) {
         music = fileName;
@@ -28,7 +29,7 @@ public class PlayerController implements Runnable {
 
         try {
             if (player != null)
-                player.play(currentPos, Integer.MAX_VALUE);
+                player.play(position, Integer.MAX_VALUE);
         } catch (JavaLayerException e) {
             e.printStackTrace();
         }
@@ -46,16 +47,14 @@ public class PlayerController implements Runnable {
         if (player == null)
             return;
         status = Status.PAUSED;
-        currentPos = player.getPosition();
+        position = player.getPosition();
         player.stop();
         player = null;
     }
 
     public void play() {
         try {
-            player = new SongPlayer(new FileInputStream(music));
-            if (listener != null)
-                player.addListener(listener);
+            player = new SongPlayer(new FileInputStream(music),music);
         } catch (JavaLayerException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
@@ -65,16 +64,13 @@ public class PlayerController implements Runnable {
         t.start();
     }
 
-    public void setListener(PlayerListener playerListener){
-        listener = playerListener;
-    }
 
     public void stop() {
 
         if (player == null)
             return;
         status = Status.FINISHED;
-        currentPos = 0;
+        position = 0;
         player.stop();
         player.close();
         player = null;
@@ -87,10 +83,17 @@ public class PlayerController implements Runnable {
         return player.getFrameNumber();
     }
 
-    public void skip(int s) {
-        currentPos += (s - currentPos);
+
+    public void avanceTo(int i) {
+
+        position = (i - position);
     }
 
+    public void setListener(PlayerListener listener) {
+        this.listener = listener;
+    }
 
-
+    public PlayerListener getListener() {
+        return listener;
+    }
 }

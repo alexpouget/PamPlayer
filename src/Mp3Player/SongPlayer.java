@@ -14,21 +14,19 @@ import java.io.InputStream;
  */
 public class SongPlayer extends Player {
     private int maxFramesNumber;
-    private static final int corrFactor = 20;
     private Bitstream bitstream;
     private AudioDevice audioDevice;
     private Decoder decoder;
     private FileInputStream fileStream;
     private int currentFrame;
     private boolean isActive;
-    private PlayerListener listener;
 
-    public SongPlayer(FileInputStream fileInputStream) throws JavaLayerException, FileNotFoundException {
+    public SongPlayer(FileInputStream fileInputStream,String title) throws JavaLayerException, FileNotFoundException {
         super(fileInputStream);
 
         fileStream = fileInputStream;
         bitstream = new Bitstream(fileStream);
-        maxFramesNumber = getFramesCount("E:/Music/1.mp3");
+        maxFramesNumber = getFramesCount(title);
 
 
     }
@@ -38,20 +36,16 @@ public class SongPlayer extends Player {
         return currentFrame;
     }
 
-    private int getFramesCount(String s) {
-        Bitstream tmp = new Bitstream(getInputStream(s));
+    private int getFramesCount(String string){
+        Bitstream tmp = new Bitstream(getInputStream(string));
         int frame = 0;
         try {
-            while (skipFrame(tmp))
+            while (skipFrame(tmp)){
                 frame++;
+            }
+            tmp.close();
         } catch (BitstreamException e1) {
             e1.printStackTrace();
-        }
-
-        try {
-            tmp.close();
-        } catch (BitstreamException e) {
-            e.printStackTrace();
         }
         return frame;
     }
@@ -79,14 +73,10 @@ public class SongPlayer extends Player {
         }
     }
 
-    public void onFrameRead(int frameNumber) {
-        System.out.println("New Frame: " + frameNumber);
-    }
-
     public void play(int start, int end) throws JavaLayerException {
 
         isActive = true;
-        while (currentFrame < start - corrFactor) {
+        while (currentFrame < start) {
             skipFrame(bitstream);
             currentFrame++;
         }
@@ -98,9 +88,6 @@ public class SongPlayer extends Player {
         while(isActive && currentFrame < maxFramesNumber) {
             decodeFrame();
             currentFrame++;
-            if(listener != null){
-                listener.onFrameRead(currentFrame);
-            }
         }
 
         if (audioDevice != null) {
@@ -110,13 +97,6 @@ public class SongPlayer extends Player {
                 super.close();
             }
         }
-
-        if(listener != null && currentFrame >= maxFramesNumber)
-            listener.onFinish();
-    }
-
-    public void addListener(PlayerListener listener_) {
-        listener = listener_;
     }
 
     public void stop()  {

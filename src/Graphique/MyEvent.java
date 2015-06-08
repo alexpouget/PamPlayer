@@ -4,25 +4,26 @@ import Mp3Player.PlayerController;
 
 import Main.Main;
 import Mp3Player.PlayerController;
+import Mp3Player.PlayerListener;
 import Mp3Player.Status;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.event.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
  * Created by alex on 26/05/2015.
  */
-public class MyEvent  extends WindowAdapter implements ActionListener{
+public class MyEvent  extends WindowAdapter implements ChangeListener,ActionListener, MouseListener {
     private static PlayerController player;
-    private int maxLen;
+    public static int maxLen;
+    private boolean pause;
 
     @Override
     public void windowClosing(WindowEvent e) {
@@ -49,7 +50,7 @@ public class MyEvent  extends WindowAdapter implements ActionListener{
                     e1.printStackTrace();
                 }
             }
-            if(e.getActionCommand()=="play" || e.getActionCommand()=="pause" || e.getActionCommand()=="reprendre") {
+            if(e.getActionCommand()=="play" || e.getActionCommand()=="pause") {
                 System.out.println(e.getActionCommand().toString());
                 Main.fileName = "E:/Music/1.mp3";
 
@@ -63,7 +64,7 @@ public class MyEvent  extends WindowAdapter implements ActionListener{
                     MyWindow.play.setText("pause");
                 } else {
                     player.pause();
-                    MyWindow.play.setText("reprendre");
+                    MyWindow.play.setText("play");
                 }
             }
         }
@@ -79,7 +80,7 @@ public class MyEvent  extends WindowAdapter implements ActionListener{
             return;
         }
 
-        //player.setListener(new SlideChangeListener());
+        player.setListener(new PlayerListener());
         //infoLabel.setText(extractFileName(fileName));
 
 
@@ -88,6 +89,53 @@ public class MyEvent  extends WindowAdapter implements ActionListener{
 
         maxLen = player.getFramesNumber();
         MyWindow.play.setText("pause");
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        if(player == null){
+            return;
+        }
+        if(player.getStatus() == Status.PAUSED){
+            pause = true;
+        }
+        else{
+            player.pause();
+            pause =false;
+        }
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        if (player == null || MyWindow.jSlider.getValue() >=100) {
+            return;
+        }
+        if (pause) {
+        }
+        else{
+            player.resume();
+        }
+        player.avanceTo(MyWindow.jSlider.getValue() * maxLen / 100);
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+
     }
 }
 
