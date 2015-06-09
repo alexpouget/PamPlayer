@@ -20,6 +20,7 @@ public class SongPlayer extends Player {
     private FileInputStream fileStream;
     private int currentFrame;
     private boolean isActive;
+    private PlayerListener listener;
 
     public SongPlayer(FileInputStream fileInputStream,String title) throws JavaLayerException, FileNotFoundException {
         super(fileInputStream);
@@ -88,14 +89,13 @@ public class SongPlayer extends Player {
         while(isActive && currentFrame < maxFramesNumber) {
             decodeFrame();
             currentFrame++;
+            if(listener != null){
+                listener.start(currentFrame);
+            }
         }
 
         if (audioDevice != null) {
             audioDevice.flush();
-
-            synchronized (this) {
-                super.close();
-            }
         }
     }
 
@@ -105,5 +105,13 @@ public class SongPlayer extends Player {
 
     public int getFrameNumber() {
         return maxFramesNumber;
+    }
+
+    public PlayerListener getListener() {
+        return listener;
+    }
+
+    public void setListener(PlayerListener listener) {
+        this.listener = listener;
     }
 }

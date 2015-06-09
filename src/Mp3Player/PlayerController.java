@@ -55,6 +55,7 @@ public class PlayerController implements Runnable {
     public void play() {
         try {
             player = new SongPlayer(new FileInputStream(music),music);
+            player.setListener(new PlayerListener());
         } catch (JavaLayerException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {

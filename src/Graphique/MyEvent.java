@@ -79,11 +79,6 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             Main.fileName = null;
             return;
         }
-
-        player.setListener(new PlayerListener());
-        //infoLabel.setText(extractFileName(fileName));
-
-
             player.play();
 
 
@@ -120,7 +115,9 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
         else{
             player.resume();
         }
-        player.avanceTo(MyWindow.jSlider.getValue() * maxLen / 100);
+        //MyWindow.jSlider.getValue() );
+        System.out.println(MyWindow.jSlider.getValue()*maxLen / 100);
+        player.avanceTo(MyWindow.jSlider.getValue()*maxLen / 100);
     }
 
     @Override
