@@ -15,13 +15,16 @@ public class NewsGenerator {
 
 	        if(Desktop.isDesktopSupported()){
 	            Desktop desktop = Desktop.getDesktop();
-	            try {
-	                desktop.browse(new URI(url));
-	            } catch (IOException | URISyntaxException e) {
-	                // TODO Auto-generated catch block
-	                e.printStackTrace();
-	            }
-	        }else{
+
+                try {
+                    desktop.browse(new URI(url));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
+
+            }else{
 	            Runtime runtime = Runtime.getRuntime();
 	            try {
 	                runtime.exec("xdg-open " + url);

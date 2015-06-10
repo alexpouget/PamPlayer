@@ -51,14 +51,14 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             }
             if(e.getActionCommand()=="play" || e.getActionCommand()=="pause") {
                 System.out.println(e.getActionCommand().toString());
-                Main.fileName = "D:/Users/bmichau/workspace/PAMPlayer_DEV/PAMPlayer/Ressource/folder/729.mp3";
+                Main.fileName = "Ressource/folder/729.mp3";
 
                 if (Main.fileName == null)
                     return;
 
                 if (player == null) {
                     startPlayer();
-                } else if (player.getStatus() == Status.PAUSED) {
+                } else if (player.getStatus()== Status.PAUSED) {
                     player.resume();
                     MyWindow.play.setText("pause");
                 } else {

@@ -1,4 +1,4 @@
-package Mp3player;
+package Mp3Player;
 
 import Graphique.MyWindow;
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
@@ -15,10 +15,10 @@ import java.io.FileNotFoundException;
 public class PlayerController implements Runnable {
     private SongPlayer player;
     private int position;
-    private Status status = Status.INACTIVE;
+    private Mp3player.Status status = Mp3player.Status.INACTIVE;
     private Thread t;
     private String music;
-    private PlayerListener listener;
+    private Mp3player.PlayerListener listener;
 
     public PlayerController(String fileName) {
         music = fileName;

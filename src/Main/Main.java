@@ -25,7 +25,7 @@ public static String fileName;
         System.out.println("Liste des fichiers mp3: ");
         SynchroMusic synchroMusic = new SynchroMusic();
         try {
-        	synchroMusic.ComparerMusique(new File("D:/Users/bmichau/workspace/PAMPlayer_DEV/PAMPlayer/Ressource/folder1/"), (new File("D:/Users/bmichau/workspace/PAMPlayer_DEV/PAMPlayer/Ressource/folder/")));
+        	synchroMusic.ComparerMusique(new File("Ressource/folder1/"), (new File("Ressource/folder/")));
         } catch (IOException e) {
             e.printStackTrace();
         }
