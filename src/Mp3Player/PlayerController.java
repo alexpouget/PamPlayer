@@ -1,4 +1,4 @@
-package Mp3Player;
+package Mp3player;
 
 import Graphique.MyWindow;
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;

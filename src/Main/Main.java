@@ -1,10 +1,13 @@
 package Main;
 
-import Graphique.MyWindow;
 import synchronisation.SynchroMusic;
 
 
+
 import javax.swing.*;
+
+import Graphique.MyWindow;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -22,7 +25,7 @@ public static String fileName;
         System.out.println("Liste des fichiers mp3: ");
         SynchroMusic synchroMusic = new SynchroMusic();
         try {
-            synchroMusic.ComparerMusique(new File("E:/pamPlayer/Ressource/folder1/"), (new File("E:/pamPlayer/Ressource/folder/")));
+        	synchroMusic.ComparerMusique(new File("D:/Users/bmichau/workspace/PAMPlayer_DEV/PAMPlayer/Ressource/folder1/"), (new File("D:/Users/bmichau/workspace/PAMPlayer_DEV/PAMPlayer/Ressource/folder/")));
         } catch (IOException e) {
             e.printStackTrace();
         }
