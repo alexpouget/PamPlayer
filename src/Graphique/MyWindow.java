@@ -102,6 +102,7 @@ public class MyWindow extends JFrame {
         JPanel tab2 = new JPanel();
         JPanel tab3 = new JPanel();
         JPanel tab4 = new JPanel();
+        JPanel tab5 = new JPanel();
         tab1.setPreferredSize(new Dimension(710, 520));
 
         String[] lesMusiques = {"uneChanson", "uneAutreChanson", "encoreUne"};
@@ -114,6 +115,7 @@ public class MyWindow extends JFrame {
         onglets.addTab("Playlist", tab2);
         onglets.addTab("Mix", tab3);
         onglets.addTab("Quizz", tab4);
+        onglets.addTab("News", tab5);
         music.add(onglets);
 	  /*-------------- FIN PANEL PRINCIPAL-------------*/
 

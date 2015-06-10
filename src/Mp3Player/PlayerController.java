@@ -1,4 +1,4 @@
-package Mp3Player;
+package Mp3player;
 
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import javazoom.jl.decoder.JavaLayerException;

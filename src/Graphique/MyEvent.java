@@ -1,11 +1,9 @@
 package Graphique;
 
-import Mp3Player.PlayerController;
-
 import Main.Main;
-import Mp3Player.PlayerController;
-import Mp3Player.PlayerListener;
-import Mp3Player.Status;
+import Mp3player.PlayerController;
+import Mp3player.PlayerListener;
+import Mp3player.Status;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -13,6 +11,7 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
 import java.awt.event.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -52,7 +51,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             }
             if(e.getActionCommand()=="play" || e.getActionCommand()=="pause") {
                 System.out.println(e.getActionCommand().toString());
-                Main.fileName = "E:/Music/1.mp3";
+                Main.fileName = "D:/Users/bmichau/workspace/PAMPlayer_DEV/PAMPlayer/Ressource/folder/729.mp3";
 
                 if (Main.fileName == null)
                     return;
