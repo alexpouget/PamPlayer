@@ -1,9 +1,5 @@
-package Graphique;
+package graphique;
 
-import Main.Main;
-import Mp3player.PlayerController;
-import Mp3player.PlayerListener;
-import Mp3player.Status;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -11,6 +7,11 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
+import main.Main;
+import mp3player.PlayerController;
+import mp3player.PlayerListener;
+import mp3player.Status;
 
 import java.awt.event.*;
 import java.io.FileNotFoundException;
@@ -36,7 +37,6 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             if (e.getActionCommand()=="stop"){
                 System.out.println(e.getActionCommand().toString());
                 if (player == null) {
-                    System.out.println("re");
                     return;
                 }
                 player.stop();
@@ -92,7 +92,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             JTable target = (JTable)e.getSource();
             int row = target.getSelectedRow();
             Main.fileName = MyWindow.listMusic[row].getPath();
-
+            MyWindow.infoMusic.setText(MyWindow.listMusic[row].getTitle());
             if (Main.fileName == null)
                 return;
 
@@ -102,8 +102,15 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                 player.resume();
                 MyWindow.play.setText("pause");
             } else {
-                player.pause();
-                MyWindow.play.setText("play");
+                player.stop();
+                player = null;
+                try {
+                    Thread.sleep(100);
+                    MyWindow.jSlider.setValue(0);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
+                startPlayer();
             }
         }
     }

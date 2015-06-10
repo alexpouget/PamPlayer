@@ -580,7 +580,7 @@ public abstract class ID3V1Tag extends ID3Tag
         /** Predefined genre. */
         public static final Genre EXT_Opera = new Genre((byte)103, "Opera");
         /** Predefined genre. */
-        public static final Genre EXT_ChamberMusic = new Genre((byte)104, "Chamber Music");
+        public static final Genre EXT_ChamberMusic = new Genre((byte)104, "Chamber music");
         /** Predefined genre. */
         public static final Genre EXT_Sonata = new Genre((byte)105, "Sonata");
         /** Predefined genre. */

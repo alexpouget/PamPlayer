@@ -100,7 +100,7 @@ public class MCDIID3V2Frame extends ID3V2Frame
     
     public String toString()
     {
-        return "Music CD Identifier: CD TOC length=" + m_abyCDTOC.length;
+        return "music CD Identifier: CD TOC length=" + m_abyCDTOC.length;
     }
 
     protected void writeBody(ID3DataOutputStream oIDOS)

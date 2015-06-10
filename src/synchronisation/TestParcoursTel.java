@@ -15,7 +15,7 @@ public class TestParcoursTel {
 	public static void main(String[] args) {
 		
 		
-//		Path dir = Paths.get("Ordinateur/Benjamin Michau_G3/Carte SD/Music");
+//		Path dir = Paths.get("Ordinateur/Benjamin Michau_G3/Carte SD/music");
 //		try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir)) {
 //		    for (Path file: stream) {
 //		        System.out.println(file.getFileName());

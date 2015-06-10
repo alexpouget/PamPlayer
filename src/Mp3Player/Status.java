@@ -1,4 +1,4 @@
-package Mp3player;
+package mp3player;
 
 /**
  * Created by alex on 06/06/2015.

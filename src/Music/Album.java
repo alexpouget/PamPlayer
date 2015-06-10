@@ -1,4 +1,4 @@
-package Music;
+package music;
 
 /**
  * Created by alex on 10/06/2015.
