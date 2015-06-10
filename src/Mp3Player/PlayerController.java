@@ -1,5 +1,6 @@
 package Mp3Player;
 
+import Graphique.MyWindow;
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
@@ -55,6 +56,7 @@ public class PlayerController implements Runnable {
     public void play() {
         try {
             player = new SongPlayer(new FileInputStream(music),music);
+            MyWindow.infoMusic.setText(getMusic());
             player.setListener(new PlayerListener());
         } catch (JavaLayerException e) {
             e.printStackTrace();
@@ -75,7 +77,12 @@ public class PlayerController implements Runnable {
         player.stop();
         player.close();
         player = null;
+        MyWindow.infoMusic.setText("");
 
+    }
+
+    public String getMusic(){
+        return music;
     }
 
     public int getFramesNumber() {

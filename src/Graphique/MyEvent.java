@@ -89,6 +89,24 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
     @Override
     public void mouseClicked(MouseEvent e) {
 
+        if (e.getClickCount() == 2) {
+            JTable target = (JTable)e.getSource();
+            int row = target.getSelectedRow();
+            Main.fileName = MyWindow.listMusic[row].getPath();
+
+            if (Main.fileName == null)
+                return;
+
+            if (player == null) {
+                startPlayer();
+            } else if (player.getStatus() == Status.PAUSED) {
+                player.resume();
+                MyWindow.play.setText("pause");
+            } else {
+                player.pause();
+                MyWindow.play.setText("play");
+            }
+        }
     }
 
     @Override

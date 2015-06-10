@@ -3,12 +3,22 @@ package Graphique;
 import javax.swing.*;
 
 
+import com.sun.javafx.scene.control.skin.TableColumnHeader;
 import javazoom.jl.decoder.JavaLayerException;
 
 import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
+import Music.*;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.*;
+import java.util.Iterator;
 
 /**
  * Created by alex on 26/05/2015.
@@ -17,6 +27,8 @@ public class MyWindow extends JFrame {
     public static JButton play;
     private JButton stop;
     public static JSlider jSlider;
+    public static  JLabel infoMusic;
+    public static Music[] listMusic;
 
     public MyWindow() {
 
@@ -62,12 +74,14 @@ public class MyWindow extends JFrame {
         jSlider = new JSlider(0, 100, 0);
         jSlider.addMouseListener(new MyEvent());
 
+        infoMusic = new JLabel("");
+
 
         player.add(play);
         player.add(stop);
 
-
         player.add(jSlider);
+        player.add(infoMusic);
 
 
 	/*---------------BARRE DE MENU----------------*/
@@ -104,10 +118,44 @@ public class MyWindow extends JFrame {
         JPanel tab4 = new JPanel();
         tab1.setPreferredSize(new Dimension(710, 520));
 
-        String[] lesMusiques = {"uneChanson", "uneAutreChanson", "encoreUne"};
-        JList lstMusic = new JList(lesMusiques);
-        lstMusic.addMouseListener(new MyMouse());
-        JScrollPane spMusic = new JScrollPane(lstMusic);
+        listMusic = new Music[]{new Music("Ressource/folder1/legend.mp3", "legend"), new Music("Ressource/folder1/729.mp3", "ya rien a faire")};
+        //JList lstMusic = new JList(listMusic);
+
+        final String[] column = new String[]{"Titre","Artiste","Album","durée"};
+        AbstractTableModel model = new AbstractTableModel() {
+            public int getColumnCount() { return 4 ; }
+            public int getRowCount() { return listMusic.length; }
+            public String getColumnName(int col) {
+                return column[col];
+            }
+
+            @Override
+            public Object getValueAt(int rowIndex, int columnIndex) {
+                if(columnIndex==0) {
+                    return listMusic[rowIndex].getTitle();
+                }
+                if(columnIndex==1) {
+                    if(listMusic[rowIndex].getArtiste()!=null) {
+                        return listMusic[rowIndex].getArtiste().getName();
+                    }
+                }
+                if(columnIndex==2) {
+                    if(listMusic[rowIndex].getAlbum()!=null) {
+                        return listMusic[rowIndex].getAlbum().getName();
+                    }
+                }
+                if(columnIndex==3) {
+                    return listMusic[rowIndex].getDurée()/1000;
+                }
+                return "";
+            }
+        };
+
+        JTable table = new JTable(model);
+
+        table.addMouseListener(new MyEvent());
+        JScrollPane spMusic = new JScrollPane(table);
+        //spMusic.setRowHeaderView(rowHeader);
         tab1.add(spMusic);
 
         onglets.addTab("Biblioth�que", tab1);
