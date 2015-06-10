@@ -1,7 +1,7 @@
-package Mp3player;
+package mp3player;
 
-import Graphique.MyEvent;
-import Graphique.MyWindow;
+import graphique.MyEvent;
+import graphique.MyWindow;
 
 /**
  * Created by alex on 08/06/2015.

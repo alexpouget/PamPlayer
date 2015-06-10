@@ -1,12 +1,12 @@
-package Main;
+package main;
 
 import synchronisation.SynchroMusic;
 
 
 
-import javax.swing.*;
+import graphique.MyWindow;
 
-import Graphique.MyWindow;
+import javax.swing.*;
 
 import java.io.File;
 import java.io.IOException;

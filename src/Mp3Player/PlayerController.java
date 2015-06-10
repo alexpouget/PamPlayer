@@ -1,11 +1,13 @@
-package Mp3player;
+package mp3player;
 
-import Graphique.MyWindow;
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+
+import graphique.MyWindow;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
 import javax.net.ssl.SSLEngineResult;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 

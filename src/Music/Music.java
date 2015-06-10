@@ -1,24 +1,24 @@
-package Music;
+package music;
 
 /**
  * Created by alex on 10/06/2015.
  */
 public class Music {
-    private int durée; //in milliseconds
+    private int duree; //in milliseconds
     private String path,title;
     private Artiste artiste;
     private Album album;
 
-    public Music(int durée, String path, String title, Artiste artiste, Album album) {
-        this.durée = durée;
+    public Music(int duree, String path, String title, Artiste artiste, Album album) {
+        this.duree = duree;
         this.path = path;
         this.title = title;
         this.artiste = artiste;
         this.album = album;
     }
 
-    public Music(int durée, String path, String title) {
-        this.durée = durée;
+    public Music(int duree, String path, String title) {
+        this.duree = duree;
         this.path = path;
         this.title = title;
     }
@@ -53,12 +53,12 @@ public class Music {
         this.album = album;
     }
 
-    public int getDurée() {
-        return durée;
+    public int getDuree() {
+        return duree;
     }
 
-    public void setDurée(int durée) {
-        this.durée = durée;
+    public void setDuree(int duree) {
+        this.duree = duree;
     }
 
     public String getPath() {

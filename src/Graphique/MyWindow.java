@@ -1,9 +1,9 @@
-package Graphique;
+package graphique;
 
 import javax.swing.*;
 
-
 import com.sun.javafx.scene.control.skin.TableColumnHeader;
+
 import javazoom.jl.decoder.JavaLayerException;
 
 import javax.swing.*;
@@ -11,8 +11,10 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
+
+import music.*;
+
 import java.awt.*;
-import Music.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
@@ -146,7 +148,7 @@ public class MyWindow extends JFrame {
                     }
                 }
                 if(columnIndex==3) {
-                    return listMusic[rowIndex].getDurée()/1000;
+                    return listMusic[rowIndex].getDuree()/1000;
                 }
                 return "";
             }
@@ -191,6 +193,8 @@ public class MyWindow extends JFrame {
         biblio.add(tree);
 	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
 
+        
+    
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
         cp.add(biblio);
