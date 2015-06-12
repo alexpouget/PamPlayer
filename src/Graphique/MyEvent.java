@@ -37,7 +37,6 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             if (e.getActionCommand()=="stop"){
                 System.out.println(e.getActionCommand().toString());
                 if (player == null) {
-                    System.out.println("re");
                     return;
                 }
                 player.stop();
@@ -52,14 +51,14 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             }
             if(e.getActionCommand()=="play" || e.getActionCommand()=="pause") {
                 System.out.println(e.getActionCommand().toString());
-                Main.fileName = "D:/Users/bmichau/workspace/PAMPlayer_DEV/PAMPlayer/Ressource/folder/729.mp3";
+                Main.fileName = "Ressource/folder/729.mp3";
 
                 if (Main.fileName == null)
                     return;
 
                 if (player == null) {
                     startPlayer();
-                } else if (player.getStatus() == Status.PAUSED) {
+                } else if (player.getStatus()== Status.PAUSED) {
                     player.resume();
                     MyWindow.play.setText("pause");
                 } else {
@@ -93,7 +92,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             JTable target = (JTable)e.getSource();
             int row = target.getSelectedRow();
             Main.fileName = MyWindow.listMusic[row].getPath();
-
+            MyWindow.infoMusic.setText(MyWindow.listMusic[row].getTitle());
             if (Main.fileName == null)
                 return;
 
@@ -103,8 +102,15 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                 player.resume();
                 MyWindow.play.setText("pause");
             } else {
-                player.pause();
-                MyWindow.play.setText("play");
+                player.stop();
+                player = null;
+                try {
+                    Thread.sleep(100);
+                    MyWindow.jSlider.setValue(0);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
+                startPlayer();
             }
         }
     }

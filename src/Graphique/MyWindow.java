@@ -155,7 +155,7 @@ public class MyWindow extends JFrame {
                 if(columnIndex==3) {
                     return listMusic[rowIndex].getDuree()/1000;
                 }
-                return "";
+                return listMusic[rowIndex].getPath();
             }
         };
 

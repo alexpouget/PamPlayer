@@ -8,10 +8,10 @@ import graphique.MyWindow;
  */
 public class PlayerListener {
 
-    public void start(int frame){
+    public void start(int frame) {
         if (MyEvent.maxLen != 0) {
             //System.out.println(frame);
-            MyWindow.jSlider.setValue(100*frame / MyEvent.maxLen);
+            MyWindow.jSlider.setValue(100 * frame / MyEvent.maxLen);
         }
     }
 }

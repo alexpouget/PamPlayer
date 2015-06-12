@@ -62,6 +62,7 @@ public class NewsGenerator {
 		   listItem=racine.getChild("channel").getChildren("item");
 		  // System.out.println(listItem.getChildText("title"));
 		
+
 		  for(int i=0;i<listItem.size();i++)
 		  {
 //		   	listTitre.add(listItem.get(i).getChildText("title"));
@@ -72,6 +73,10 @@ public class NewsGenerator {
 		  }
 		  System.out.println(listNews);
 		   return listNews;
+
+
+	        }
+
 	}
 
 
@@ -79,4 +84,3 @@ public class NewsGenerator {
 
 
 
-}
