@@ -2,10 +2,22 @@ package graphique;
 
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
+
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import graphique.evenement.MyEvent;
 import graphique.evenement.OpenEvent;
+
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+
+import newsgeneration.News;
+import newsgeneration.NewsGenerator;
+
 import music.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -122,8 +134,7 @@ public class MyWindow extends JFrame {
         onglets.addTab("Biblioth�que", tab1);
         onglets.addTab("Playlist", tab2);
         onglets.addTab("Mix", tab3);
-        onglets.addTab("Quizz", tab4);
-        onglets.addTab("News", tab5);
+        onglets.addTab("News", tab4);
         music.add(onglets);
 	  /*-------------- FIN PANEL PRINCIPAL-------------*/
 
@@ -151,8 +162,59 @@ public class MyWindow extends JFrame {
         biblio.add(tree);
 	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
 
+    /*--------------PANEL NEWS-------------------------*/
+
+        /*
+        final String[] columnNews = new String[]{"Artiste","News"};
+        final JButton btNews= new JButton("Consulter news");
+//        TableCellRenderer buttonRenderer = new Tabl;
+//        table.getColumn("Button1").setCellRenderer(buttonRenderer);
+//        table.getColumn("Button2").setCellRenderer(buttonRenderer);
+        AbstractTableModel modelNews = new AbstractTableModel() {
+            public int getColumnCount() { return 2 ; }
+            public int getRowCount() { return listMusic.length; }
+            public String getColumnName(int col) {
+                return columnNews[col];
+            }
+
+            @Override
+            public Object getValueAt(int rowIndex, int columnIndex) {
+                if(columnIndex==0 && listMusic[rowIndex].getArtiste()!=null) {
+                	return listMusic[rowIndex].getArtiste().getName();
+                }
+             
+//                if(columnIndex==1 ){
+//                    return btNews;
+//                }
+                return "";
+            }
+        };
+
+        JTable tableNews = new JTable(modelNews);
+        String[] choix = {"ET","OU"};
+        JComboBox comboBoxChoix = new JComboBox(choix);        
+        TableCellEditor tce = null;
+        TableColumn maColonne = tableNews.getColumnModel().getColumn(1);                      // sur la col. z�ro
+        tce = new DefaultCellEditor(comboBoxChoix);
+        maColonne.setCellEditor(tce);
+        tableNews.addMouseListener(new MyEvent());
+        JScrollPane spMusicNews = new JScrollPane(tableNews);
+        //spMusic.setRowHeaderView(rowHeader);
+         */
+//        News[] albums= {NewsGenerator.Redirect("feu"),NewsGenerator.Redirect("feu")};
         
+//        JList<News> listAlbums= new JList<News>(albums);
+//        for(int i=0; i<3;i++)
+//        {
+//        	
+//        }
+//        double dim=tab1.getPreferredSize().getWidth();
+//        Dimension dimension=new Dimension((int) dim, 100);
+//        listAlbums.setPreferredSize(dimension);
+//        listAlbums.addMouseListener(new MyMouse());
+//        tab4.add(listAlbums);
     
+      /*--------------FIN PANEL NEWS-------------------------*/ 
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
         cp.add(biblio);
