@@ -1,26 +1,14 @@
 package graphique;
 
 import javax.swing.*;
-
-import com.sun.javafx.scene.control.skin.TableColumnHeader;
-
-import javazoom.jl.decoder.JavaLayerException;
-
-import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import graphique.evenement.MyEvent;
+import graphique.evenement.OpenEvent;
 import music.*;
-
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.nio.file.*;
-import java.util.Iterator;
+import java.util.ArrayList;
 
 /**
  * Created by alex on 26/05/2015.
@@ -30,7 +18,7 @@ public class MyWindow extends JFrame {
     private JButton stop;
     public static JSlider jSlider;
     public static  JLabel infoMusic;
-    public static Music[] listMusic;
+    public static ArrayList<Music> listMusic;
 
     public MyWindow() {
 
@@ -94,6 +82,8 @@ public class MyWindow extends JFrame {
         JMenu menu2 = new JMenu("Edition");
         //differents choix de chaque menu
         JMenuItem demarrer = new JMenuItem("D�marrer");
+        JMenuItem addmusic = new JMenuItem("Ajouter music");
+        addmusic.addActionListener(new OpenEvent());
         JMenuItem fin = new JMenuItem("Fin");
         JMenuItem annuler = new JMenuItem("Annuler");
         JMenuItem copier = new JMenuItem("Copier");
@@ -102,6 +92,7 @@ public class MyWindow extends JFrame {
         //Ajouter les choix au menu
         menu1.add(demarrer);
         menu1.add(fin);
+        menu1.add(addmusic);
         menu2.add(annuler);
         menu2.add(copier);
         menu2.add(coller);
@@ -121,45 +112,12 @@ public class MyWindow extends JFrame {
         JPanel tab5 = new JPanel();
         tab1.setPreferredSize(new Dimension(710, 520));
 
-        listMusic = new Music[]{new Music("Ressource/folder1/legend.mp3", "legend"), new Music("Ressource/folder1/729.mp3", "ya rien a faire")};
-        //JList lstMusic = new JList(listMusic);
+        ListMusic list = new ListMusic();
+        listMusic = list.getList();
 
-        final String[] column = new String[]{"Titre","Artiste","Album","durée"};
-        AbstractTableModel model = new AbstractTableModel() {
-            public int getColumnCount() { return 4 ; }
-            public int getRowCount() { return listMusic.length; }
-            public String getColumnName(int col) {
-                return column[col];
-            }
-
-            @Override
-            public Object getValueAt(int rowIndex, int columnIndex) {
-                if(columnIndex==0) {
-                    return listMusic[rowIndex].getTitle();
-                }
-                if(columnIndex==1) {
-                    if(listMusic[rowIndex].getArtiste()!=null) {
-                        return listMusic[rowIndex].getArtiste().getName();
-                    }
-                }
-                if(columnIndex==2) {
-                    if(listMusic[rowIndex].getAlbum()!=null) {
-                        return listMusic[rowIndex].getAlbum().getName();
-                    }
-                }
-                if(columnIndex==3) {
-                    return listMusic[rowIndex].getDuree()/1000;
-                }
-                return listMusic[rowIndex].getPath();
-            }
-        };
-
-        JTable table = new JTable(model);
-
-        table.addMouseListener(new MyEvent());
-        JScrollPane spMusic = new JScrollPane(table);
-        //spMusic.setRowHeaderView(rowHeader);
-        tab1.add(spMusic);
+        Table table = new Table(listMusic);
+        table.getTable().addMouseListener(new MyEvent());
+        tab1.add(table.getjScrollPane());
 
         onglets.addTab("Biblioth�que", tab1);
         onglets.addTab("Playlist", tab2);

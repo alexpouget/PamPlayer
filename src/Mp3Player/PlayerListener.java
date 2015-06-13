@@ -1,6 +1,6 @@
 package mp3player;
 
-import graphique.MyEvent;
+import graphique.evenement.MyEvent;
 import graphique.MyWindow;
 
 /**

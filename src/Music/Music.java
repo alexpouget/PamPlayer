@@ -1,9 +1,11 @@
 package music;
 
+import java.io.Serializable;
+
 /**
  * Created by alex on 10/06/2015.
  */
-public class Music {
+public class Music implements Serializable {
     private int duree; //in milliseconds
     private String path,title;
     private Artiste artiste;

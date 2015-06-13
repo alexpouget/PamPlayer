@@ -1,5 +1,6 @@
-package graphique;
+package graphique.evenement;
 
+import graphique.MyWindow;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -7,11 +8,14 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.text.html.HTML;
 
 import main.Main;
 import mp3player.PlayerController;
 import mp3player.PlayerListener;
 import mp3player.Status;
+import mp3tag.Tag;
+import org.blinkenlights.jid3.ID3Exception;
 
 import java.awt.event.*;
 import java.io.FileNotFoundException;
@@ -51,7 +55,9 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             }
             if(e.getActionCommand()=="play" || e.getActionCommand()=="pause") {
                 System.out.println(e.getActionCommand().toString());
-                Main.fileName = "Ressource/folder/729.mp3";
+                if(Main.fileName == null) {
+                    Main.fileName = MyWindow.listMusic.get(0).getPath();
+                }
 
                 if (Main.fileName == null)
                     return;
@@ -72,7 +78,12 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
     private void startPlayer() {
          player = new PlayerController(Main.fileName);
          MyWindow.jSlider.setValue(0);
-
+        try {
+            Tag t = new Tag(Main.fileName);
+            MyWindow.infoMusic.setText(t.getTitle());
+        } catch (ID3Exception e1) {
+            e1.printStackTrace();
+        }
         if (player == null) {
             System.out.println("mauvais fichier");
             Main.fileName = null;
@@ -87,12 +98,16 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        if(e.getClickCount() == 1){
+            JTable target = (JTable)e.getSource();
+            int row = target.getSelectedRow();
+            Main.fileName = MyWindow.listMusic.get(row).getPath();
+        }
         if (e.getClickCount() == 2) {
             JTable target = (JTable)e.getSource();
             int row = target.getSelectedRow();
-            Main.fileName = MyWindow.listMusic[row].getPath();
-            MyWindow.infoMusic.setText(MyWindow.listMusic[row].getTitle());
+            Main.fileName = MyWindow.listMusic.get(row).getPath();
+
             if (Main.fileName == null)
                 return;
 
