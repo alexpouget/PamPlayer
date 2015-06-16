@@ -17,7 +17,7 @@ public class MyMouse extends MouseAdapter {
 	        if (evt.getClickCount() == 2) {
 	        	JList list=(JList)evt.getSource();
 	        	String row= list.getSelectedValue().toString();
-	        	
+
                 try {
                     NewsGenerator.Redirect(row);
                 } catch (ParserConfigurationException e) {
