@@ -27,6 +27,6 @@ public class News {
 	
 	public String toString()
 	{
-		return "TITRE: "+this.titre+" URL: "+this.url;
+		return ""+this.titre;
 	}
 }

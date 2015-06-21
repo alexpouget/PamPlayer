@@ -4,6 +4,9 @@ import org.blinkenlights.jid3.ID3Exception;
 import org.blinkenlights.jid3.MP3File;
 import org.blinkenlights.jid3.io.IFileSource;
 import org.blinkenlights.jid3.v2.ID3V2Tag;
+import org.jdom2.JDOMException;
+import org.xml.sax.SAXException;
+
 import synchronisation.SynchroMusic;
 
 
@@ -11,6 +14,7 @@ import synchronisation.SynchroMusic;
 import graphique.MyWindow;
 
 import javax.swing.*;
+import javax.xml.parsers.ParserConfigurationException;
 
 import java.io.*;
 
@@ -24,6 +28,7 @@ public class Main {
 public static String fileName;
 
     public static void main(String[] args) {
+    	
         try {
             File f= new File("Ressource/folder/729.mp3");
             MP3File mp3File = new MP3File(f);
@@ -39,7 +44,7 @@ public static String fileName;
         System.out.println("Liste des fichiers mp3: ");
         SynchroMusic synchroMusic = new SynchroMusic();
         try {
-        	synchroMusic.ComparerMusique(new File("Ressource/folder1/"), (new File("Ressource/folder/")));
+        	synchroMusic.comparerMusique(new File("Ressource/folder1/"), (new File("Ressource/folder/")));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,7 +52,13 @@ public static String fileName;
 
         Runnable runnable = new Runnable() {
             public void run() {
-                new MyWindow();
+                try {
+					new MyWindow();
+				} catch (ParserConfigurationException | SAXException
+						| IOException | JDOMException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         };
         SwingUtilities.invokeLater(runnable);
@@ -56,3 +67,4 @@ public static String fileName;
 
     }
 }
+
