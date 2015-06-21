@@ -1,10 +1,12 @@
 package graphique;
 
 import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
 
-import com.sun.javafx.scene.control.skin.TableColumnHeader;
+import javax.swing.tree.DefaultMutableTreeNode;
 
-import javazoom.jl.decoder.JavaLayerException;
+import graphique.evenement.MyEvent;
+import graphique.evenement.OpenEvent;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -23,8 +25,8 @@ import org.xml.sax.SAXException;
 
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
-import music.*;
 
+import music.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,10 +38,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import java.util.ArrayList;
+
+
 /**
  * Created by alex on 26/05/2015.
  */
 public class MyWindow extends JFrame {
+
 	public static JButton play;
 	private JButton stop;
 	public static JSlider jSlider;
@@ -280,6 +286,7 @@ public class MyWindow extends JFrame {
 		setVisible(true);
 
 	}
+
 }
 
 

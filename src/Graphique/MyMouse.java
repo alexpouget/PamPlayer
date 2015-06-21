@@ -21,6 +21,7 @@ public class MyMouse extends MouseAdapter {
 		public void mouseClicked(MouseEvent evt) {
 	        if (evt.getClickCount() == 2) {
 	        	JList list=(JList)evt.getSource();
+
 	        	News news= (News) list.getSelectedValue();
 	        	Properties sys = System.getProperties();
 				String os = sys.getProperty("os.name");
@@ -34,8 +35,8 @@ public class MyMouse extends MouseAdapter {
 					e.printStackTrace();
 				}
 				}
-	        } else if (evt.getClickCount() == 3) {
-	        }
+
 		}
+}
 }
 
