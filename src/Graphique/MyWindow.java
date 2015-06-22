@@ -14,12 +14,17 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.xml.parsers.ParserConfigurationException;
 
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
 
 import music.*;
+import org.jdom2.JDOMException;
+import org.xml.sax.SAXException;
+
 import java.awt.*;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -31,6 +36,7 @@ public class MyWindow extends JFrame {
     public static JSlider jSlider;
     public static  JLabel infoMusic;
     public static ArrayList<Music> listMusic;
+    public static JTextField filtreNews= new JTextField(15);
 
     public MyWindow() {
 
@@ -162,59 +168,75 @@ public class MyWindow extends JFrame {
         biblio.add(tree);
 	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
 
-    /*--------------PANEL NEWS-------------------------*/
+/*--------------PANEL NEWS-------------------------*/
 
-        /*
-        final String[] columnNews = new String[]{"Artiste","News"};
-        final JButton btNews= new JButton("Consulter news");
-//        TableCellRenderer buttonRenderer = new Tabl;
-//        table.getColumn("Button1").setCellRenderer(buttonRenderer);
-//        table.getColumn("Button2").setCellRenderer(buttonRenderer);
-        AbstractTableModel modelNews = new AbstractTableModel() {
-            public int getColumnCount() { return 2 ; }
-            public int getRowCount() { return listMusic.length; }
-            public String getColumnName(int col) {
-                return columnNews[col];
-            }
 
-            @Override
-            public Object getValueAt(int rowIndex, int columnIndex) {
-                if(columnIndex==0 && listMusic[rowIndex].getArtiste()!=null) {
-                	return listMusic[rowIndex].getArtiste().getName();
-                }
-             
-//                if(columnIndex==1 ){
-//                    return btNews;
-//                }
-                return "";
-            }
-        };
+        ArrayList<News> news=new ArrayList<News>();
+        try {
+            news=NewsGenerator.rssParser("https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q=Feu+album&oq=Feu+album");
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JDOMException e) {
+            e.printStackTrace();
+        }
+        String[] listNews= new String[news.size()*2];
+        for(int i=0; i<news.size();i++)
+        {
+            listNews[i]=news.get(i).getTitre();
+//			listNews[i+1]=news.get(i).getUrl();
+//			i++;
 
-        JTable tableNews = new JTable(modelNews);
-        String[] choix = {"ET","OU"};
-        JComboBox comboBoxChoix = new JComboBox(choix);        
-        TableCellEditor tce = null;
-        TableColumn maColonne = tableNews.getColumnModel().getColumn(1);                      // sur la col. z�ro
-        tce = new DefaultCellEditor(comboBoxChoix);
-        maColonne.setCellEditor(tce);
-        tableNews.addMouseListener(new MyEvent());
-        JScrollPane spMusicNews = new JScrollPane(tableNews);
-        //spMusic.setRowHeaderView(rowHeader);
-         */
-//        News[] albums= {NewsGenerator.Redirect("feu"),NewsGenerator.Redirect("feu")};
-        
-//        JList<News> listAlbums= new JList<News>(albums);
-//        for(int i=0; i<3;i++)
-//        {
-//        	
-//        }
-//        double dim=tab1.getPreferredSize().getWidth();
-//        Dimension dimension=new Dimension((int) dim, 100);
-//        listAlbums.setPreferredSize(dimension);
-//        listAlbums.addMouseListener(new MyMouse());
-//        tab4.add(listAlbums);
-    
-      /*--------------FIN PANEL NEWS-------------------------*/ 
+        }
+        JList listAlbums= new JList(news.toArray());
+        double dim=tab1.getPreferredSize().getWidth();
+        Dimension dimension=new Dimension((int) dim, 500);
+        listAlbums.setPreferredSize(dimension);
+
+        tab4.add(listAlbums);
+
+
+        listAlbums.addMouseListener(new MyMouse());
+
+        // champs de filtre des news
+
+
+        //filtreNews.addKeyListener(new KeyListener());
+        //filtreNews.addKeyListener(new MyFilter());
+        final JButton filtrer= new JButton("Filtrer News");
+        System.out.println(MyFilter.newsRefresh);
+        filtrer.addActionListener(new MyFilter());
+        if(MyFilter.newsRefresh!=null)
+        {
+
+            news=MyFilter.newsRefresh;
+//		listNews=new String[news.size()*2];
+//		for(int i=0; i<news.size();i++)
+//		{
+//			listNews[i]=news.get(i).getTitre();
+////			listNews[i+1]=news.get(i).getUrl();
+////			i++;
+//
+//		}
+//		listAlbums= new JList(news.toArray());
+//		dim=tab1.getPreferredSize().getWidth();
+//		dimension=new Dimension((int) dim, 500);
+//		listAlbums.setPreferredSize(dimension);
+//
+//		tab4.add(listAlbums);
+            listAlbums.revalidate();
+
+        }
+
+        //filtrer.addActionListener(new MyFilter(filtreNews.getText()));
+        filtreNews.setLocation(500,403);
+        //filtrerNews.add(filtreNews);
+        recherche.add(filtreNews);
+//		cp.add(filtrerNews);
+		/*--------------FIN PANEL NEWS-------------------------*/
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
         cp.add(biblio);
