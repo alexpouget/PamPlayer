@@ -2,13 +2,163 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc35cb92-ab9a-4128-92f2-e80d4c9c2130" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Music/Album.java" afterPath="$PROJECT_DIR$/src/Music/Album.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Music/Artiste.java" afterPath="$PROJECT_DIR$/src/Music/Artiste.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Music/Music.java" afterPath="$PROJECT_DIR$/src/Music/Music.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/MyEvent.java" afterPath="$PROJECT_DIR$/src/Graphique/MyEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/MyMouse.java" afterPath="$PROJECT_DIR$/src/Graphique/MyMouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/MyWindow.java" afterPath="$PROJECT_DIR$/src/Graphique/MyWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Mp3Player/PlayerController.java" afterPath="$PROJECT_DIR$/src/Mp3Player/PlayerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/AdvancedPlayer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/AdvancedPlayer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/AdvancedPlayer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/AdvancedPlayer.java" />
+      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\music\Album.java" afterPath="$PROJECT_DIR$/src/music/Album.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/AllTests.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/AllTests.java" />
+      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\music\Artiste.java" afterPath="$PROJECT_DIR$/src/music/Artiste.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDevice.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDevice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDevice.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDevice.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDeviceBase.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDeviceBase.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDeviceBase.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDeviceBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDeviceFactory.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDeviceFactory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDeviceFactory.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDeviceFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitReserve.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitReserve.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Bitstream.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Bitstream.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Bitstream.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Bitstream.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/BitstreamErrors.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/BitstreamErrors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitstreamErrors.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitstreamErrors.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/BitstreamException.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/BitstreamException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitstreamException.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitstreamException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/javazoom/jl/decoder/BitstreamTest.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/javazoom/jl/decoder/BitstreamTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/CHANGES.txt" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/CHANGES.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Control.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Control.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Control.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Control.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.PrintWriterProgressListener.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.PrintWriterProgressListener.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.ProgressListener.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.ProgressListener.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/Converter.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/Converter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Crc16.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Crc16.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Crc16.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Crc16.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Decoder.Params.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Decoder.Params.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Decoder.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Decoder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Decoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Decoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/DecoderErrors.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/DecoderErrors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/DecoderErrors.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/DecoderErrors.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/DecoderException.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/DecoderException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/DecoderException.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/DecoderException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Equalizer.EQFunction.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Equalizer.EQFunction.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Equalizer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Equalizer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Equalizer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Equalizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/FactoryRegistry.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/FactoryRegistry.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/FactoryRegistry.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/FactoryRegistry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/FrameDecoder.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/FrameDecoder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/FrameDecoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/FrameDecoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Header.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Header.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Header.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/InputStreamSource.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/InputStreamSource.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/InputStreamSource.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/InputStreamSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/JID3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/JID3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerError.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerError.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerError.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerError.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerErrors.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerErrors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerErrors.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerErrors.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerException.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerException.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerException.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerHook.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerHook.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerHook.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerHook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerUtils.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerUtils.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerUtils.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/JavaSoundAudioDevice.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/JavaSoundAudioDevice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/JavaSoundAudioDevice.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/JavaSoundAudioDevice.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/JavaSoundAudioDeviceFactory.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/JavaSoundAudioDeviceFactory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/JavaSoundAudioDeviceFactory.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/JavaSoundAudioDeviceFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/LICENSE.txt" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIDecoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIDecoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIIDecoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIIDecoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIIIDecoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIIIDecoder.java" />
+      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\main\Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Manager.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Manager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Manager.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Manager.java" />
+      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\music\Music.java" afterPath="$PROJECT_DIR$/src/music/Music.java" />
+      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\graphique\MyWindow.java" afterPath="$PROJECT_DIR$/src/graphique/MyWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/newsgeneration/NewsGenerator.java" afterPath="$PROJECT_DIR$/src/newsgeneration/NewsGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/NullAudioDevice.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/NullAudioDevice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/NullAudioDevice.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/NullAudioDevice.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Obuffer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Obuffer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Obuffer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Obuffer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/OutputChannels.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/OutputChannels.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/OutputChannels.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/OutputChannels.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAMPlayer.iml" afterPath="$PROJECT_DIR$/PAMPlayer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/PlaybackEvent.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/PlaybackEvent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/PlaybackEvent.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/PlaybackEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/PlaybackListener.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/PlaybackListener.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/PlaybackListener.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/PlaybackListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/Player.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/Player.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/Player.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/PlayerApplet.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/PlayerApplet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/PlayerApplet.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/PlayerApplet.java" />
+      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\mp3player\PlayerController.java" afterPath="$PROJECT_DIR$/src/mp3player/PlayerController.java" />
+      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\mp3player\PlayerListener.java" afterPath="$PROJECT_DIR$/src/mp3player/PlayerListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/README.txt" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/RiffFile.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/RiffFile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/RiffFile.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/RiffFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/SampleBuffer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/SampleBuffer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/SampleBuffer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/SampleBuffer.java" />
+      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\mp3player\SongPlayer.java" afterPath="$PROJECT_DIR$/src/mp3player/SongPlayer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Source.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Source.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Source.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Source.java" />
+      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\mp3player\Status.java" afterPath="$PROJECT_DIR$/src/mp3player/Status.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/SynthesisFilter.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/SynthesisFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/synchronisation/TestParcoursTel.java" afterPath="$PROJECT_DIR$/src/synchronisation/TestParcoursTel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFile.WaveFileSample.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFile.WaveFileSample.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFile.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/WaveFile.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/WaveFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFileObuffer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFileObuffer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/WaveFileObuffer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/WaveFileObuffer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/allclasses-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/allclasses-noframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build-unix.sh" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build-unix.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build-win32.bat" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build-win32.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build.xml" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/constant-values.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/constant-values.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/deprecated-list.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/deprecated-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fichier.txt" afterPath="$PROJECT_DIR$/fichier.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/help-doc.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/help-doc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/huffcodetab.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/huffcodetab.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/index-all.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/index-all.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/index.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/jlap.InfoListener.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/jlap.InfoListener.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/jlap.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/jlap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/jlap.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/jlap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/jlc.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/jlc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/jlc.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/jlc.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/jlp.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/jlp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/jlp.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/jlp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/javazoom/jl/player/jlpTest.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/javazoom/jl/player/jlpTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/package-list" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/package-list" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/packages.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/packages.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/playerapplet.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/playerapplet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/readme.txt" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/serialized-form.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/serialized-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/setEnvAnt.bat" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/setEnvAnt.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/stylesheet.css" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/stylesheet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/test.mp3.properties" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/test.mp3.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pamPlayer.iws" />
@@ -32,92 +182,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
+      <file leaf-file-name="MyEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphique/evenement/MyEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="799">
-              <caret line="24" column="82" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1896" max-vertical-offset="2822">
+              <caret line="101" column="50" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsGenerator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/newsgeneration/NewsGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="1564">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#700#804#0" expanded="true" />
-                <element signature="e#793#794#0" expanded="true" />
+                <element signature="e#1764#1773#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Music.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Music/Music.java">
+      <file leaf-file-name="ListMusic.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/music/ListMusic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="1411">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-              <folding>
-                <element signature="method#Music#3;class#Music#0" expanded="false" />
-                <element signature="e#766#767#0" expanded="true" />
-                <element signature="e#795#796#0" expanded="true" />
-                <element signature="e#830#831#0" expanded="true" />
-                <element signature="e#860#861#0" expanded="true" />
-                <element signature="e#907#908#0" expanded="true" />
-                <element signature="e#945#946#0" expanded="true" />
-                <element signature="e#976#977#0" expanded="true" />
-                <element signature="e#1004#1005#0" expanded="true" />
-                <element signature="e#1045#1046#0" expanded="true" />
-                <element signature="e#1079#1080#0" expanded="true" />
-                <element signature="e#1108#1109#0" expanded="true" />
-                <element signature="e#1136#1137#0" expanded="true" />
-                <element signature="e#1175#1176#0" expanded="true" />
-                <element signature="e#1209#1210#0" expanded="true" />
-                <element signature="e#1240#1241#0" expanded="true" />
-                <element signature="e#1267#1268#0" expanded="true" />
-                <element signature="e#1307#1308#0" expanded="true" />
-                <element signature="e#1339#1340#0" expanded="true" />
-                <element signature="e#1371#1372#0" expanded="true" />
-                <element signature="e#1399#1400#0" expanded="true" />
-                <element signature="e#1441#1442#0" expanded="true" />
-                <element signature="e#1475#1476#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Artiste.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Music/Artiste.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding>
-                <element signature="e#139#140#0" expanded="true" />
-                <element signature="e#171#172#0" expanded="true" />
-                <element signature="e#202#203#0" expanded="true" />
-                <element signature="e#229#230#0" expanded="true" />
-                <element signature="e#269#270#0" expanded="true" />
-                <element signature="e#301#302#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Album.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Music/Album.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="510">
-              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-              <folding>
-                <element signature="e#127#128#0" expanded="true" />
-                <element signature="e#159#160#0" expanded="true" />
-                <element signature="e#246#247#0" expanded="true" />
-                <element signature="e#286#287#0" expanded="true" />
-                <element signature="e#318#319#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
+              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MyEvent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Graphique/MyEvent.java">
+        <entry file="file://$PROJECT_DIR$/src/graphique/MyEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1427" max-vertical-offset="2788">
-              <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="2771">
+              <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,69 +226,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Mp3Player/PlayerController.java">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="1921">
-              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#637#638#0" expanded="true" />
-                <element signature="e#669#670#0" expanded="true" />
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#997#998#0" expanded="true" />
-                <element signature="e#1025#1026#0" expanded="true" />
-                <element signature="e#1047#1048#0" expanded="true" />
-                <element signature="e#1960#1961#0" expanded="true" />
-                <element signature="e#1988#1989#0" expanded="true" />
-                <element signature="e#2255#2256#0" expanded="true" />
-                <element signature="e#2295#2296#0" expanded="true" />
-                <element signature="e#2338#2339#0" expanded="true" />
-                <element signature="e#2369#2370#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="9" max-vertical-offset="612">
+              <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SongPlayer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Mp3Player/SongPlayer.java">
+      <file leaf-file-name="Music.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/music/Music.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="2023">
-              <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1675#1676#0" expanded="true" />
-                <element signature="e#1722#1723#0" expanded="true" />
-                <element signature="e#2674#2675#0" expanded="true" />
-                <element signature="e#2706#2707#0" expanded="true" />
-                <element signature="e#2822#2823#0" expanded="true" />
-                <element signature="e#2853#2854#0" expanded="true" />
-                <element signature="e#2909#2910#0" expanded="true" />
-                <element signature="e#2949#2950#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="1479">
+              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyWindow.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Graphique/MyWindow.java">
+      <file leaf-file-name="MyWindow.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphique/MyWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8707124" vertical-offset="2186" max-vertical-offset="3604">
-              <caret line="148" column="17" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4157#4158#0" expanded="true" />
-                <element signature="e#4207#4208#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="2771" max-vertical-offset="4046">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MyMouse.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Graphique/MyMouse.java">
+        <entry file="file://$PROJECT_DIR$/src/graphique/MyMouse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Table.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/graphique/Table.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.55979645" vertical-offset="1" max-vertical-offset="1003">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="833">
+              <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -214,16 +307,30 @@
         <option value="$PROJECT_DIR$/src/Player/Mp3Player.java" />
         <option value="$PROJECT_DIR$/src/Mp3Player/Status" />
         <option value="$PROJECT_DIR$/src/Mp3Player/Status.java" />
-        <option value="$PROJECT_DIR$/src/Main/Main.java" />
         <option value="$PROJECT_DIR$/src/Mp3Player/SongPlayer.java" />
-        <option value="$PROJECT_DIR$/src/Mp3Player/PlayerListener.java" />
-        <option value="$PROJECT_DIR$/src/Mp3Player/PlayerController.java" />
         <option value="$PROJECT_DIR$/src/Music/Artiste.java" />
         <option value="$PROJECT_DIR$/src/Music/Album.java" />
-        <option value="$PROJECT_DIR$/src/Music/Music.java" />
         <option value="$PROJECT_DIR$/src/Graphique/MyMouse.java" />
-        <option value="$PROJECT_DIR$/src/Graphique/MyEvent.java" />
+        <option value="$PROJECT_DIR$/src/Music/Music.java" />
         <option value="$PROJECT_DIR$/src/Graphique/MyWindow.java" />
+        <option value="$PROJECT_DIR$/src/newsgeneration/NewsGenerator.java" />
+        <option value="$PROJECT_DIR$/src/Graphique/MyEvent.java" />
+        <option value="$PROJECT_DIR$/src/Mp3Player/PlayerController.java" />
+        <option value="$PROJECT_DIR$/src/Mp3Player/PlayerListener.java" />
+        <option value="$PROJECT_DIR$/src/Main/Main.java" />
+        <option value="$PROJECT_DIR$/src/mp3player/PlayerController.java" />
+        <option value="$PROJECT_DIR$/src/mp3player/PlayerListener.java" />
+        <option value="$PROJECT_DIR$/src/mp3tag/Tag.java" />
+        <option value="$PROJECT_DIR$/src/music/Album.java" />
+        <option value="$PROJECT_DIR$/src/music/Artiste.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/graphique/Table.java" />
+        <option value="$PROJECT_DIR$/src/music/ListMusic.java" />
+        <option value="$PROJECT_DIR$/src/music/Music.java" />
+        <option value="$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java" />
+        <option value="$PROJECT_DIR$/src/graphique/MyWindow.java" />
+        <option value="$PROJECT_DIR$/src/graphique/MyMouse.java" />
+        <option value="$PROJECT_DIR$/src/graphique/MyEvent.java" />
       </list>
     </option>
   </component>
@@ -260,7 +367,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,6 +374,10 @@
               <option name="myItemId" value="pamPlayer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -276,6 +386,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pamPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pamPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pamPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -293,7 +417,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="synchronisation" />
+              <option name="myItemId" value="music" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -311,61 +435,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pamPlayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pamPlayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mp3Player" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pamPlayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pamPlayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pamPlayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pamPlayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Graphique" />
+              <option name="myItemId" value="graphique" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -397,12 +467,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="folder" />
+              <option name="myItemId" value="jdom" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,14 +483,16 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ressource/jlayer1.0.1/jl1.0.1.jar!/" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ressource/jdom/jdom-2.0.6.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -435,12 +508,12 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -624,7 +697,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3598775" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -636,10 +708,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2468254" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32159266" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17301588" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32006127" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -662,7 +735,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="28" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -670,35 +743,169 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/synchronisation/SynchroMusic.java">
+    <entry file="file://$PROJECT_DIR$/src/music/Album.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2737">
-          <caret line="153" column="5" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="629">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="765">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#700#804#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="680">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphique/MyWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/mp3player/PlayerListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="391">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/music/Music.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="1479">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/MyWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2771" max-vertical-offset="4046">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/MyMouse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="714">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1241">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="833">
+          <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/evenement/MyEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3145">
+          <caret line="101" column="50" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/music/ListMusic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="1105">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/music/Album.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="544">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/music/Artiste.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="476">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="509" max-vertical-offset="1003">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mp3tag/Tag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="918">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mp3player/PlayerListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="391">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/music/Music.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1479">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/MyWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1700" max-vertical-offset="3587">
+          <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="629">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/synchronisation/SynchroMusic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2737">
+          <caret line="153" column="5" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="765">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/MyWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="731">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4157#4158#0" expanded="true" />
-            <element signature="e#4207#4208#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -706,31 +913,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3298">
           <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="697">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="697">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#700#804#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphique/MyWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/graphique/MyWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="731">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4157#4158#0" expanded="true" />
-            <element signature="e#4207#4208#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02910959" vertical-offset="0" max-vertical-offset="584">
           <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
           <caret line="39" column="20" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3324937" vertical-offset="89" max-vertical-offset="41514">
           <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="7409" max-vertical-offset="35989">
           <caret line="508" column="0" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -786,15 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="11132" max-vertical-offset="33252">
           <caret line="725" column="0" selection-start-line="725" selection-start-column="0" selection-end-line="725" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mp3Player/Status.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,160 +986,171 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.9868073" vertical-offset="1627" max-vertical-offset="2482">
           <caret line="150" column="1" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mp3Player/PlayerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52040815" vertical-offset="0" max-vertical-offset="392">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mp3Player/SongPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/mp3player/SongPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1353" max-vertical-offset="2023">
           <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mp3player/Status.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33163264" vertical-offset="3117" max-vertical-offset="58412">
+          <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mp3player/PlayerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1955">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1675#1676#0" expanded="true" />
-            <element signature="e#1722#1723#0" expanded="true" />
-            <element signature="e#2674#2675#0" expanded="true" />
-            <element signature="e#2706#2707#0" expanded="true" />
-            <element signature="e#2822#2823#0" expanded="true" />
-            <element signature="e#2853#2854#0" expanded="true" />
-            <element signature="e#2909#2910#0" expanded="true" />
-            <element signature="e#2949#2950#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#707#708#0" expanded="false" />
+            <element signature="e#1005#1006#0" expanded="false" />
+            <element signature="e#1034#1035#0" expanded="false" />
+            <element signature="e#1062#1063#0" expanded="false" />
+            <element signature="e#1084#1085#0" expanded="false" />
+            <element signature="e#1945#1946#0" expanded="false" />
+            <element signature="e#1973#1974#0" expanded="false" />
+            <element signature="e#2240#2241#0" expanded="false" />
+            <element signature="e#2280#2281#0" expanded="false" />
+            <element signature="e#2323#2324#0" expanded="false" />
+            <element signature="e#2354#2355#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/mp3tag/Tag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="799">
-          <caret line="24" column="82" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#700#804#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="918">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Music/Artiste.java">
+    <entry file="file://$PROJECT_DIR$/src/music/Artiste.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding>
-            <element signature="e#139#140#0" expanded="true" />
-            <element signature="e#171#172#0" expanded="true" />
-            <element signature="e#202#203#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#301#302#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Music/Music.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="1411">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding>
-            <element signature="method#Music#3;class#Music#0" expanded="false" />
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#795#796#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
-            <element signature="e#976#977#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1079#1080#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1307#1308#0" expanded="true" />
-            <element signature="e#1339#1340#0" expanded="true" />
-            <element signature="e#1371#1372#0" expanded="true" />
-            <element signature="e#1399#1400#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1475#1476#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mp3Player/PlayerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="1921">
-          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#997#998#0" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1960#1961#0" expanded="true" />
-            <element signature="e#1988#1989#0" expanded="true" />
-            <element signature="e#2255#2256#0" expanded="true" />
-            <element signature="e#2295#2296#0" expanded="true" />
-            <element signature="e#2338#2339#0" expanded="true" />
-            <element signature="e#2369#2370#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Music/Album.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="510">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding>
-            <element signature="e#127#128#0" expanded="true" />
-            <element signature="e#159#160#0" expanded="true" />
-            <element signature="e#246#247#0" expanded="true" />
-            <element signature="e#286#287#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphique/MyMouse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphique/MyEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/mp3player/PlayerListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1427" max-vertical-offset="2788">
-          <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/music/Album.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="527">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ressource/list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08947369" vertical-offset="0" max-vertical-offset="380">
+          <caret line="2" column="124" selection-start-line="2" selection-start-column="124" selection-end-line="2" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/music/Music.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="678" max-vertical-offset="1105">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="833">
+          <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/MyWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2771" max-vertical-offset="4046">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9" max-vertical-offset="612">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/evenement/MyEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1896" max-vertical-offset="2822">
+          <caret line="101" column="50" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newsgeneration/NewsGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="1564">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="e#1764#1773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/MyMouse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/music/ListMusic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="474" max-vertical-offset="867">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/MyEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="2771">
+          <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphique/MyWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/graphique/Table.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8707124" vertical-offset="2186" max-vertical-offset="3604">
-          <caret line="148" column="17" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4157#4158#0" expanded="true" />
-            <element signature="e#4207#4208#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.55979645" vertical-offset="1" max-vertical-offset="1003">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,7 +1211,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1036,6 +1230,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>JID3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

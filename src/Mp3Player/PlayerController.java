@@ -1,13 +1,17 @@
-package Mp3player;
+package mp3player;
 
-import Graphique.MyWindow;
+
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+
+import graphique.MyWindow;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
+import org.blinkenlights.jid3.ID3Exception;
+import org.blinkenlights.jid3.v2.ID3V2Tag;
 
 import javax.net.ssl.SSLEngineResult;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
+import java.io.*;
 
 /**
  * Created by alex on 06/06/2015.
@@ -27,7 +31,6 @@ public class PlayerController implements Runnable {
     @Override
     public void run() {
         status = Status.ACTIVE;
-
         try {
             if (player != null)
                 player.play(position, Integer.MAX_VALUE);
@@ -56,7 +59,6 @@ public class PlayerController implements Runnable {
     public void play() {
         try {
             player = new SongPlayer(new FileInputStream(music),music);
-            MyWindow.infoMusic.setText(getMusic());
             player.setListener(new PlayerListener());
         } catch (JavaLayerException e) {
             e.printStackTrace();

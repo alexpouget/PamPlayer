@@ -2,34 +2,85 @@ package newsgeneration;
 
 import java.awt.Desktop;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Properties;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
+import org.xml.sax.SAXException;
+
+import com.sun.xml.internal.stream.buffer.sax.SAXBufferCreator;
+
+import java.io.*;
+import java.util.List;
+import java.util.Iterator;
 
 
 public class NewsGenerator {
-	public static void main(String[] args) {
-		
-		   String url = "http://www.google.com";
 
-	        if(Desktop.isDesktopSupported()){
-	            Desktop desktop = Desktop.getDesktop();
-	            try {
-	                desktop.browse(new URI(url));
-	            } catch (IOException | URISyntaxException e) {
-	                // TODO Auto-generated catch block
-	                e.printStackTrace();
-	            }
-	        }else{
-	            Runtime runtime = Runtime.getRuntime();
-	            try {
-	                runtime.exec("xdg-open " + url);
-	            } catch (IOException e) {
-	                // TODO Auto-generated catch block
-	                e.printStackTrace();
-	            }
+	public static void Redirect(String keyWord) throws ParserConfigurationException, SAXException, IOException, JDOMException {
+
+		//		   String url = "https://www.google.fr/search?q="+keyWord+"+album&tbm=nws";
+		String url= "https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+keyWord+"+album&oq="+keyWord+"album";
+		rssParser(url);
+
+	}        
+	// TEST FLUX RSS
+	public static ArrayList<News> rssParser(String urlFluxRss) throws ParserConfigurationException, SAXException, IOException, JDOMException
+	{
+		Document document;
+		Element racine;
+
+	
+		//urlFluxRss= "https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q=Feu+album&oq=Feu+album";
+		URL url2 = new URL(urlFluxRss);
+
+
+		//On crée une instance de SAXBuilder
+		SAXBuilder sxb= new SAXBuilder();
+		document=sxb.build(url2);
+		racine = document.getRootElement();
+		
+		  //On crée une List contenant tous les noeuds "etudiant" de l'Element racine
+		//   Element listItem = racine.getChild("channel").getChild("item");
+		   List<Element> listItem= new ArrayList<Element>();
+		   ArrayList<String> listTitre= new ArrayList<String>();
+		   ArrayList<News> listNews= new ArrayList<News>();
+		   ArrayList<String> listUrl= new ArrayList<String>();
+		   
+		  // on recupere les les enfants de channel
+		   listItem=racine.getChild("channel").getChildren("item");
+		  // System.out.println(listItem.getChildText("title"));
+		
+
+		  for(int i=0;i<listItem.size();i++)
+		  {
+//		   	listTitre.add(listItem.get(i).getChildText("title"));
+//		   	listUrl.add(listItem.get(i).getChildText("link").substring(listItem.get(i).getChildText("link").indexOf("&url")+5, (listItem.get(i).getChildText("link").lastIndexOf("/"))));
+		    // on recupére pour chaque item son title et son lien et on met dans un objet news
+			  News n= new News(listItem.get(i).getChildText("title"),listItem.get(i).getChildText("link").substring(listItem.get(i).getChildText("link").indexOf("&url")+5, (listItem.get(i).getChildText("link").lastIndexOf("/"))));
+		    listNews.add(n);
+		  }
+		  System.out.println(listNews);
+		   return listNews;
+
+
 	        }
+
 	}
 
-}
+
+
+
+
+

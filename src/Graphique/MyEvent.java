@@ -1,9 +1,9 @@
-package Graphique;
+package graphique;
 
-import Main.Main;
-import Mp3player.PlayerController;
-import Mp3player.PlayerListener;
-import Mp3player.Status;
+import main.Main;
+import mp3player.PlayerController;
+import mp3player.PlayerListener;
+import mp3player.Status;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -91,7 +91,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
         if (e.getClickCount() == 2) {
             JTable target = (JTable)e.getSource();
             int row = target.getSelectedRow();
-            Main.fileName = MyWindow.listMusic[row].getPath();
+            Main.fileName = MyWindow.listMusic.get(row).getPath();
 
             if (Main.fileName == null)
                 return;
