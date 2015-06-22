@@ -2,164 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc35cb92-ab9a-4128-92f2-e80d4c9c2130" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/AdvancedPlayer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/AdvancedPlayer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/AdvancedPlayer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/AdvancedPlayer.java" />
-      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\music\Album.java" afterPath="$PROJECT_DIR$/src/music/Album.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/AllTests.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/AllTests.java" />
-      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\music\Artiste.java" afterPath="$PROJECT_DIR$/src/music/Artiste.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDevice.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDevice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDevice.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDevice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDeviceBase.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDeviceBase.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDeviceBase.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDeviceBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDeviceFactory.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/AudioDeviceFactory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDeviceFactory.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/AudioDeviceFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitReserve.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitReserve.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Bitstream.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Bitstream.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Bitstream.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Bitstream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/BitstreamErrors.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/BitstreamErrors.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitstreamErrors.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitstreamErrors.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/BitstreamException.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/BitstreamException.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitstreamException.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/BitstreamException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/javazoom/jl/decoder/BitstreamTest.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/javazoom/jl/decoder/BitstreamTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/CHANGES.txt" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/CHANGES.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Control.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Control.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Control.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Control.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.PrintWriterProgressListener.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.PrintWriterProgressListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.ProgressListener.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.ProgressListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/Converter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/Converter.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/Converter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Crc16.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Crc16.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Crc16.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Crc16.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Decoder.Params.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Decoder.Params.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Decoder.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Decoder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Decoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Decoder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/DecoderErrors.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/DecoderErrors.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/DecoderErrors.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/DecoderErrors.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/DecoderException.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/DecoderException.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/DecoderException.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/DecoderException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Equalizer.EQFunction.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Equalizer.EQFunction.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Equalizer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Equalizer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Equalizer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Equalizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/FactoryRegistry.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/FactoryRegistry.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/FactoryRegistry.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/FactoryRegistry.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/FrameDecoder.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/FrameDecoder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/FrameDecoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/FrameDecoder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Header.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Header.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Header.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/InputStreamSource.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/InputStreamSource.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/InputStreamSource.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/InputStreamSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/JID3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/JID3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerError.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerError.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerError.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerError.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerErrors.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerErrors.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerErrors.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerErrors.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerException.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerException.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerException.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerHook.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerHook.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerHook.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerHook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerUtils.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/JavaLayerUtils.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerUtils.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/JavaLayerUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/JavaSoundAudioDevice.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/JavaSoundAudioDevice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/JavaSoundAudioDevice.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/JavaSoundAudioDevice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/JavaSoundAudioDeviceFactory.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/JavaSoundAudioDeviceFactory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/JavaSoundAudioDeviceFactory.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/JavaSoundAudioDeviceFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/LICENSE.txt" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIDecoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIDecoder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIIDecoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIIDecoder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIIIDecoder.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/LayerIIIDecoder.java" />
-      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\main\Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Manager.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Manager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Manager.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Manager.java" />
-      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\music\Music.java" afterPath="$PROJECT_DIR$/src/music/Music.java" />
-      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\graphique\MyWindow.java" afterPath="$PROJECT_DIR$/src/graphique/MyWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/newsgeneration/NewsGenerator.java" afterPath="$PROJECT_DIR$/src/newsgeneration/NewsGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/NullAudioDevice.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/NullAudioDevice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/NullAudioDevice.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/NullAudioDevice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Obuffer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Obuffer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Obuffer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Obuffer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/OutputChannels.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/OutputChannels.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/OutputChannels.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/OutputChannels.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PAMPlayer.iml" afterPath="$PROJECT_DIR$/PAMPlayer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/PlaybackEvent.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/PlaybackEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/PlaybackEvent.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/PlaybackEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/PlaybackListener.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/PlaybackListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/PlaybackListener.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/PlaybackListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/Player.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/Player.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/Player.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/PlayerApplet.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/PlayerApplet.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/PlayerApplet.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/PlayerApplet.java" />
-      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\mp3player\PlayerController.java" afterPath="$PROJECT_DIR$/src/mp3player/PlayerController.java" />
-      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\mp3player\PlayerListener.java" afterPath="$PROJECT_DIR$/src/mp3player/PlayerListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/README.txt" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/RiffFile.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/RiffFile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/RiffFile.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/RiffFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/SampleBuffer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/SampleBuffer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/SampleBuffer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/SampleBuffer.java" />
-      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\mp3player\SongPlayer.java" afterPath="$PROJECT_DIR$/src/mp3player/SongPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Source.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/Source.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Source.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/Source.java" />
-      <change type="MODIFICATION" beforePath="E:\pamPlayer\src\mp3player\Status.java" afterPath="$PROJECT_DIR$/src/mp3player/Status.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/SynthesisFilter.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/SynthesisFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/synchronisation/TestParcoursTel.java" afterPath="$PROJECT_DIR$/src/synchronisation/TestParcoursTel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFile.WaveFileSample.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFile.WaveFileSample.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFile.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/WaveFile.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/WaveFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFileObuffer.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/WaveFileObuffer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/WaveFileObuffer.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/WaveFileObuffer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build-unix.sh" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build-unix.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build-win32.bat" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build-win32.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build.xml" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/constant-values.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/deprecated-list.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/deprecated-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fichier.txt" afterPath="$PROJECT_DIR$/fichier.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/help-doc.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/help-doc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/huffcodetab.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/huffcodetab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/index-all.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/index-all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/index.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/jlap.InfoListener.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/jlap.InfoListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/jlap.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/jlap.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/jlap.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/advanced/jlap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/jlc.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/jlc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/jlc.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/converter/jlc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/jlp.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/jlp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/jlp.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/player/jlp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/javazoom/jl/player/jlpTest.java" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/javazoom/jl/player/jlpTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-frame.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/package-list" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/package-list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-summary.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/converter/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/decoder/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-tree.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/javazoom/jl/player/advanced/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/packages.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/packages.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/playerapplet.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/playerapplet.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/readme.txt" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/src/javazoom/jl/decoder/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/serialized-form.html" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/serialized-form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/setEnvAnt.bat" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/setEnvAnt.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/stylesheet.css" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/doc/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/test.mp3.properties" afterPath="$PROJECT_DIR$/Ressource/jlayer1.0.1/srctest/test.mp3.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressource/list.txt" afterPath="$PROJECT_DIR$/Ressource/list.txt" />
     </list>
     <ignored path="pamPlayer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -266,21 +109,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Table.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Table.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphique/Table.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55979645" vertical-offset="1" max-vertical-offset="1003">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="1003">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpenEvent.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="OpenEvent.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="833">
-              <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.826972" vertical-offset="219" max-vertical-offset="935">
+              <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -327,10 +170,10 @@
         <option value="$PROJECT_DIR$/src/graphique/Table.java" />
         <option value="$PROJECT_DIR$/src/music/ListMusic.java" />
         <option value="$PROJECT_DIR$/src/music/Music.java" />
-        <option value="$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java" />
         <option value="$PROJECT_DIR$/src/graphique/MyWindow.java" />
         <option value="$PROJECT_DIR$/src/graphique/MyMouse.java" />
         <option value="$PROJECT_DIR$/src/graphique/MyEvent.java" />
+        <option value="$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java" />
       </list>
     </option>
   </component>
@@ -851,6 +694,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="918">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,6 +880,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="918">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,14 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="678" max-vertical-offset="1105">
           <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="833">
-          <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="82" />
           <folding />
         </state>
       </provider>
@@ -1148,8 +985,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphique/Table.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55979645" vertical-offset="1" max-vertical-offset="1003">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="1003">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphique/evenement/OpenEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.826972" vertical-offset="219" max-vertical-offset="935">
+          <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
           <folding />
         </state>
       </provider>
