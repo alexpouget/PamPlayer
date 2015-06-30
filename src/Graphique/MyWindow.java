@@ -1,25 +1,22 @@
 package graphique;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
+
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import graphique.evenement.MyEvent;
 import graphique.evenement.OpenEvent;
 
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellEditor;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableModel;
-import javax.swing.tree.DefaultMutableTreeNode;
 import javax.xml.parsers.ParserConfigurationException;
 
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
 
-import music.*;
+import music.Music;
+import music.ListMusic;
+import music.Album;
+import music.Artiste;
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
 
@@ -102,6 +99,8 @@ public class MyWindow extends JFrame {
         JMenuItem demarrer = new JMenuItem("D�marrer");
         JMenuItem addmusic = new JMenuItem("Ajouter music");
         addmusic.addActionListener(new OpenEvent());
+        JMenuItem addAlbum = new JMenuItem("Ajouter album");
+        addAlbum.addActionListener(new OpenEvent());
         JMenuItem fin = new JMenuItem("Fin");
         JMenuItem annuler = new JMenuItem("Annuler");
         JMenuItem copier = new JMenuItem("Copier");
@@ -111,6 +110,7 @@ public class MyWindow extends JFrame {
         menu1.add(demarrer);
         menu1.add(fin);
         menu1.add(addmusic);
+        menu1.add(addAlbum);
         menu2.add(annuler);
         menu2.add(copier);
         menu2.add(coller);

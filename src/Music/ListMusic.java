@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Created by alex on 11/06/2015.
  */
-public class ListMusic {
+public class ListMusic implements Serializable{
     ArrayList<Music> list;
 
     public ListMusic() {
