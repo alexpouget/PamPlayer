@@ -2,7 +2,6 @@ package graphique;
 
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
-
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import graphique.evenement.MyEvent;
@@ -25,8 +24,8 @@ import org.xml.sax.SAXException;
 
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
-
 import music.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,7 +36,6 @@ import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-
 import java.util.ArrayList;
 
 
@@ -52,6 +50,7 @@ public class MyWindow extends JFrame {
 	public static  JLabel infoMusic;
 	public static Music[] listMusic;
 	public static JTextField filtreNews= new JTextField(15);
+	public static JList listAlbums;
 
 	public MyWindow() throws ParserConfigurationException, SAXException, IOException, JDOMException {
 
@@ -72,9 +71,9 @@ public class MyWindow extends JFrame {
 		JTextField txtRechercher = new JTextField(15);
 
 		//biblio.setBackground(Color.orange);
-		player.setBackground(Color.blue);
+		//player.setBackground(Color.blue);
 		//music.setBackground(Color.red);
-		recherche.setBackground(Color.green);
+		//recherche.setBackground(Color.green);
 
 		biblio.setSize(245, 555);
 		biblio.setLocation(5, 105);
@@ -139,6 +138,7 @@ public class MyWindow extends JFrame {
 		JPanel tab2 = new JPanel();
 		JPanel tab3 = new JPanel();
 		JPanel tab4 = new JPanel();
+		tab4.setPreferredSize(new Dimension(710, 400));
 		JPanel tab5 = new JPanel();
 		tab1.setPreferredSize(new Dimension(710, 400));
 		tab1.setBackground(Color.red);
@@ -219,64 +219,31 @@ public class MyWindow extends JFrame {
 	
 		ArrayList<News> news=new ArrayList<News>();
 		news=NewsGenerator.rssParser("https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q=Feu+album&oq=Feu+album");
-		String[] listNews= new String[news.size()*2];
-		for(int i=0; i<news.size();i++)
-		{
-			listNews[i]=news.get(i).getTitre();
-//			listNews[i+1]=news.get(i).getUrl();
-//			i++;
-
-		}
-		JList listAlbums= new JList(news.toArray());
-		double dim=tab1.getPreferredSize().getWidth();
-		Dimension dimension=new Dimension((int) dim, 500);
+		listAlbums= new JList(news.toArray());
+		double dim=tab1.getWidth();
+		Dimension dimension=new Dimension(710, 200);
 		listAlbums.setPreferredSize(dimension);
-		
+		//listAlbums.setBackground(Color.RED);
+		//listAlbums.setSize(300, 200);
+		//listAlbums.setSize(100, 300);
+		//listAlbums.setSize(new Dimension(410, 200));
 		tab4.add(listAlbums);
 		
 		
 		listAlbums.addMouseListener(new MyMouse());
 		
-		// champs de filtre des news
-		
-		
-		//filtreNews.addKeyListener(new KeyListener());
-		//filtreNews.addKeyListener(new MyFilter());
+
 		final JButton filtrer= new JButton("Filtrer News");
-		System.out.println(MyFilter.newsRefresh);
 		filtrer.addActionListener(new MyFilter()); 
-		if(MyFilter.newsRefresh!=null)
-		{
+
+		JPanel panelFiltre= new JPanel();
+		panelFiltre.add(filtreNews);
+		panelFiltre.add(filtrer);
 		
-		news=MyFilter.newsRefresh;
-//		listNews=new String[news.size()*2];
-//		for(int i=0; i<news.size();i++)
-//		{
-//			listNews[i]=news.get(i).getTitre();
-////			listNews[i+1]=news.get(i).getUrl();
-////			i++;
-//
-//		}
-//		listAlbums= new JList(news.toArray());
-//		dim=tab1.getPreferredSize().getWidth();
-//		dimension=new Dimension((int) dim, 500);
-//		listAlbums.setPreferredSize(dimension);
-//		
-//		tab4.add(listAlbums);
-		listAlbums.revalidate();
-		
-		}
-		
-		//filtrer.addActionListener(new MyFilter(filtreNews.getText()));
-		filtreNews.setLocation(500,403);
-		//filtrerNews.add(filtreNews);
-		recherche.add(filtreNews);
-//		cp.add(filtrerNews);
+		tab4.add(panelFiltre);
 		/*--------------FIN PANEL NEWS-------------------------*/ 
 		recherche.add(txtRechercher); //je met le textfield dans le panel
 		recherche.add(btnRechercher); //je met le bouton dans le panel
-		recherche.add(filtreNews);
-		recherche.add(filtrer);
 		cp.add(biblio);
 		cp.add(music);
 		cp.add(player);

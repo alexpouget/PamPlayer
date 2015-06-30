@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
@@ -26,6 +28,8 @@ public class MyFilter implements ActionListener {
 			try {
 				String url= "https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+MyWindow.filtreNews.getText()+"+album&oq="+MyWindow.filtreNews.getText()+"album";
 				newsRefresh=newsgeneration.NewsGenerator.rssParser(url);
+				MyWindow.listAlbums.setListData(newsRefresh.toArray());
+
 			} catch (ParserConfigurationException | SAXException | IOException
 					| JDOMException e1) {
 				// TODO Auto-generated catch block
