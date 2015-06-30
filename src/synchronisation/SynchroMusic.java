@@ -11,136 +11,120 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class SynchroMusic {
 
 
-	public static void ComparerMusique(File repertoire, File repertoire2) throws IOException{
+	public static void comparerMusique(File repertoire, File repertoire2) throws IOException{
 
 		// liste des fichiers du repertoire 1 et 2
 		File [] listefichiers;
 		File [] listefichiers2;
 
-		// on stocke le nom des fichiers mp3 dans des lists
-		List<String> nomsFichier1 = new ArrayList<String>();
-		List<String> nomsFichier2 = new ArrayList<String>(); 
-
-		// on prépare une liste pour mémoriser les musiques à ajouter
-		List<String> musiqueAAjouterDossier1 = new ArrayList<String>(); 
-		List<String> musiqueAAjouterDossier2= new ArrayList<String>();
-
-		String nomfichier="";
-		String nomfichier2="";
-		int diffNbFichier=0;
-		boolean testSame=true;
-		boolean RepSupRep2 = false;
-		int parcours=0;
+		// liste des fichiers Ã  ajouter pour chaque dossier
+		ArrayList<File> fichiersAAjouterDossier1Vers2=new ArrayList<File>();
+		ArrayList<File> fichiersAAjouterDossier2Vers1=new ArrayList<File>();
 		listefichiers=repertoire.listFiles();
 		listefichiers2=repertoire2.listFiles();
+		boolean test=true;
+		Date creationDate1;
+		Date creationDate2;
 
+		// si le dossier 1 est vide alors on copie le continu du dossier 2 dans le 1
+		if(listefichiers.length==0)
+		{
+			for(File fichier: listefichiers2)
+				fichiersAAjouterDossier2Vers1.add(fichier);
+		}
 
-		// on parcours la liste de fichiers mp3 du repertoire 1 et on remplie la liste avec les noms des fichiers Mp3
+		// si le dossieer 2 est vide alors on copie le contenu du dossier 1 dans le 2
+		if(listefichiers2.length==0)
+		{
+			for(File fichier: listefichiers)
+				fichiersAAjouterDossier1Vers2.add(fichier);
+		}
+
+		// on parcours le dossier 1 afin de voir si il faut ajouter ou non des musiques on test les fichiers sur leur nom, date et taille
 		for(int i=0;i<listefichiers.length;i++)
 		{
-			if(listefichiers[i].getName().endsWith(".mp3"))
+			creationDate1= new Date(listefichiers[i].lastModified());
+
+
+			for(int j=0; j<listefichiers2.length;j++)
 			{
-				nomsFichier1.add(listefichiers[i].getName());
+				creationDate2= new Date(listefichiers2[j].lastModified());
+				if(!(listefichiers[i].getName().equals(listefichiers2[j].getName())) || !(listefichiers[i].length()==listefichiers2[j].length()) || !(creationDate1.equals(creationDate2)))
+					test=false;
+				else
+				{
+					test=true;
+					break;
+				}
+			}
+			if(test==false)
+			{
+				fichiersAAjouterDossier1Vers2.add(listefichiers[i]);
 			}
 
-		}
+		} 
 
-		// on parcours la liste de fichiers mp3 du repertoire 2 et on remplie la liste avec les noms des fichiers Mp3
+		// on parcours le dossier 2 afin de voir si il faut ajouter ou non des musiques on test les fichiers sur leur nom, date et taille
 		for(int i=0;i<listefichiers2.length;i++)
 		{
-			if(listefichiers2[i].getName().endsWith(".mp3"))
+			creationDate1= new Date(listefichiers2[i].lastModified());
+			for(int j=0; j<listefichiers.length;j++)
 			{
-				nomsFichier2.add(listefichiers2[i].getName());
-			}
-
-		}
-
-		// affichage des fichiers dans les deux dossiers
-		System.out.println("Liste nom des fichiers du dossier 1: "+nomsFichier1);
-		System.out.println("Liste nom des fichiers du dossier 2: "+nomsFichier2);
-
-		// on compare les deux listes des fichiers mp3 afin de savoir si deux dossier sont les mêmes et on mémorise les musiques à ajouter
-
-		// on parcours les fichiers du dossier 1
-		for(int i=0; i<nomsFichier1.size();i++)
-		{
-
-			// si un fichier du dossier 1 n'est pas contenue dans le dossier 2 on l'ajoute a liste des musiques a ajouter
-			if(!nomsFichier2.contains(nomsFichier1.get(i)))
-			{
-				testSame=false;
-
-				musiqueAAjouterDossier1.add(nomsFichier1.get(i));
-				RepSupRep2=true;
-				//					System.out.println("Il n'y pas la méme chose dans les deux dossiers");
-
-			}
-		}
-
-		// si un fichier du dossier 2 n'est pas contenue dans le dossier 1 on l'ajoute a liste des musiques a ajouter
-		for(int i=0; i<nomsFichier2.size();i++)
-		{
-
-			if(!nomsFichier1.contains(nomsFichier2.get(i)))
-			{
-
-				testSame=false;
-				musiqueAAjouterDossier2.add(nomsFichier2.get(i));
-				RepSupRep2=false;
-				//					System.out.println("Il n'y pas la méme chose dans les deux dossiers");
-
-
-			}
-		}
-
-		if(testSame==false)
-		{
-			//System.out.println("Musiques à ajouter "+musiqueAAjouter);
-
-			// si il y a plus fichiers dans le repertoire 1 alors on copie les fichiers manquants dans le dossier 2
-			if(RepSupRep2==true)
-			{
-				// ajout du dossie 1 dans le dossier 2
-				for(int i=0;i<musiqueAAjouterDossier1.size();i++)
+				creationDate2= new Date(listefichiers[j].lastModified());
+				if(!(listefichiers2[i].getName().equals(listefichiers[j].getName())) || !(listefichiers[j].length()==listefichiers2[i].length()) || !(creationDate1.equals(creationDate2)))
+					test=false;
+				else
 				{
-					Path monFichier =Paths.get(repertoire.getAbsolutePath()+"/"+musiqueAAjouterDossier1.get(i));
-
-					Path monFichierCopie = Paths.get(repertoire2.getAbsolutePath()+"/"+musiqueAAjouterDossier1.get(i));
-
-					Path file = Files.copy(monFichier, monFichierCopie);
+					test=true;
+					break;
 				}
-				System.out.println("COPIE EFFECTUEE");
 			}
-
-
-			// si il y a plus fichiers dans le repertoire 2 alors on copie les fichiers manquants dans le dossier 1
-			else
+			if(test==false)
 			{
-				// ajout du dossie 2 dans le dossier 1
-
-				for(int i=0;i<musiqueAAjouterDossier2.size();i++)
-				{
-					Path monFichier =Paths.get(repertoire2.getAbsolutePath()+"/"+musiqueAAjouterDossier2.get(i));
-
-					Path monFichierCopie = Paths.get(repertoire.getAbsolutePath()+"/"+musiqueAAjouterDossier2.get(i));
-
-					Path file = Files.copy(monFichier, monFichierCopie);
-				}
-				System.out.println("COPIE EFFECTUEE");
+				fichiersAAjouterDossier2Vers1.add(listefichiers2[i]);
 			}
 
-		}
+		} 
 
-
-		else
+		// ajout des musiques si nÃ©cessaire du dossier 1 vers 2
+		if(fichiersAAjouterDossier1Vers2!=null)
 		{
-			System.out.println("Les dossiers sont-ils les memes: "+testSame+ " Aucune musique à ajouter");
+			for(File son: fichiersAAjouterDossier1Vers2){
+
+
+				Path monFichier =Paths.get(repertoire.getAbsolutePath()+"/"+son.getName());
+
+				Path monFichierCopie = Paths.get(repertoire2.getAbsolutePath()+"/"+son.getName());
+
+				Path file = Files.copy(monFichier, monFichierCopie);
+			}
 		}
+
+		// ajout des musiques si nÃ©cessaire du dossier 2 vers 1
+		if(fichiersAAjouterDossier2Vers1!=null)
+		{
+			for(File son: fichiersAAjouterDossier2Vers1){
+
+
+				Path monFichier =Paths.get(repertoire2.getAbsolutePath()+"/"+son.getName());
+
+				Path monFichierCopie = Paths.get(repertoire.getAbsolutePath()+"/"+son.getName());
+
+				Path file = Files.copy(monFichier, monFichierCopie);
+			}
+		}
+		System.out.println(test);
+
+		System.out.println(fichiersAAjouterDossier1Vers2);
+		System.out.println(fichiersAAjouterDossier2Vers1);
+
+
 
 
 	}

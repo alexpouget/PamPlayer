@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
@@ -39,8 +41,8 @@ public class MyFilter implements ActionListener {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-        }
-	
 
+				MyWindow.listAlbums.setListData(newsRefresh.toArray());
+		}
 
 }

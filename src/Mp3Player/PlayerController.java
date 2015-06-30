@@ -1,4 +1,5 @@
-package mp3Player;
+
+package mp3player;
 
 
 import graphique.MyWindow;
@@ -54,6 +55,7 @@ public class PlayerController implements Runnable {
     public void play() {
         try {
             player = new SongPlayer(new FileInputStream(music), music);
+            player = new SongPlayer(new FileInputStream(music),music);
             player.setListener(new PlayerListener());
         } catch (JavaLayerException e) {
             e.printStackTrace();

@@ -1,6 +1,9 @@
 package graphique;
 
 import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+
 
 
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -24,16 +27,55 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import graphique.evenement.MyEvent;
+import graphique.evenement.OpenEvent;
+
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.jdom2.JDOMException;
+import org.xml.sax.SAXException;
+
+import newsgeneration.News;
+import newsgeneration.NewsGenerator;
+import music.*;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.ArrayList;
+
 /**
  * Created by alex on 26/05/2015.
  */
 public class MyWindow extends JFrame {
+
+
+    public static ArrayList<Music> listMusic;
+
     public static JButton play;
     private JButton stop;
     public static JSlider jSlider;
     public static  JLabel infoMusic;
-    public static ArrayList<Music> listMusic;
+
     public static JTextField filtreNews= new JTextField(15);
+    public static JList listAlbums;
 
     public MyWindow() {
 
@@ -183,59 +225,28 @@ public class MyWindow extends JFrame {
         } catch (JDOMException e) {
             e.printStackTrace();
         }
-        String[] listNews= new String[news.size()*2];
-        for(int i=0; i<news.size();i++)
-        {
-            listNews[i]=news.get(i).getTitre();
-//			listNews[i+1]=news.get(i).getUrl();
-//			i++;
-
-        }
-        JList listAlbums= new JList(news.toArray());
-        double dim=tab1.getPreferredSize().getWidth();
-        Dimension dimension=new Dimension((int) dim, 500);
+        listAlbums= new JList(news.toArray());
+        double dim=tab1.getWidth();
+        Dimension dimension=new Dimension(710, 200);
         listAlbums.setPreferredSize(dimension);
-
+        //listAlbums.setBackground(Color.RED);
+        //listAlbums.setSize(300, 200);
+        //listAlbums.setSize(100, 300);
+        //listAlbums.setSize(new Dimension(410, 200));
         tab4.add(listAlbums);
 
 
         listAlbums.addMouseListener(new MyMouse());
 
-        // champs de filtre des news
 
-
-        //filtreNews.addKeyListener(new KeyListener());
-        //filtreNews.addKeyListener(new MyFilter());
         final JButton filtrer= new JButton("Filtrer News");
-        System.out.println(MyFilter.newsRefresh);
         filtrer.addActionListener(new MyFilter());
-        if(MyFilter.newsRefresh!=null)
-        {
 
-            news=MyFilter.newsRefresh;
-//		listNews=new String[news.size()*2];
-//		for(int i=0; i<news.size();i++)
-//		{
-//			listNews[i]=news.get(i).getTitre();
-////			listNews[i+1]=news.get(i).getUrl();
-////			i++;
-//
-//		}
-//		listAlbums= new JList(news.toArray());
-//		dim=tab1.getPreferredSize().getWidth();
-//		dimension=new Dimension((int) dim, 500);
-//		listAlbums.setPreferredSize(dimension);
-//
-//		tab4.add(listAlbums);
-            listAlbums.revalidate();
+        JPanel panelFiltre= new JPanel();
+        panelFiltre.add(filtreNews);
+        panelFiltre.add(filtrer);
 
-        }
-
-        //filtrer.addActionListener(new MyFilter(filtreNews.getText()));
-        filtreNews.setLocation(500,403);
-        //filtrerNews.add(filtreNews);
-        recherche.add(filtreNews);
-//		cp.add(filtrerNews);
+        tab4.add(panelFiltre);
 		/*--------------FIN PANEL NEWS-------------------------*/
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
@@ -248,6 +259,10 @@ public class MyWindow extends JFrame {
         setVisible(true);
 
     }
+
+
+
+
 }
 
 

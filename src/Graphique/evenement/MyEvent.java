@@ -1,6 +1,7 @@
 package graphique.evenement;
 
 import graphique.MyWindow;
+
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -9,10 +10,11 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.html.HTML;
-
+import music.*;
 import main.Main;
-import mp3Player.PlayerController;
-import mp3Player.Status;
+import mp3player.PlayerController;
+import mp3player.PlayerListener;
+import mp3player.Status;
 import mp3tag.Tag;
 import org.blinkenlights.jid3.ID3Exception;
 

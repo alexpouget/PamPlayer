@@ -1,4 +1,4 @@
-package mp3Player;
+package mp3player;
 
 import javazoom.jl.decoder.*;
 import javazoom.jl.player.AudioDevice;
@@ -28,7 +28,6 @@ public class SongPlayer extends Player {
         fileStream = fileInputStream;
         bitstream = new Bitstream(fileStream);
         maxFramesNumber = getFramesCount(title);
-
 
     }
 

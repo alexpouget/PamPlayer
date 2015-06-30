@@ -3,12 +3,16 @@ package graphique.evenement;
 import graphique.MyWindow;
 import graphique.Table;
 import javafx.stage.FileChooser;
+
 import mp3tag.Tag;
 import music.Album;
 import music.Artiste;
 import music.ListMusic;
 import music.Music;
 import org.blinkenlights.jid3.ID3Exception;
+
+import music.ListMusic;
+import music.Music;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -21,6 +25,7 @@ import java.io.File;
 public class OpenEvent implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
+
         Music music;
         if (e.getActionCommand().equalsIgnoreCase("Ajouter music")) {
             JFileChooser dialogue = new JFileChooser(new File("."));
@@ -36,19 +41,18 @@ public class OpenEvent implements ActionListener {
             dialogue.setAcceptAllFileFilterUsed(false);
             if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 File[] list = dialogue.getSelectedFile().listFiles();
-                for(int i = 0;i<list.length;i++){
-                    if(list[i].getName().endsWith(".mp3")) {
+                for (int i = 0; i < list.length; i++) {
+                    if (list[i].getName().endsWith(".mp3")) {
                         addToList(new Music(list[i].getPath(), list[i].getName()));
                     }
                 }
-            }
-            else {
+            } else {
                 System.out.println("pas dossier selectionner");
             }
         }
     }
 
-    public boolean isPresent(Music music){
+    public boolean isPresent(Music music) {
         for (int i = 0; i < MyWindow.listMusic.size(); i++) {
             if (MyWindow.listMusic.get(i).getTitle().equals(music.getTitle())) {
                 return true;
@@ -57,24 +61,45 @@ public class OpenEvent implements ActionListener {
         return false;
     }
 
-    public void addToList(Music music){
+    public void addToList(Music music) {
         try {
             Tag tag = new Tag(music.getPath());
-            if(!(tag.getAlbum() == null)) {
+            if (!(tag.getAlbum() == null)) {
                 music.setAlbum(new Album(tag.getAlbum()));
             }
-            if(!(tag.getArtiste() == null)) {
+            if (!(tag.getArtiste() == null)) {
                 music.setArtiste(new Artiste(tag.getArtiste()));
             }
-            if(!tag.getTitle().equals(null)) {
+            if (!tag.getTitle().equals(null)) {
                 music.setTitle(tag.getTitle());
             }
         } catch (ID3Exception e1) {
             e1.printStackTrace();
         }
-        if(!isPresent(music)){
+        if (!isPresent(music)) {
             ListMusic listMusic = new ListMusic();
             listMusic.addMusic(music);
+
+            JFileChooser dialogue = new JFileChooser(new File("."));
+            if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                music = new Music(dialogue.getSelectedFile().getPath(), dialogue.getSelectedFile().getName());
+                Boolean isPresent = false;
+                for (int i = 0; i < MyWindow.listMusic.size(); i++) {
+                    if (MyWindow.listMusic.get(i).getTitle().equals(music.getTitle())) {
+                        isPresent = true;
+                    }
+                }
+                if (!isPresent) {
+                    listMusic = new ListMusic();
+                    listMusic.addMusic(music);
+                }
+                //ListMusic list = new ListMusic();
+                //MyWindow.listMusic = list.getList();
+                //Table nTable = new Table(MyWindow.listMusic);
+
+                //MyWindow.tab1.add(nTable.getjScrollPane());
+                //MyWindow.tab1.repaint();
+            }
         }
     }
 }
