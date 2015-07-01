@@ -1,26 +1,21 @@
-package graphique.evenement;
+package graphique;
 
-import graphique.MyWindow;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
-import javazoom.jl.player.advanced.AdvancedPlayer;
-
-import javax.swing.*;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.text.html.HTML;
-import music.*;
+
 import main.Main;
 import mp3player.PlayerController;
 import mp3player.Status;
-import mp3tag.Tag;
 
-import org.blinkenlights.jid3.ID3Exception;
-
-import java.awt.event.*;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 /**
  * Created by alex on 26/05/2015.
@@ -42,6 +37,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             if (e.getActionCommand()=="stop"){
                 System.out.println(e.getActionCommand().toString());
                 if (player == null) {
+                    System.out.println("re");
                     return;
                 }
                 player.stop();
@@ -56,16 +52,14 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             }
             if(e.getActionCommand()=="play" || e.getActionCommand()=="pause") {
                 System.out.println(e.getActionCommand().toString());
-                if(Main.fileName == null) {
-                    Main.fileName = MyWindow.listMusic.get(0).getPath();
-                }
+                Main.fileName = "Ressource/folder/729.mp3";
 
                 if (Main.fileName == null)
                     return;
 
                 if (player == null) {
                     startPlayer();
-                } else if (player.getStatus()== Status.PAUSED) {
+                } else if (player.getStatus() == Status.PAUSED) {
                     player.resume();
                     MyWindow.play.setText("pause");
                 } else {
@@ -79,12 +73,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
     private void startPlayer() {
          player = new PlayerController(Main.fileName);
          MyWindow.jSlider.setValue(0);
-        try {
-            Tag t = new Tag(Main.fileName);
-            MyWindow.infoMusic.setText(t.getTitle());
-        } catch (ID3Exception e1) {
-            e1.printStackTrace();
-        }
+
         if (player == null) {
             System.out.println("mauvais fichier");
             Main.fileName = null;
@@ -99,11 +88,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getClickCount() == 1){
-            JTable target = (JTable)e.getSource();
-            int row = target.getSelectedRow();
-            Main.fileName = MyWindow.listMusic.get(row).getPath();
-        }
+
         if (e.getClickCount() == 2) {
             JTable target = (JTable)e.getSource();
             int row = target.getSelectedRow();
@@ -118,15 +103,8 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                 player.resume();
                 MyWindow.play.setText("pause");
             } else {
-                player.stop();
-                player = null;
-                try {
-                    Thread.sleep(100);
-                    MyWindow.jSlider.setValue(0);
-                } catch (InterruptedException e1) {
-                    e1.printStackTrace();
-                }
-                startPlayer();
+                player.pause();
+                MyWindow.play.setText("play");
             }
         }
     }

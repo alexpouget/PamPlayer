@@ -11,6 +11,7 @@ import java.io.File;
  */
 public class Tag {
     String title,album,artiste;
+    float duree;
 
     public Tag(String s) throws ID3Exception {
         File file = new File(s);
@@ -19,7 +20,27 @@ public class Tag {
         ID3V2Tag tag = mp3File.getID3V2Tag();
         setTitle(tag.getTitle());
         setAlbum(tag.getAlbum());
-        setArtiste(tag.getArtist());
+        
+        String artist3=tag.getArtist();
+        String arti;
+        String feat="";
+        
+        if(artist3.contains("feat"))
+        	feat="feat";
+        if(artist3.contains("ft"))
+        	feat="ft";
+        if(artist3.contains("ft."))
+        	feat="ft.";
+        if(artist3.contains("feat."))
+        	feat="feat.";
+        if(artist3.contains("featuring."))
+        	feat="featuring.";
+        if(artist3.contains("featuring"))
+        	feat="featuring";
+        
+        arti=artist3.substring(0, artist3.indexOf(feat));
+        
+        setArtiste(arti);
     }
 
     public String getAlbum() {
@@ -45,4 +66,5 @@ public class Tag {
     public void setArtiste(String artiste) {
         this.artiste = artiste;
     }
+ 
 }
