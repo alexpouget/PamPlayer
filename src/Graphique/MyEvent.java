@@ -1,20 +1,20 @@
 package graphique;
 
-import main.Main;
-import mp3player.PlayerController;
-import mp3player.PlayerListener;
-import mp3player.Status;
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
-import javazoom.jl.player.advanced.AdvancedPlayer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import java.awt.event.*;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import mp3Player.PlayerController;
+import mp3Player.Status;
+//import mp3player.PlayerListener;
 
 /**
  * Created by alex on 26/05/2015.
@@ -51,9 +51,9 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             }
             if(e.getActionCommand()=="play" || e.getActionCommand()=="pause") {
                 System.out.println(e.getActionCommand().toString());
-                Main.fileName = "D:/Users/bmichau/workspace/PAMPlayer_DEV/PAMPlayer/Ressource/folder/729.mp3";
+                main.fileName = "D:/Users/bmichau/workspace/PAMPlayer_DEV/PAMPlayer/Ressource/folder/729.mp3";
 
-                if (Main.fileName == null)
+                if (main.fileName == null)
                     return;
 
                 if (player == null) {
@@ -70,12 +70,12 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
 
 
     private void startPlayer() {
-         player = new PlayerController(Main.fileName);
+         player = new PlayerController(main.fileName);
          MyWindow.jSlider.setValue(0);
 
         if (player == null) {
             System.out.println("mauvais fichier");
-            Main.fileName = null;
+            main.fileName = null;
             return;
         }
             player.play();
@@ -91,9 +91,9 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
         if (e.getClickCount() == 2) {
             JTable target = (JTable)e.getSource();
             int row = target.getSelectedRow();
-            Main.fileName = MyWindow.listMusic.get(row).getPath();
+            main.fileName = MyWindow.listMusic.get(row).getPath();
 
-            if (Main.fileName == null)
+            if (main.fileName == null)
                 return;
 
             if (player == null) {

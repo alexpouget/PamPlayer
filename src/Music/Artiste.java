@@ -1,10 +1,9 @@
 package music;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Created by alex on 10/06/2015.
- */
 public class Artiste implements Serializable {
     private String name;
 

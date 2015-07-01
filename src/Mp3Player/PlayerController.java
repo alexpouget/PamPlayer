@@ -1,4 +1,4 @@
-package mp3player;
+package mp3Player;
 
 
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
