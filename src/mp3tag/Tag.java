@@ -24,23 +24,25 @@ public class Tag {
         String artist3=tag.getArtist();
         String arti;
         String feat="";
-        
-        if(artist3.contains("feat"))
-        	feat="feat";
-        if(artist3.contains("ft"))
-        	feat="ft";
-        if(artist3.contains("ft."))
-        	feat="ft.";
-        if(artist3.contains("feat."))
-        	feat="feat.";
-        if(artist3.contains("featuring."))
-        	feat="featuring.";
-        if(artist3.contains("featuring"))
-        	feat="featuring";
-        
-        arti=artist3.substring(0, artist3.indexOf(feat));
-        
-        setArtiste(arti);
+
+        if(artist3 != null) {
+            if (artist3.contains("feat"))
+                feat = "feat";
+            if (artist3.contains("ft"))
+                feat = "ft";
+            if (artist3.contains("ft."))
+                feat = "ft.";
+            if (artist3.contains("feat."))
+                feat = "feat.";
+            if (artist3.contains("featuring."))
+                feat = "featuring.";
+            if (artist3.contains("featuring"))
+                feat = "featuring";
+
+            arti = artist3.substring(0, artist3.indexOf(feat));
+
+            setArtiste(arti);
+        }
     }
 
     public String getAlbum() {
