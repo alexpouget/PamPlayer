@@ -170,6 +170,7 @@ public class MyWindow extends JFrame {
         JPanel tab3 = new JPanel();
         JPanel tab4 = new JPanel();
         JPanel tab5 = new JPanel();
+        tab4.setPreferredSize(new Dimension(710, 400));
         tab1.setPreferredSize(new Dimension(710, 520));
 
         ListMusic list = new ListMusic();
