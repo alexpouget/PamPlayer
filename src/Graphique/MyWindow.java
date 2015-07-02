@@ -4,10 +4,6 @@ import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 
-
-
-import javax.swing.tree.DefaultMutableTreeNode;
-
 import graphique.evenement.MyEvent;
 import graphique.evenement.OpenEvent;
 
@@ -48,6 +44,9 @@ import org.xml.sax.SAXException;
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
 import music.*;
+
+import org.jdom2.JDOMException;
+import org.xml.sax.SAXException;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -187,30 +186,59 @@ public class MyWindow extends JFrame {
         music.add(onglets);
 	  /*-------------- FIN PANEL PRINCIPAL-------------*/
 
-	/*--------------PANEL BIBLIOTHEQUE-------------*/
-        //Cr�ation de la racine
-        DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Biblioth�que");
-
-        //ajout des branches � la racine
-        for (int i = 1; i < 15; i++) {
-            DefaultMutableTreeNode artiste = new DefaultMutableTreeNode("Artiste");
-
-            //On rajoute 15 branches
-            if (i < 15) {
-                DefaultMutableTreeNode album = new DefaultMutableTreeNode("Album");
-                artiste.add(album);
-            }
-            //On ajoute l'album � l'artiste
-            laBiblio.add(artiste);
+        
+    	/*--------------PANEL BIBLIOTHEQUE-------------*/
+        ArrayList<String> listArtist = new ArrayList<String>(); //contient les artistes pr�sents dans la bibliotheque
+        //ArrayList<String> listAlbum = new ArrayList<String>();
+        for (Music elem : listMusic) {
+        	if(elem.getArtiste()==null)
+        		continue;
+        	String artist=elem.getArtiste().getName().toUpperCase().trim();
+        	if(listArtist.contains(artist))
+        		continue;
+        	else 
+        		listArtist.add(artist);
         }
-        //cr�ation de l'arbre avec la taille par d�faut
-        JTree arbre = new JTree(laBiblio);
-        arbre.addMouseListener(new MyMouse());
-        JScrollPane tree = new JScrollPane(arbre);
-        tree.setPreferredSize(new Dimension(240, 547));
-        biblio.add(tree);
-	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
-
+                
+            //Creation de la racine
+            DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Biblioth�que");
+           
+            //parcours de la liste des artistes afin de cr�� un noeud � pour chaque artiste
+            for (String artist : listArtist) {
+            	if(artist==null)
+            		continue;
+                DefaultMutableTreeNode artiste = new DefaultMutableTreeNode(""+artist); 
+                ArrayList<String> listArtistAlbum = new ArrayList<String>();
+                
+                //parcours de la liste des musiques afin de trouver les musiques correspondant � l'artiste courant
+                for(Music song: listMusic){
+                	if(song.getAlbum()==null)
+                		continue;
+                	String artist2=song.getArtiste().getName().toUpperCase().trim();
+                	//on r�cup�re les albums de l'artiste et on les met dans la liste listArtistAlbum
+                	if(artist2.equals(artist)){
+                    	if(listArtistAlbum.contains(song.getAlbum().getName()))
+                    		continue;
+                    	else
+                    		listArtistAlbum.add(song.getAlbum().getName());
+                	}
+                }
+                //on parcourt la liste des albums de l'artiste courant afin de cr�er un noeud pour chaque album
+	            for (String theAlbum: listArtistAlbum) {
+	            	if(theAlbum==null)
+	            		continue;
+	                   DefaultMutableTreeNode album = new DefaultMutableTreeNode(theAlbum);
+	                   artiste.add(album);
+	                }
+                laBiblio.add(artiste);
+            }
+            //creation de l'arbre avec la taille par defaut
+            JTree arbre = new JTree(laBiblio);
+            arbre.addMouseListener(new MyMouse());
+            JScrollPane tree = new JScrollPane(arbre);
+            tree.setPreferredSize(new Dimension(240, 547));
+            biblio.add(tree);
+    	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
 /*--------------PANEL NEWS-------------------------*/
 
 
