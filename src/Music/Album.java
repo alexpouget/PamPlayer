@@ -2,9 +2,6 @@ package music;
 
 import java.io.Serializable;
 
-/**
- * Created by alex on 10/06/2015.
- */
 public class Album implements Serializable {
     String name;
 
