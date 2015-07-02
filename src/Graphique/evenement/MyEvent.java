@@ -2,9 +2,9 @@ package graphique.evenement;
 
 import graphique.MyWindow;
 
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
-import javazoom.jl.player.advanced.AdvancedPlayer;
+//import javazoom.jl.decoder.JavaLayerException;
+//import javazoom.jl.player.Player;
+//import javazoom.jl.player.advanced.AdvancedPlayer;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;

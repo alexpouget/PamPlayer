@@ -28,14 +28,14 @@ public static String fileName;
     public static void main(String[] args) {
 
         System.out.println("Liste des fichiers mp3: ");
-        SynchroMusic synchroMusic = new SynchroMusic();
-        try {
-
-        	synchroMusic.comparerMusique(new File("Ressource/folder1/"), (new File("Ressource/folder/")));
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        SynchroMusic synchroMusic = new SynchroMusic();
+//        try {
+//
+//        	synchroMusic.comparerMusique(new File("Ressource/folder1/"), (new File("Ressource/folder/")));
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
             System.out.println("start");
 
 

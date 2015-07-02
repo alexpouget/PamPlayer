@@ -17,7 +17,7 @@ import java.util.List;
 public class SynchroMusic {
 
 
-	public static void comparerMusique(File repertoire, File repertoire2) throws IOException{
+	public static String comparerMusique(File repertoire, File repertoire2) throws IOException{
 
 		// liste des fichiers du repertoire 1 et 2
 		File [] listefichiers;
@@ -31,6 +31,7 @@ public class SynchroMusic {
 		boolean test=true;
 		Date creationDate1;
 		Date creationDate2;
+		String isSyncrho="";
 
 		// si le dossier 1 est vide alors on copie le continu du dossier 2 dans le 1
 		if(listefichiers.length==0)
@@ -119,11 +120,20 @@ public class SynchroMusic {
 				Path file = Files.copy(monFichier, monFichierCopie);
 			}
 		}
+		/*
 		System.out.println(test);
 
 		System.out.println(fichiersAAjouterDossier1Vers2);
 		System.out.println(fichiersAAjouterDossier2Vers1);
-
+		*/
+			
+		if(fichiersAAjouterDossier1Vers2.size()!=0 )
+			return fichiersAAjouterDossier1Vers2.toString()+"Ajouté(es) dans le dossier 2";
+		if(fichiersAAjouterDossier2Vers1.size()!=0 )
+			return fichiersAAjouterDossier2Vers1.toString()+"Ajouté(es) dans le dossier 1";
+		else
+			return "Aucune musique à synchro";
+			
 
 
 

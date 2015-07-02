@@ -5,17 +5,18 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import graphique.evenement.MyEvent;
+import graphique.evenement.MySynchro;
 import graphique.evenement.OpenEvent;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
-
 import music.Music;
 import music.ListMusic;
 import music.Album;
 import music.Artiste;
+
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
 
@@ -72,7 +73,7 @@ public class MyWindow extends JFrame {
     private JButton stop;
     public static JSlider jSlider;
     public static  JLabel infoMusic;
-
+    public static  JLabel labelResultSynchro;
     public static JTextField filtreNews= new JTextField(15);
     public static JList listAlbums;
 
@@ -171,6 +172,7 @@ public class MyWindow extends JFrame {
         JPanel tab5 = new JPanel();
         tab4.setPreferredSize(new Dimension(710, 400));
         tab1.setPreferredSize(new Dimension(710, 520));
+        tab5.setPreferredSize(new Dimension(310, 400));
 
         ListMusic list = new ListMusic();
         listMusic = list.getList();
@@ -183,6 +185,7 @@ public class MyWindow extends JFrame {
         onglets.addTab("Playlist", tab2);
         onglets.addTab("Mix", tab3);
         onglets.addTab("News", tab4);
+        onglets.addTab("Synchronisation",tab5);
         music.add(onglets);
 	  /*-------------- FIN PANEL PRINCIPAL-------------*/
 
@@ -277,6 +280,19 @@ public class MyWindow extends JFrame {
 
         tab4.add(panelFiltre);
 		/*--------------FIN PANEL NEWS-------------------------*/
+        /*------------------------PANEL SYNCHRO-------------------*/
+      
+        JPanel panelSynchro= new JPanel();
+        labelResultSynchro= new JLabel();
+        
+        JButton buttonSynchro= new JButton("Lancer Synchro musique");
+        panelSynchro.add(buttonSynchro);
+       // buttonSynchro.setLocation(500, 300);
+        buttonSynchro.addActionListener(new MySynchro());
+        panelSynchro.setLocation(300, 500);
+        tab5.add(panelSynchro);
+        tab5.add(labelResultSynchro);
+        /*------------------------FIN PANEL SYNCHRO-------------------*/
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
         cp.add(biblio);
