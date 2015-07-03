@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import graphique.evenement.MyConnexion;
 import graphique.evenement.MyEvent;
 import graphique.evenement.MySynchro;
 import graphique.evenement.OpenEvent;
@@ -76,6 +77,7 @@ public class MyWindow extends JFrame {
     public static  JLabel labelResultSynchro;
     public static JTextField filtreNews= new JTextField(15);
     public static JList listAlbums;
+    public static JMenuItem connect;
 
     public MyWindow() {
 
@@ -140,6 +142,8 @@ public class MyWindow extends JFrame {
         //differents choix de chaque menu
         JMenuItem demarrer = new JMenuItem("D�marrer");
         JMenuItem addmusic = new JMenuItem("Ajouter music");
+        connect = new JMenuItem("Se connecter");
+        connect.addActionListener(new MyConnexion());
         addmusic.addActionListener(new OpenEvent());
         JMenuItem addAlbum = new JMenuItem("Ajouter album");
         addAlbum.addActionListener(new OpenEvent());
@@ -153,6 +157,7 @@ public class MyWindow extends JFrame {
         menu1.add(fin);
         menu1.add(addmusic);
         menu1.add(addAlbum);
+        menu1.add(connect);
         menu2.add(annuler);
         menu2.add(copier);
         menu2.add(coller);
@@ -293,6 +298,9 @@ public class MyWindow extends JFrame {
         tab5.add(panelSynchro);
         tab5.add(labelResultSynchro);
         /*------------------------FIN PANEL SYNCHRO-------------------*/
+        
+        /*------------------------POP UP DE CONNEXIOn-----------------*/
+       
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
         cp.add(biblio);
