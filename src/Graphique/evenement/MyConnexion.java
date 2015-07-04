@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
 import javax.swing.text.Utilities;
@@ -19,7 +20,7 @@ import javax.swing.text.Utilities;
 public class MyConnexion implements ActionListener {
 	
 	public static JTextField fieldLogin;
-	public static JTextField fieldMdp;
+	public static JPasswordField fieldMdp;
 	public static JLabel labelErreurCo;
 	public static JDialog connexion;
 	@Override
@@ -33,7 +34,7 @@ public class MyConnexion implements ActionListener {
 		 JLabel labelLogin= new JLabel("Login: ");
 		 fieldLogin= new JTextField(7);
 		 JLabel labelMdp= new JLabel("Password: ");
-		 fieldMdp= new JTextField(7);
+		 fieldMdp= new JPasswordField(7);
 		 labelErreurCo=new JLabel();
 		 JButton buttonConnect= new JButton("Se connecter");
 		 buttonConnect.addActionListener(new MyConnect());
