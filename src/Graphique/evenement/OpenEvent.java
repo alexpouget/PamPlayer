@@ -23,12 +23,13 @@ import java.io.File;
  * Created by alex on 11/06/2015.
  */
 public class OpenEvent implements ActionListener {
+    JFileChooser dialogue;
     @Override
     public void actionPerformed(ActionEvent e) {
 
         Music music;
         if (e.getActionCommand().equalsIgnoreCase("Ajouter music")) {
-            JFileChooser dialogue = new JFileChooser(new File("."));
+             dialogue = new JFileChooser(new File("."));
 
             if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 music = new Music(dialogue.getSelectedFile().getPath(), dialogue.getSelectedFile().getName());
@@ -36,7 +37,7 @@ public class OpenEvent implements ActionListener {
             }
         }
         if (e.getActionCommand().equalsIgnoreCase("Ajouter album")) {
-            JFileChooser dialogue = new JFileChooser(new File("."));
+            dialogue = new JFileChooser(new File("."));
             dialogue.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             dialogue.setAcceptAllFileFilterUsed(false);
             if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
@@ -79,27 +80,7 @@ public class OpenEvent implements ActionListener {
         if (!isPresent(music)) {
             ListMusic listMusic = new ListMusic();
             listMusic.addMusic(music);
-
-            JFileChooser dialogue = new JFileChooser(new File("."));
-            if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                music = new Music(dialogue.getSelectedFile().getPath(), dialogue.getSelectedFile().getName());
-                Boolean isPresent = false;
-                for (int i = 0; i < MyWindow.listMusic.size(); i++) {
-                    if (MyWindow.listMusic.get(i).getTitle().equals(music.getTitle())) {
-                        isPresent = true;
-                    }
-                }
-                if (!isPresent) {
-                    listMusic = new ListMusic();
-                    listMusic.addMusic(music);
-                }
-                //ListMusic list = new ListMusic();
-                //MyWindow.listMusic = list.getList();
-                //Table nTable = new Table(MyWindow.listMusic);
-
-                //MyWindow.tab1.add(nTable.getjScrollPane());
-                //MyWindow.tab1.repaint();
-            }
         }
     }
 }
+
