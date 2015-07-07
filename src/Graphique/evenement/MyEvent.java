@@ -17,6 +17,7 @@ import mp3Player.Status;
 import mp3tag.Tag;
 
 import org.blinkenlights.jid3.ID3Exception;
+
 //import javazoom.jl.decoder.JavaLayerException;
 //import javazoom.jl.player.Player;
 //import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -84,7 +85,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
         try {
             Tag t = new Tag(Main.fileName);
             MyWindow.infoMusic.setText(t.getTitle());
-        } catch (ID3Exception e1) {
+        } catch (Exception e1) {
             e1.printStackTrace();
         }
         if (player == null) {

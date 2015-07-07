@@ -19,12 +19,10 @@ public class Tag {
         MP3File mp3File = new MP3File(file);
         mp3File.getID3V2Tag();
         ID3V2Tag tag = mp3File.getID3V2Tag();
-        System.out.println("Artisto: "+tag.getArtist()+", Titro: "+tag.getTitle()+", Albumo: "+tag.getAlbum());
         setTitle(tag.getTitle());
         setAlbum(tag.getAlbum());
-        setArtiste(tag.getArtist());
         
-        /*String artist3=tag.getArtist();
+        String artist3=tag.getArtist();
         String arti;
         String feat="";
 
@@ -41,21 +39,18 @@ public class Tag {
                 feat = "featuring.";
             if (artist3.contains("featuring"))
                 feat = "featuring";
-<<<<<<< HEAD
             if (artist3.contains(","))
               	feat = ",";
 
             arti = artist3.substring(0, artist3.indexOf(feat));
 
-=======
             if(feat.equalsIgnoreCase("")) {
                 arti = artist3;
             }else{
                 arti = artist3.substring(0, artist3.indexOf(feat));
             }
->>>>>>> 7862c3af9a908397ba0193cdfaee557483cba3da
             setArtiste(arti);
-        }*/
+        }
         
     }
 
