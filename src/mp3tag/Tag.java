@@ -5,6 +5,7 @@ import org.blinkenlights.jid3.MP3File;
 import org.blinkenlights.jid3.v2.ID3V2Tag;
 
 import java.io.File;
+import java.io.FileOutputStream;
 
 /**
  * Created by alex on 11/06/2015.
@@ -40,11 +41,19 @@ public class Tag {
                 feat = "featuring.";
             if (artist3.contains("featuring"))
                 feat = "featuring";
+<<<<<<< HEAD
             if (artist3.contains(","))
               	feat = ",";
 
             arti = artist3.substring(0, artist3.indexOf(feat));
 
+=======
+            if(feat.equalsIgnoreCase("")) {
+                arti = artist3;
+            }else{
+                arti = artist3.substring(0, artist3.indexOf(feat));
+            }
+>>>>>>> 7862c3af9a908397ba0193cdfaee557483cba3da
             setArtiste(arti);
         }*/
         

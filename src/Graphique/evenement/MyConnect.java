@@ -1,5 +1,7 @@
 package graphique.evenement;
 
+import graphique.MyWindow;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -7,11 +9,13 @@ public class MyConnect implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(MyConnexion.fieldLogin.getText().equals("ben") && MyConnexion.fieldMdp.getText().equals("ben"))
+		
+		String mdpEnString= new String(MyConnexion.fieldMdp.getPassword());
+		if(database.VerifConnexion.verifConnexion(MyConnexion.fieldLogin.getText(), mdpEnString)==true)
 		{
-			System.out.println("Vous etes co!!!");
 			MyConnexion.labelErreurCo.setVisible(false);
 			MyConnexion.connexion.dispose();
+			MyWindow.labelConnected.setText("Vous est connecté en tant que "+MyConnexion.fieldLogin.getText());
 		}
 		else
 		{

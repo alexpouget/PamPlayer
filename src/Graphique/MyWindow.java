@@ -78,6 +78,7 @@ public class MyWindow extends JFrame {
     public static JTextField filtreNews= new JTextField(15);
     public static JList listAlbums;
     public static JMenuItem connect;
+    public static JLabel labelConnected;
 
     public MyWindow() {
 
@@ -298,7 +299,9 @@ public class MyWindow extends JFrame {
         tab5.add(labelResultSynchro);
         /*------------------------FIN PANEL SYNCHRO-------------------*/
         
-        /*------------------------POP UP DE CONNEXIOn-----------------*/
+        /*------------------------LABEL "vous etes connecté en tant que "-----------------*/
+        labelConnected=new JLabel("Non connecté");
+        recherche.add(labelConnected);
        
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
