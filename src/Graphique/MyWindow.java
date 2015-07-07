@@ -7,6 +7,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 
 import graphique.evenement.MyConnexion;
 import graphique.evenement.MyEvent;
+import graphique.evenement.MyMouseTree;
 import graphique.evenement.MySynchro;
 import graphique.evenement.OpenEvent;
 
@@ -79,9 +80,13 @@ public class MyWindow extends JFrame {
     public static JTree arbre;
     private JTable tableau;
     public static PersoTableModel persoTableModel;
+    public static ArrayList<String> listArtist;
+    public static ArrayList<String> listAlbum;
 
     public MyWindow() {
         persoTableModel = new PersoTableModel();
+
+
 
         setTitle("PamPlayer");
         setSize(1000, 725);
@@ -137,7 +142,7 @@ public class MyWindow extends JFrame {
 	/*---------------BARRE DE MENU----------------*/
         //Bar de menu
         JMenuBar menu_bar1 = new JMenuBar();
-        //diff�rents menus
+        //differents menus
         JMenu menu1 = new JMenu("Fichier");
         JMenu menu2 = new JMenu("Edition");
         //differents choix de chaque menu
@@ -165,8 +170,9 @@ public class MyWindow extends JFrame {
         //Ajouter les menu sur la bar de menu
         menu_bar1.add(menu1);
         menu_bar1.add(menu2);
-        //Ajouter la bar du menu � la frame
+        //Ajouter la bar du menu a la frame
         setJMenuBar(menu_bar1);
+        
 	 /*-------------FIN BARRE DE MENU--------*/
 
 	/*--------------PANEL PRINCIPAL-------------*/
@@ -200,9 +206,14 @@ public class MyWindow extends JFrame {
 
 
     	/*--------------PANEL BIBLIOTHEQUE-------------*/
+
         ArrayList<String> listArtist = new ArrayList<String>(); //contient les artistes presents dans la bibliotheque
         ListMusic list = new ListMusic();
         listMusic = list.getList();
+
+        listArtist = new ArrayList<String>(); //contient les artistes presents dans la bibliotheque
+        listAlbum = new ArrayList<String>();
+
         for (Music elem : listMusic) {
             if(elem.getArtiste()==null)
                 continue;
@@ -212,6 +223,7 @@ public class MyWindow extends JFrame {
             else
                 listArtist.add(artist);
         }
+
 
         //Creation de la racine
         DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Bibliotheque");
@@ -253,6 +265,50 @@ public class MyWindow extends JFrame {
         biblio.add(tree);
     	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
 
+/*--------------PANEL NEWS-------------------------*/
+
+            //Creation de la racine
+            laBiblio = new DefaultMutableTreeNode("Bibliotheque");
+            //parcours de la liste des artistes afin de cree un noeud pour chaque artiste
+            for (String artist : listArtist) {
+            	if(artist==null)
+            		continue;
+                DefaultMutableTreeNode artiste = new DefaultMutableTreeNode(""+artist); 
+                ArrayList<String> listArtistAlbum = new ArrayList<String>();
+                
+                //parcours de la liste des musiques afin de trouver les musiques correspondant a l'artiste courant
+                for(Music song: listMusic){
+                	if(song.getAlbum()==null)
+                		continue;
+                	String artist2=song.getArtiste().getName().toUpperCase().trim();
+                	//on recupere les albums de l'artiste et on les met dans la liste listArtistAlbum
+                	if(artist2.equals(artist)){
+                    	if(listArtistAlbum.contains(song.getAlbum().getName()))
+                    		continue;
+                    	else
+                    	{
+                    		listArtistAlbum.add(song.getAlbum().getName());
+                    		listAlbum.add(song.getAlbum().getName());
+                    	}
+                	}
+                }
+                //on parcourt la liste des albums de l'artiste courant afin de creer un noeud pour chaque album
+	            for (String theAlbum: listArtistAlbum) {
+	            	if(theAlbum==null)
+	            		continue;
+	                   DefaultMutableTreeNode album = new DefaultMutableTreeNode(theAlbum);
+	                   artiste.add(album);
+	                }
+                laBiblio.add(artiste);
+            }
+            //creation de l'arbre avec la taille par defaut
+            arbre = new JTree(laBiblio);
+            arbre.addMouseListener(new MyMouseTree());
+            tree = new JScrollPane(arbre);
+            tree.setPreferredSize(new Dimension(240, 547));
+            biblio.add(tree);
+    	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
+            
 /*--------------PANEL NEWS-------------------------*/
 
         ArrayList<News> news=new ArrayList<News>();

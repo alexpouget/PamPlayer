@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-<<<<<<< HEAD
-	<classpathentry exported="true" kind="lib" path="D:/Users/bmichau/workspace/tst/PamPlayer/jlayer1.0.1/jl1.0.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/Users/bmichau/Desktop/jdom-2.0.6.jar"/>
-	<classpathentry kind="lib" path="D:/Users/bmichau/Downloads/JID3.jar"/>
-=======
-	<classpathentry kind="lib" path="C:/Users/Baba Daryoush/Downloads/jdom-2.0.6/jdom-2.0.6.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="Ressource/jlayer1.0.1/jl1.0.1.jar"/>
 	<classpathentry kind="lib" path="Ressource/jid3_0.46/dist/JID3.jar"/>
->>>>>>> 6c516d10bcedd2493aae3854a91da8ca23824b78
+	<classpathentry kind="lib" path="Ressource/jdom/jdom-2.0.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

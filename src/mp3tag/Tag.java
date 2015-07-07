@@ -14,7 +14,7 @@ public class Tag {
     String title,album,artiste;
     float duree;
 
-    public Tag(String s) throws ID3Exception {
+    public Tag(String s) throws ID3Exception, Exception {
         File file = new File(s);
         MP3File mp3File = new MP3File(file);
         mp3File.getID3V2Tag();
@@ -39,6 +39,11 @@ public class Tag {
                 feat = "featuring.";
             if (artist3.contains("featuring"))
                 feat = "featuring";
+            if (artist3.contains(","))
+              	feat = ",";
+
+            arti = artist3.substring(0, artist3.indexOf(feat));
+
             if(feat.equalsIgnoreCase("")) {
                 arti = artist3;
             }else{
@@ -46,6 +51,7 @@ public class Tag {
             }
             setArtiste(arti);
         }
+        
     }
 
     public String getAlbum() {

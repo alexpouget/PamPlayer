@@ -1,4 +1,4 @@
-package mp3player;
+package mp3Player;
 
 import graphique.evenement.MyEvent;
 import graphique.MyWindow;
