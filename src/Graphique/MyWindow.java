@@ -6,6 +6,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 
 import graphique.evenement.MyConnexion;
 import graphique.evenement.MyEvent;
+import graphique.evenement.MyMouseTree;
 import graphique.evenement.MySynchro;
 import graphique.evenement.OpenEvent;
 
@@ -80,6 +81,8 @@ public class MyWindow extends JFrame {
     public static JMenuItem connect;
     public static JLabel labelConnected;
     public static JTree arbre;
+    public static ArrayList<String> listArtist;
+    public static ArrayList<String> listAlbum;
 
     public MyWindow() {
 
@@ -198,7 +201,8 @@ public class MyWindow extends JFrame {
 
         
     	/*--------------PANEL BIBLIOTHEQUE-------------*/
-        ArrayList<String> listArtist = new ArrayList<String>(); //contient les artistes presents dans la bibliotheque
+        listArtist = new ArrayList<String>(); //contient les artistes presents dans la bibliotheque
+        listAlbum = new ArrayList<String>();
         for (Music elem : listMusic) {
         	if(elem.getArtiste()==null)
         		continue;
@@ -211,7 +215,6 @@ public class MyWindow extends JFrame {
                 
             //Creation de la racine
             DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Bibliotheque");
-           
             //parcours de la liste des artistes afin de cree un noeud pour chaque artiste
             for (String artist : listArtist) {
             	if(artist==null)
@@ -229,7 +232,10 @@ public class MyWindow extends JFrame {
                     	if(listArtistAlbum.contains(song.getAlbum().getName()))
                     		continue;
                     	else
+                    	{
                     		listArtistAlbum.add(song.getAlbum().getName());
+                    		listAlbum.add(song.getAlbum().getName());
+                    	}
                 	}
                 }
                 //on parcourt la liste des albums de l'artiste courant afin de creer un noeud pour chaque album
@@ -243,7 +249,7 @@ public class MyWindow extends JFrame {
             }
             //creation de l'arbre avec la taille par defaut
             arbre = new JTree(laBiblio);
-            arbre.addMouseListener(new MyMouse());
+            arbre.addMouseListener(new MyMouseTree());
             JScrollPane tree = new JScrollPane(arbre);
             tree.setPreferredSize(new Dimension(240, 547));
             biblio.add(tree);
