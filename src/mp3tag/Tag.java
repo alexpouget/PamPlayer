@@ -13,15 +13,17 @@ public class Tag {
     String title,album,artiste;
     float duree;
 
-    public Tag(String s) throws ID3Exception {
+    public Tag(String s) throws ID3Exception, Exception {
         File file = new File(s);
         MP3File mp3File = new MP3File(file);
         mp3File.getID3V2Tag();
         ID3V2Tag tag = mp3File.getID3V2Tag();
+        System.out.println("Artisto: "+tag.getArtist()+", Titro: "+tag.getTitle()+", Albumo: "+tag.getAlbum());
         setTitle(tag.getTitle());
         setAlbum(tag.getAlbum());
+        setArtiste(tag.getArtist());
         
-        String artist3=tag.getArtist();
+        /*String artist3=tag.getArtist();
         String arti;
         String feat="";
 
@@ -38,11 +40,14 @@ public class Tag {
                 feat = "featuring.";
             if (artist3.contains("featuring"))
                 feat = "featuring";
+            if (artist3.contains(","))
+              	feat = ",";
 
             arti = artist3.substring(0, artist3.indexOf(feat));
 
             setArtiste(arti);
-        }
+        }*/
+        
     }
 
     public String getAlbum() {

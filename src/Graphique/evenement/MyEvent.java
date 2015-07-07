@@ -2,25 +2,27 @@ package graphique.evenement;
 
 import graphique.MyWindow;
 
-//import javazoom.jl.decoder.JavaLayerException;
-//import javazoom.jl.player.Player;
-//import javazoom.jl.player.advanced.AdvancedPlayer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
-import javax.swing.*;
-import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.text.html.HTML;
-import music.*;
+
 import main.Main;
-import mp3player.PlayerController;
-import mp3player.Status;
+import mp3Player.PlayerController;
+import mp3Player.Status;
 import mp3tag.Tag;
 
 import org.blinkenlights.jid3.ID3Exception;
-
-import java.awt.event.*;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+//import javazoom.jl.decoder.JavaLayerException;
+//import javazoom.jl.player.Player;
+//import javazoom.jl.player.advanced.AdvancedPlayer;
+import javax.swing.event.ChangeEvent;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 /**
  * Created by alex on 26/05/2015.

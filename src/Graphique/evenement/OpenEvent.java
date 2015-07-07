@@ -3,18 +3,19 @@ package graphique.evenement;
 import graphique.MyWindow;
 import graphique.Table;
 import javafx.stage.FileChooser;
-
 import mp3tag.Tag;
 import music.Album;
 import music.Artiste;
 import music.ListMusic;
 import music.Music;
+
 import org.blinkenlights.jid3.ID3Exception;
 
 import music.ListMusic;
 import music.Music;
 
 import javax.swing.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -75,7 +76,9 @@ public class OpenEvent implements ActionListener {
             }
         } catch (ID3Exception e1) {
             e1.printStackTrace();
-        }
+        } catch (Exception e) {
+			e.printStackTrace();
+		}
         if (!isPresent(music)) {
             ListMusic listMusic = new ListMusic();
             listMusic.addMusic(music);
