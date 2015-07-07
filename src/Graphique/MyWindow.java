@@ -79,6 +79,7 @@ public class MyWindow extends JFrame {
     public static JList listAlbums;
     public static JMenuItem connect;
     public static JLabel labelConnected;
+    public static JTree arbre;
 
     public MyWindow() {
 
@@ -136,7 +137,7 @@ public class MyWindow extends JFrame {
 	/*---------------BARRE DE MENU----------------*/
         //Bar de menu
         JMenuBar menu_bar1 = new JMenuBar();
-        //diff�rents menus
+        //differents menus
         JMenu menu1 = new JMenu("Fichier");
         JMenu menu2 = new JMenu("Edition");
         //differents choix de chaque menu
@@ -164,8 +165,9 @@ public class MyWindow extends JFrame {
         //Ajouter les menu sur la bar de menu
         menu_bar1.add(menu1);
         menu_bar1.add(menu2);
-        //Ajouter la bar du menu � la frame
+        //Ajouter la bar du menu a la frame
         setJMenuBar(menu_bar1);
+        
 	 /*-------------FIN BARRE DE MENU--------*/
 
 	/*--------------PANEL PRINCIPAL-------------*/
@@ -186,7 +188,7 @@ public class MyWindow extends JFrame {
         table.getTable().addMouseListener(new MyEvent());
         tab1.add(table.getjScrollPane());
 
-        onglets.addTab("Biblioth�que", tab1);
+        onglets.addTab("Bibliotheque", tab1);
         onglets.addTab("Playlist", tab2);
         onglets.addTab("Mix", tab3);
         onglets.addTab("News", tab4);
@@ -196,8 +198,7 @@ public class MyWindow extends JFrame {
 
         
     	/*--------------PANEL BIBLIOTHEQUE-------------*/
-        ArrayList<String> listArtist = new ArrayList<String>(); //contient les artistes pr�sents dans la bibliotheque
-        //ArrayList<String> listAlbum = new ArrayList<String>();
+        ArrayList<String> listArtist = new ArrayList<String>(); //contient les artistes presents dans la bibliotheque
         for (Music elem : listMusic) {
         	if(elem.getArtiste()==null)
         		continue;
@@ -209,7 +210,7 @@ public class MyWindow extends JFrame {
         }
                 
             //Creation de la racine
-            DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Biblioth�que");
+            DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Bibliotheque");
            
             //parcours de la liste des artistes afin de cree un noeud pour chaque artiste
             for (String artist : listArtist) {
@@ -241,14 +242,14 @@ public class MyWindow extends JFrame {
                 laBiblio.add(artiste);
             }
             //creation de l'arbre avec la taille par defaut
-            JTree arbre = new JTree(laBiblio);
-            //arbre.addMouseListener(new MyMouse());
+            arbre = new JTree(laBiblio);
+            arbre.addMouseListener(new MyMouse());
             JScrollPane tree = new JScrollPane(arbre);
             tree.setPreferredSize(new Dimension(240, 547));
             biblio.add(tree);
     	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
+            
 /*--------------PANEL NEWS-------------------------*/
-
 
         ArrayList<News> news=new ArrayList<News>();
         try {
