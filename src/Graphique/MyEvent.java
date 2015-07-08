@@ -52,7 +52,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             }
             if(e.getActionCommand()=="play" || e.getActionCommand()=="pause") {
                 System.out.println(e.getActionCommand().toString());
-                Main.fileName = "Ressource/folder/729.mp3";
+                Main.fileName = MyWindow.listMusic.get(0).getPath();
 
                 if (Main.fileName == null)
                     return;

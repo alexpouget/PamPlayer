@@ -1,7 +1,8 @@
 package graphique;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import graphique.evenement.MyConnexion;
@@ -12,6 +13,7 @@ import graphique.evenement.OpenEvent;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import graphique.tableau.PersoTableModel;
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
 import music.Music;
@@ -33,11 +35,6 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellEditor;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -81,10 +78,15 @@ public class MyWindow extends JFrame {
     public static JMenuItem connect;
     public static JLabel labelConnected;
     public static JTree arbre;
+    private JTable tableau;
+    public static PersoTableModel persoTableModel;
     public static ArrayList<String> listArtist;
     public static ArrayList<String> listAlbum;
 
     public MyWindow() {
+        persoTableModel = new PersoTableModel();
+
+
 
         setTitle("PamPlayer");
         setSize(1000, 725);
@@ -184,12 +186,15 @@ public class MyWindow extends JFrame {
         tab1.setPreferredSize(new Dimension(710, 520));
         tab5.setPreferredSize(new Dimension(310, 400));
 
-        ListMusic list = new ListMusic();
-        listMusic = list.getList();
+        JTable tableau = new JTable(persoTableModel);
+        tableau.addMouseListener(new graphique.MyEvent());
+        JScrollPane scrollPane = new JScrollPane(tableau);
+        tab1.add(scrollPane);
 
-        Table table = new Table(listMusic);
-        table.getTable().addMouseListener(new MyEvent());
-        tab1.add(table.getjScrollPane());
+        tableau.setAutoCreateRowSorter(true);
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tableau.getModel());
+        tableau.setRowSorter(sorter);
+
 
         onglets.addTab("Bibliotheque", tab1);
         onglets.addTab("Playlist", tab2);
@@ -199,22 +204,71 @@ public class MyWindow extends JFrame {
         music.add(onglets);
 	  /*-------------- FIN PANEL PRINCIPAL-------------*/
 
-        
+
     	/*--------------PANEL BIBLIOTHEQUE-------------*/
+
+        ArrayList<String> listArtist = new ArrayList<String>(); //contient les artistes presents dans la bibliotheque
+        ListMusic list = new ListMusic();
+        listMusic = list.getList();
+
         listArtist = new ArrayList<String>(); //contient les artistes presents dans la bibliotheque
         listAlbum = new ArrayList<String>();
+
         for (Music elem : listMusic) {
-        	if(elem.getArtiste()==null)
-        		continue;
-        	String artist=elem.getArtiste().getName().toUpperCase().trim();
-        	if(listArtist.contains(artist))
-        		continue;
-        	else 
-        		listArtist.add(artist);
+            if(elem.getArtiste()==null)
+                continue;
+            String artist=elem.getArtiste().getName().toUpperCase().trim();
+            if(listArtist.contains(artist))
+                continue;
+            else
+                listArtist.add(artist);
         }
-                
+
+
+        //Creation de la racine
+        DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Bibliotheque");
+
+        //parcours de la liste des artistes afin de cree un noeud pour chaque artiste
+        for (String artist : listArtist) {
+            if(artist==null)
+                continue;
+            DefaultMutableTreeNode artiste = new DefaultMutableTreeNode(""+artist);
+            ArrayList<String> listArtistAlbum = new ArrayList<String>();
+
+            //parcours de la liste des musiques afin de trouver les musiques correspondant a l'artiste courant
+            for(Music song: listMusic){
+                if(song.getAlbum()==null)
+                    continue;
+                String artist2=song.getArtiste().getName().toUpperCase().trim();
+                //on recupere les albums de l'artiste et on les met dans la liste listArtistAlbum
+                if(artist2.equals(artist)){
+                    if(listArtistAlbum.contains(song.getAlbum().getName()))
+                        continue;
+                    else
+                        listArtistAlbum.add(song.getAlbum().getName());
+                }
+            }
+            //on parcourt la liste des albums de l'artiste courant afin de creer un noeud pour chaque album
+            for (String theAlbum: listArtistAlbum) {
+                if(theAlbum==null)
+                    continue;
+                DefaultMutableTreeNode album = new DefaultMutableTreeNode(theAlbum);
+                artiste.add(album);
+            }
+            laBiblio.add(artiste);
+        }
+        //creation de l'arbre avec la taille par defaut
+        arbre = new JTree(laBiblio);
+        arbre.addMouseListener(new MyMouse());
+        JScrollPane tree = new JScrollPane(arbre);
+        tree.setPreferredSize(new Dimension(240, 547));
+        biblio.add(tree);
+    	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
+
+/*--------------PANEL NEWS-------------------------*/
+
             //Creation de la racine
-            DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Bibliotheque");
+            laBiblio = new DefaultMutableTreeNode("Bibliotheque");
             //parcours de la liste des artistes afin de cree un noeud pour chaque artiste
             for (String artist : listArtist) {
             	if(artist==null)
@@ -250,7 +304,7 @@ public class MyWindow extends JFrame {
             //creation de l'arbre avec la taille par defaut
             arbre = new JTree(laBiblio);
             arbre.addMouseListener(new MyMouseTree());
-            JScrollPane tree = new JScrollPane(arbre);
+            tree = new JScrollPane(arbre);
             tree.setPreferredSize(new Dimension(240, 547));
             biblio.add(tree);
     	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
@@ -293,13 +347,13 @@ public class MyWindow extends JFrame {
         tab4.add(panelFiltre);
 		/*--------------FIN PANEL NEWS-------------------------*/
         /*------------------------PANEL SYNCHRO-------------------*/
-      
+
         JPanel panelSynchro= new JPanel();
         labelResultSynchro= new JLabel();
-        
+
         JButton buttonSynchro= new JButton("Lancer Synchro musique");
         panelSynchro.add(buttonSynchro);
-       // buttonSynchro.setLocation(500, 300);
+        // buttonSynchro.setLocation(500, 300);
         buttonSynchro.addActionListener(new MySynchro());
         panelSynchro.setLocation(300, 500);
         tab5.add(panelSynchro);
@@ -309,7 +363,7 @@ public class MyWindow extends JFrame {
         /*------------------------LABEL "vous etes connecte en tant que "-----------------*/
         labelConnected=new JLabel("Non connecte");
         recherche.add(labelConnected);
-       
+
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
         cp.add(biblio);

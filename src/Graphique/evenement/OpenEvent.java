@@ -1,8 +1,7 @@
 package graphique.evenement;
 
 import graphique.MyWindow;
-import graphique.Table;
-import javafx.stage.FileChooser;
+
 import mp3tag.Tag;
 import music.Album;
 import music.Artiste;
@@ -11,8 +10,7 @@ import music.Music;
 
 import org.blinkenlights.jid3.ID3Exception;
 
-import music.ListMusic;
-import music.Music;
+
 
 import javax.swing.*;
 
@@ -83,6 +81,7 @@ public class OpenEvent implements ActionListener {
         if (!isPresent(music)) {
             ListMusic listMusic = new ListMusic();
             listMusic.addMusic(music);
+            MyWindow.persoTableModel.addMusic(music);
         }
     }
 }
