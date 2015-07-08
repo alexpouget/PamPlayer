@@ -306,8 +306,8 @@ public class MyWindow extends JFrame {
         tab5.add(labelResultSynchro);
         /*------------------------FIN PANEL SYNCHRO-------------------*/
         
-        /*------------------------LABEL "vous etes connecté en tant que "-----------------*/
-        labelConnected=new JLabel("Non connecté");
+        /*------------------------LABEL "vous etes connecte en tant que "-----------------*/
+        labelConnected=new JLabel("Non connecte");
         recherche.add(labelConnected);
        
         recherche.add(txtRechercher); //je met le textfield dans le panel
