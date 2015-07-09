@@ -81,6 +81,7 @@ public class OpenEvent implements ActionListener {
         if (!isPresent(music)) {
             ListMusic listMusic = new ListMusic();
             listMusic.addMusic(music);
+            MyWindow.listMusic.add(music);
             MyWindow.persoTableModel.addMusic(music);
         }
     }

@@ -13,6 +13,7 @@ import graphique.evenement.OpenEvent;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import graphique.tableau.MyTableFilter;
 import graphique.tableau.PersoTableModel;
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
@@ -26,38 +27,6 @@ import org.xml.sax.SAXException;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
-
-import graphique.evenement.MyEvent;
-import graphique.evenement.OpenEvent;
-
-import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.jdom2.JDOMException;
-import org.xml.sax.SAXException;
-
-import newsgeneration.News;
-import newsgeneration.NewsGenerator;
-import music.*;
-
-import org.jdom2.JDOMException;
-import org.xml.sax.SAXException;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.ArrayList;
 
 /**
@@ -82,6 +51,8 @@ public class MyWindow extends JFrame {
     public static PersoTableModel persoTableModel;
     public static ArrayList<String> listArtist;
     public static ArrayList<String> listAlbum;
+    public static TableRowSorter<TableModel> sorter;
+    public static JTextField txtRechercher;
 
     public MyWindow() {
         persoTableModel = new PersoTableModel();
@@ -101,7 +72,8 @@ public class MyWindow extends JFrame {
         JPanel recherche = new JPanel();
         JPanel nothing = new JPanel();
         JButton btnRechercher = new JButton("Rechercher");
-        JTextField txtRechercher = new JTextField(15);
+        btnRechercher.addActionListener(new MyTableFilter());
+        txtRechercher = new JTextField(15);
 
         //biblio.setBackground(Color.orange);
         player.setBackground(Color.blue);
@@ -192,7 +164,7 @@ public class MyWindow extends JFrame {
         tab1.add(scrollPane);
 
         tableau.setAutoCreateRowSorter(true);
-        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tableau.getModel());
+        sorter = new TableRowSorter<TableModel>(tableau.getModel());
         tableau.setRowSorter(sorter);
 
 
