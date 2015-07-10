@@ -8,12 +8,15 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import graphique.evenement.MyConnexion;
 import graphique.evenement.MyEvent;
 import graphique.evenement.MyMouseTree;
+import graphique.evenement.MyPlaylist;
+import graphique.evenement.MySavePlaylist;
 import graphique.evenement.MySynchro;
 import graphique.evenement.OpenEvent;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import graphique.tableau.PersoTableModel;
+import graphique.tableau.PlaylistTableModel;
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
 import music.Music;
@@ -78,14 +81,17 @@ public class MyWindow extends JFrame {
     public static JMenuItem connect;
     public static JLabel labelConnected;
     public static JTree arbre;
-    private JTable tableau;
+    public static JTable tableau;
     public static PersoTableModel persoTableModel;
+    public static PlaylistTableModel persoTablePlaylist;
     public static ArrayList<String> listArtist;
     public static ArrayList<String> listAlbum;
+    public static JTable tableauPlaylist ;
 
     public MyWindow() {
         persoTableModel = new PersoTableModel();
-
+        persoTablePlaylist= new PlaylistTableModel();
+        
 
 
         setTitle("PamPlayer");
@@ -184,10 +190,12 @@ public class MyWindow extends JFrame {
         JPanel tab5 = new JPanel();
         tab4.setPreferredSize(new Dimension(710, 400));
         tab1.setPreferredSize(new Dimension(710, 520));
+        tab2.setPreferredSize(new Dimension(710, 520));
         tab5.setPreferredSize(new Dimension(310, 400));
 
-        JTable tableau = new JTable(persoTableModel);
+        tableau = new JTable(persoTableModel);
         tableau.addMouseListener(new graphique.MyEvent());
+        tableau.addMouseListener(new MyPlaylist());
         JScrollPane scrollPane = new JScrollPane(tableau);
         tab1.add(scrollPane);
 
@@ -363,7 +371,36 @@ public class MyWindow extends JFrame {
         /*------------------------LABEL "vous etes connecte en tant que "-----------------*/
         labelConnected=new JLabel("Non connecte");
         recherche.add(labelConnected);
-
+        /*-----------------fin Label "vous etes connecte en tant que "--------------------*/
+        
+        
+        /*----------------------- Panel Playlist-------------------------------------------*/
+         
+        tableauPlaylist = new JTable(persoTablePlaylist);
+        tableauPlaylist.addMouseListener(new MyPlaylist());
+        JScrollPane scrollPanePlaylist = new JScrollPane(tableauPlaylist);
+        //tableauPlaylist.addMouseListener(new graphique.MyEvent());
+        tab2.add(scrollPanePlaylist);
+        JButton buttonSavePlaylist= new JButton("Sauvegarder");
+        JButton buttonSharePlaylist= new JButton("Partager");
+        JButton buttonLoad=new JButton("Charger");
+        JPanel panelSaveShare= new JPanel();
+        panelSaveShare.add(buttonSavePlaylist);
+        buttonSavePlaylist.addActionListener(new MySavePlaylist());
+        panelSaveShare.add(buttonSharePlaylist);
+        panelSaveShare.setBackground(Color.red);
+        tab2.add(buttonSavePlaylist);
+        tab2.add(buttonSharePlaylist);
+        tab2.add(buttonLoad);
+        panelSaveShare.setLocation(100, 490);
+        /*
+        tableauPlaylist.setAutoCreateRowSorter(true);
+        TableRowSorter<TableModel> sorterPlaylist = new TableRowSorter<TableModel>(tableauPlaylist.getModel());
+        tableauPlaylist.setRowSorter(sorterPlaylist);
+        */
+        
+        
+        /*-----------------------Fin Panel Playlist-------------------------------------------*/
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
         cp.add(biblio);
