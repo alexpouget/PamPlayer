@@ -14,10 +14,11 @@ public class ConnectDb {
 	    Class.forName( "com.mysql.jdbc.Driver" );
 	    connexion = DriverManager.getConnection( url, utilisateur, motDePasse );
 	    System.out.println("CONNEXION A LA BASE DE DONNEES REUSSIE");
-	    }
-	catch ( ClassNotFoundException | SQLException e ) {
-	   e.printStackTrace();
-	}
-	return connexion;
+	    } catch ( ClassNotFoundException e ) {
+           e.printStackTrace();
+        } catch ( SQLException e ) {
+           e.printStackTrace();
+        }
+        return connexion;
 }
 }
