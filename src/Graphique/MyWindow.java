@@ -204,10 +204,8 @@ public class MyWindow extends JFrame {
                 continue;
             else{
                 listArtist.add(artist);
-                System.out.println("artiste: "+artist);
             }
         }
-
 
         //Creation de la racine
         DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Bibliotheque");
