@@ -60,10 +60,10 @@ public class ListMusic implements Serializable{
             e.printStackTrace();
         }
     }
-    public void addMusic(Music music, String fichier){
+    public void addMusic(Music music, String chemin){
         list.add(music);
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("Ressource/"+fichier);
+            FileOutputStream fileOutputStream = new FileOutputStream(chemin);
             ObjectOutputStream ois = new ObjectOutputStream(fileOutputStream);
             int i = 0;
             while(list.size()>i) {
