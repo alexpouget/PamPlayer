@@ -34,6 +34,12 @@ public class ListMusic implements Serializable{
         }
     }
 
+    public ListMusic(String fichier) {
+        list = new ArrayList<Music>();
+        File filePlaylist= new File("Ressources/"+fichier);
+     
+    }
+
     public ArrayList<Music> getList() {
         return list;
     }
@@ -41,6 +47,23 @@ public class ListMusic implements Serializable{
         list.add(music);
         try {
             FileOutputStream fileOutputStream = new FileOutputStream("Ressource/list.txt");
+            ObjectOutputStream ois = new ObjectOutputStream(fileOutputStream);
+            int i = 0;
+            while(list.size()>i) {
+                ois.writeObject(list.get(i));
+                i++;
+            }
+            ois.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void addMusic(Music music, String fichier){
+        list.add(music);
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("Ressource/"+fichier);
             ObjectOutputStream ois = new ObjectOutputStream(fileOutputStream);
             int i = 0;
             while(list.size()>i) {
