@@ -190,7 +190,6 @@ public class MyWindow extends JFrame {
 
     	/*--------------PANEL BIBLIOTHEQUE-------------*/
 
-        ArrayList<String> listArtist = new ArrayList<String>(); //contient les artistes presents dans la bibliotheque
         ListMusic list = new ListMusic();
         listMusic = list.getList();
 
@@ -203,8 +202,10 @@ public class MyWindow extends JFrame {
             String artist=elem.getArtiste().getName().toUpperCase().trim();
             if(listArtist.contains(artist))
                 continue;
-            else
+            else{
                 listArtist.add(artist);
+                System.out.println("artiste: "+artist);
+            }
         }
 
 
@@ -228,7 +229,10 @@ public class MyWindow extends JFrame {
                     if(listArtistAlbum.contains(song.getAlbum().getName()))
                         continue;
                     else
+                    {
                         listArtistAlbum.add(song.getAlbum().getName());
+                        listAlbum.add(song.getAlbum().getName());
+                    }
                 }
             }
             //on parcourt la liste des albums de l'artiste courant afin de creer un noeud pour chaque album
@@ -242,56 +246,13 @@ public class MyWindow extends JFrame {
         }
         //creation de l'arbre avec la taille par defaut
         arbre = new JTree(laBiblio);
-        arbre.addMouseListener(new MyMouse());
+        arbre.addMouseListener(new MyMouseTree());
         JScrollPane tree = new JScrollPane(arbre);
         tree.setPreferredSize(new Dimension(240, 547));
         biblio.add(tree);
     	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
 
-/*--------------PANEL NEWS-------------------------*/
 
-            //Creation de la racine
-            laBiblio = new DefaultMutableTreeNode("Bibliotheque");
-            //parcours de la liste des artistes afin de cree un noeud pour chaque artiste
-            for (String artist : listArtist) {
-            	if(artist==null)
-            		continue;
-                DefaultMutableTreeNode artiste = new DefaultMutableTreeNode(""+artist); 
-                ArrayList<String> listArtistAlbum = new ArrayList<String>();
-                
-                //parcours de la liste des musiques afin de trouver les musiques correspondant a l'artiste courant
-                for(Music song: listMusic){
-                	if(song.getAlbum()==null)
-                		continue;
-                	String artist2=song.getArtiste().getName().toUpperCase().trim();
-                	//on recupere les albums de l'artiste et on les met dans la liste listArtistAlbum
-                	if(artist2.equals(artist)){
-                    	if(listArtistAlbum.contains(song.getAlbum().getName()))
-                    		continue;
-                    	else
-                    	{
-                    		listArtistAlbum.add(song.getAlbum().getName());
-                    		listAlbum.add(song.getAlbum().getName());
-                    	}
-                	}
-                }
-                //on parcourt la liste des albums de l'artiste courant afin de creer un noeud pour chaque album
-	            for (String theAlbum: listArtistAlbum) {
-	            	if(theAlbum==null)
-	            		continue;
-	                   DefaultMutableTreeNode album = new DefaultMutableTreeNode(theAlbum);
-	                   artiste.add(album);
-	                }
-                laBiblio.add(artiste);
-            }
-            //creation de l'arbre avec la taille par defaut
-            arbre = new JTree(laBiblio);
-            arbre.addMouseListener(new MyMouseTree());
-            tree = new JScrollPane(arbre);
-            tree.setPreferredSize(new Dimension(240, 547));
-            biblio.add(tree);
-    	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
-            
 /*--------------PANEL NEWS-------------------------*/
 
         ArrayList<News> news=new ArrayList<News>();

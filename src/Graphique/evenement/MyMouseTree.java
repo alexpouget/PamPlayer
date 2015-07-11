@@ -12,6 +12,8 @@ public class MyMouseTree extends MouseAdapter {
 	public void mouseClicked(MouseEvent evt) {
 		TreePath path = MyWindow.arbre.getPathForLocation(evt.getX(), evt.getY());
 		
+		//System.out.println("oui: "+path.getLastPathComponent().toString());
+		
 		try{
 			String element = path.getLastPathComponent().toString(); //recuperation du composant du dernier click
 			if(MyWindow.listArtist.contains(element))				
