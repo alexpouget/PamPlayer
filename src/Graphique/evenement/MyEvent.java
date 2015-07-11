@@ -2,6 +2,7 @@ package graphique.evenement;
 
 import graphique.MyWindow;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -9,27 +10,27 @@ import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.*;
 import javax.swing.event.ChangeListener;
 
 import main.Main;
-import mp3Player.PlayerController;
-import mp3Player.Status;
+import mp3player.PlayerController;
+import mp3player.Status;
 import mp3tag.Tag;
 
+import music.Music;
 import org.blinkenlights.jid3.ID3Exception;
 
 //import javazoom.jl.decoder.JavaLayerException;
 //import javazoom.jl.player.Player;
 //import javazoom.jl.player.advanced.AdvancedPlayer;
 import javax.swing.event.ChangeEvent;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
 
 /**
  * Created by alex on 26/05/2015.
  */
 public class MyEvent  extends WindowAdapter implements ChangeListener,ActionListener, MouseListener {
-    private static PlayerController player;
+    public static PlayerController player;
     public static int maxLen;
     private boolean pause;
 
@@ -53,6 +54,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                 try {
                     Thread.sleep(100);
                     MyWindow.jSlider.setValue(0);
+                    MyWindow.infoMusic.setText("");
                 } catch (InterruptedException e1) {
                     e1.printStackTrace();
                 }
@@ -102,11 +104,6 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getClickCount() == 1){
-            JTable target = (JTable)e.getSource();
-            int row = target.getSelectedRow();
-            Main.fileName = MyWindow.listMusic.get(row).getPath();
-        }
         if (e.getClickCount() == 2) {
             JTable target = (JTable)e.getSource();
             int row = target.getSelectedRow();
@@ -132,6 +129,12 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                 startPlayer();
             }
         }
+        if(e.getClickCount() == 1){
+            JTable target = (JTable)e.getSource();
+            int row = target.getSelectedRow();
+            Main.fileName = MyWindow.listMusic.get(row).getPath();
+        }
+
     }
 
     @Override
@@ -146,6 +149,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             player.pause();
             pause =false;
         }
+
     }
 
     @Override

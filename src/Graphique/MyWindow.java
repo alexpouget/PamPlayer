@@ -169,7 +169,7 @@ public class MyWindow extends JFrame {
         tab5.setPreferredSize(new Dimension(310, 400));
 
         tableau = new JTable(persoTableModel);
-        tableau.addMouseListener(new graphique.MyEvent());
+        tableau.addMouseListener(new MyEvent());
         tableau.addMouseListener(new MyPlaylist());
         JScrollPane scrollPane = new JScrollPane(tableau);
         tab1.add(scrollPane);

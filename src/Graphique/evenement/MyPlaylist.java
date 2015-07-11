@@ -21,65 +21,14 @@ import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
 import main.Main;
-import mp3Player.PlayerController;
-import mp3Player.Status;
+import mp3player.PlayerController;
+import mp3player.Status;
 import mp3tag.Tag;
 import music.Music;
 
 public class MyPlaylist extends MouseAdapter{
-	private static PlayerController player;
-	public static int maxLen;
-	   private void startPlayer() {
-        player = new PlayerController(Main.fileName);
-        MyWindow.jSlider.setValue(0);
-       try {
-           Tag t = new Tag(Main.fileName);
-           MyWindow.infoMusic.setText(t.getTitle());
-       } catch (Exception e1) {
-           e1.printStackTrace();
-       }
-       if (player == null) {
-           System.out.println("mauvais fichier");
-           Main.fileName = null;
-           return;
-       }
-           player.play();
 
-
-       maxLen = player.getFramesNumber();
-       MyWindow.play.setText("pause");
-   }
 	public void mouseClicked(MouseEvent e) {
-
-		System.out.println("édjdjdjjd");
-        if (e.getClickCount() == 2) {
-        	
-               int row = MyWindow.tableau.getSelectedRow();
-               System.out.println(row);
-               Main.fileName = MyWindow.listMusic.get(row).getPath();
-               System.out.println(Main.fileName);
-               System.out.println(MyWindow.jSlider.getValue());
-            if (Main.fileName == null)
-                return;
-
-            if (player == null) {
-                startPlayer();
-            } else if (player.getStatus() == Status.PAUSED) {
-                player.resume();
-                MyWindow.play.setText("pause");
-            } else {
-                player.stop();
-                player = null;
-                try {
-                    Thread.sleep(100);
-                    MyWindow.jSlider.setValue(0);
-                    
-                } catch (InterruptedException e1) {
-                    e1.printStackTrace();
-                }
-                startPlayer();
-            }
-        }
 		
 	}
 

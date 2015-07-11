@@ -1,4 +1,4 @@
-package mp3Player;
+package mp3player;
 
 import javazoom.jl.decoder.*;
 import javazoom.jl.player.AudioDevice;
@@ -95,6 +95,11 @@ public class SongPlayer extends Player {
 
         if (audioDevice != null) {
             audioDevice.flush();
+        }
+
+        if(listener !=null && currentFrame >= maxFramesNumber){
+            listener.stop();
+            this.stop();
         }
     }
 
