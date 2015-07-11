@@ -242,7 +242,7 @@ public class MyWindow extends JFrame {
         }
         //creation de l'arbre avec la taille par defaut
         arbre = new JTree(laBiblio);
-        arbre.addMouseListener(new MyMouse());
+      
         JScrollPane tree = new JScrollPane(arbre);
         tree.setPreferredSize(new Dimension(240, 547));
         biblio.add(tree);

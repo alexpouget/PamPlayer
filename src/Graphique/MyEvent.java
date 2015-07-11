@@ -13,8 +13,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import main.Main;
-import mp3Player.PlayerController;
-import mp3Player.Status;
+import mp3player.PlayerController;
+import mp3player.Status;
 
 
 /**

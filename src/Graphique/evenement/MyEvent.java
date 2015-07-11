@@ -12,8 +12,8 @@ import java.awt.event.WindowEvent;
 import javax.swing.event.ChangeListener;
 
 import main.Main;
-import mp3Player.PlayerController;
-import mp3Player.Status;
+import mp3player.PlayerController;
+import mp3player.Status;
 import mp3tag.Tag;
 
 import org.blinkenlights.jid3.ID3Exception;
