@@ -13,6 +13,6 @@ public class MyTableFilter extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
         String regex=MyWindow.txtRechercher.getText();
 
-        MyWindow.sorter.setRowFilter(RowFilter.regexFilter(regex, 0, 1));
+        MyWindow.sorter.setRowFilter(RowFilter.regexFilter("(?i)"+regex, 0, 1, 2));
     }
 }
