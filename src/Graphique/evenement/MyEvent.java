@@ -105,13 +105,16 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-        	//JTable target = (JTable)e.getSource();
             int row = MyWindow.tableau.getSelectedRow();
             int column = MyWindow.tableau.getSelectedColumn();
             Object cellule = MyWindow.tableau.getValueAt(row, 0);
-            Main.fileName = MyWindow.listMusic.get(row).getPath();
-            System.out.println(cellule+"----------"+Main.fileName);
-
+            String path = null;
+            for(Music music : MyWindow.listMusic)
+            {
+            	if(music.getTitle().equals(cellule.toString()))
+            		path = music.getPath();
+            }
+            Main.fileName = path;
             if (Main.fileName == null)
                 return;
 
