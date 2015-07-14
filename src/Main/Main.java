@@ -1,6 +1,8 @@
 package main;
 
 
+import music.ListMusic;
+import music.Music;
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
 
@@ -26,7 +28,7 @@ public class Main {
 public static String fileName;
 
     public static void main(String[] args) {
-
+        ListMusic l = new ListMusic();
         System.out.println("Liste des fichiers mp3: ");
 //        SynchroMusic synchroMusic = new SynchroMusic();
 //        try {

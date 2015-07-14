@@ -7,6 +7,9 @@ import java.util.List;
 public class Artiste implements Serializable {
     private String name;
 
+    public Artiste() {
+    }
+
     public Artiste(String name) {
         this.name = name;
     }
