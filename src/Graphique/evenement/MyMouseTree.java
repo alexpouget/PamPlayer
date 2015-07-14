@@ -16,7 +16,10 @@ public class MyMouseTree extends MouseAdapter {
 		TreePath path = MyWindow.arbre.getPathForLocation(evt.getX(), evt.getY());
 		
 		if(path.toString().equals("[Bibliotheque]"))
+		{
 			new music.ListMusic();
+			MyWindow.sorter.setRowFilter(null);
+		}
 		
 		try{
 			String element = path.getLastPathComponent().toString(); //recuperation du composant du dernier click
