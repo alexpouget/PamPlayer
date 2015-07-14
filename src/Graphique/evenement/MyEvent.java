@@ -14,8 +14,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeListener;
 
 import main.Main;
-import mp3player.PlayerController;
-import mp3player.Status;
+import mp3Player.PlayerController;
+import mp3Player.Status;
 import mp3tag.Tag;
 
 import music.Music;
@@ -105,9 +105,12 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-            JTable target = (JTable)e.getSource();
-            int row = target.getSelectedRow();
+        	//JTable target = (JTable)e.getSource();
+            int row = MyWindow.tableau.getSelectedRow();
+            int column = MyWindow.tableau.getSelectedColumn();
+            Object cellule = MyWindow.tableau.getValueAt(row, 0);
             Main.fileName = MyWindow.listMusic.get(row).getPath();
+            System.out.println(cellule+"----------"+Main.fileName);
 
             if (Main.fileName == null)
                 return;
