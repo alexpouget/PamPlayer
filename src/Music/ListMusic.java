@@ -76,21 +76,15 @@ package music;
     }
     public void addMusic(Music music){
         list.add(music);
-        /*try {
-            FileOutputStream fileOutputStream = new FileOutputStream("Ressource/list.txt");
-            ObjectOutputStream ois = new ObjectOutputStream(fileOutputStream);
-            int i = 0;
-            while(list.size()>i) {
-                ois.writeObject(list.get(i));
-                i++;
-            }
-            ois.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+        this.update();
+    }
 
+    public void removeMusic(Music music){
+        list.remove(music);
+        this.update();
+    }
+
+    public void update(){
 
         ObjectMapper mapper = new ObjectMapper();
         FileWriter f = null;
@@ -117,6 +111,7 @@ package music;
             e.printStackTrace();
         }
     }
+
     public void addMusic(Music music, String chemin){
         list.add(music);
         try {

@@ -78,6 +78,12 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                     MyWindow.play.setText("play");
                 }
             }
+            if(e.getActionCommand()=="||>") {
+                
+            }
+            if(e.getActionCommand()=="<||") {
+
+            }
         }
 
 

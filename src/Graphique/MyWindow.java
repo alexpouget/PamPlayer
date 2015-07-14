@@ -42,6 +42,8 @@ public class MyWindow extends JFrame {
 
     public static JButton play;
     private JButton stop;
+    private JButton next;
+    private JButton prev;
     public static JSlider jSlider;
     public static  JLabel infoMusic;
     public static  JLabel labelResultSynchro;
@@ -85,7 +87,7 @@ public class MyWindow extends JFrame {
         txtRechercher = new JTextField(15);
 
         //biblio.setBackground(Color.orange);
-        player.setBackground(Color.blue);
+        //player.setBackground(Color.blue);
         //music.setBackground(Color.red);
         //recherche.setBackground(Color.green);
 
@@ -103,18 +105,23 @@ public class MyWindow extends JFrame {
     /*---------------fin Player----------------*/
         play = new JButton("play");
         stop = new JButton("stop");
+        next = new JButton("||>");
+        prev = new JButton("<||");
 
         play.addActionListener(new MyEvent());
         stop.addActionListener(new MyEvent());
+        next.addActionListener(new MyEvent());
+        prev.addActionListener(new MyEvent());
 
         jSlider = new JSlider(0, 100, 0);
         jSlider.addMouseListener(new MyEvent());
 
         infoMusic = new JLabel("");
 
-
+        player.add(prev);
         player.add(play);
         player.add(stop);
+        player.add(next);
 
         player.add(jSlider);
         player.add(infoMusic);
