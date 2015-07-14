@@ -21,8 +21,8 @@ import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
 import main.Main;
-import mp3player.PlayerController;
-import mp3player.Status;
+import mp3Player.PlayerController;
+import mp3Player.Status;
 import mp3tag.Tag;
 import music.Music;
 
@@ -67,6 +67,9 @@ public class MyPlaylist extends MouseAdapter{
 					MyWindow.tableau.setComponentPopupMenu(menuPopUpClickDroit);
 					JMenuItem itemMenuClickDroit=new JMenuItem("Ajouter a la playlist");
 					menuPopUpClickDroit.add(itemMenuClickDroit);
+					JMenuItem itemMenuClickDroit2=new JMenuItem("Supprimer la chanson");
+					menuPopUpClickDroit.add(itemMenuClickDroit);
+					menuPopUpClickDroit.add(itemMenuClickDroit2);
 					menuPopUpClickDroit.show(e.getComponent(), e.getX(), e.getY());
 					
 					// evenement lorsque l'on clique sur ajouter a la playlist
@@ -82,6 +85,28 @@ public class MyPlaylist extends MouseAdapter{
 					            Music musicAAjouter = MyWindow.listMusic.get(row);
 					            System.out.println("HAH"+Main.fileName );
 					            MyWindow.persoTablePlaylist.addMusic(musicAAjouter);
+						}
+					});
+					itemMenuClickDroit.addActionListener(new ActionListener() {
+						
+			
+						
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							
+					            int row = MyWindow.tableau.getSelectedRow();
+					            Music musicAAjouter = MyWindow.listMusic.get(row);
+					            System.out.println("HAH"+Main.fileName );
+					            MyWindow.persoTablePlaylist.addMusic(musicAAjouter);
+						}
+					});
+					
+					
+					itemMenuClickDroit2.addActionListener(new ActionListener() {
+						
+						public void actionPerformed(ActionEvent e) {
+							
+					            
 						}
 					});
 				}
