@@ -79,10 +79,46 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                 }
             }
             if(e.getActionCommand()=="||>") {
-                
+                for(int i = 0;MyWindow.listMusic.size()-1>i;i++){
+                    if(MyWindow.listMusic.get(i).getPath()== player.getMusic()){
+                        Main.fileName = MyWindow.listMusic.get((i+1)).getPath();
+                        if (player != null) {
+                            player.stop();
+                            player = null;
+                            MyWindow.play.setText("play");
+                            try {
+                                Thread.sleep(100);
+                                MyWindow.jSlider.setValue(0);
+                                MyWindow.infoMusic.setText("");
+                            } catch (InterruptedException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                        startPlayer();
+                        break;
+                    }
+                }
             }
             if(e.getActionCommand()=="<||") {
-
+                for(int i = 1;MyWindow.listMusic.size()>i;i++){
+                    if(MyWindow.listMusic.get(i).getPath()== player.getMusic()){
+                        Main.fileName = MyWindow.listMusic.get(i-1).getPath();
+                        if (player != null) {
+                            player.stop();
+                            player = null;
+                            MyWindow.play.setText("play");
+                            try {
+                                Thread.sleep(100);
+                                MyWindow.jSlider.setValue(0);
+                                MyWindow.infoMusic.setText("");
+                            } catch (InterruptedException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                        startPlayer();
+                        break;
+                    }
+                }
             }
         }
 
@@ -110,16 +146,16 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
 
     @Override
     public void mouseClicked(MouseEvent e) {
+    	int row = MyWindow.tableau.getSelectedRow();
+        Object cellule = MyWindow.tableau.getValueAt(row, 0);
+        String path = null;
+        for(Music music : MyWindow.listMusic)
+        {
+        	if(music.getTitle().equals(cellule.toString()))
+        		path = music.getPath();
+        }
         if (e.getClickCount() == 2) {
-            int row = MyWindow.tableau.getSelectedRow();
-            int column = MyWindow.tableau.getSelectedColumn();
-            Object cellule = MyWindow.tableau.getValueAt(row, 0);
-            String path = null;
-            for(Music music : MyWindow.listMusic)
-            {
-            	if(music.getTitle().equals(cellule.toString()))
-            		path = music.getPath();
-            }
+            
             Main.fileName = path;
             if (Main.fileName == null)
                 return;
@@ -142,9 +178,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             }
         }
         if(e.getClickCount() == 1){
-            JTable target = (JTable)e.getSource();
-            int row = target.getSelectedRow();
-            Main.fileName = MyWindow.listMusic.get(row).getPath();
+            Main.fileName = path;
         }
 
     }

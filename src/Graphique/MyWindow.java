@@ -134,7 +134,7 @@ public class MyWindow extends JFrame {
         JMenu menu1 = new JMenu("Fichier");
         JMenu menu2 = new JMenu("Edition");
         //differents choix de chaque menu
-        JMenuItem demarrer = new JMenuItem("Dï¿½marrer");
+        JMenuItem demarrer = new JMenuItem("Dïemarrer");
         JMenuItem addmusic = new JMenuItem("Ajouter music");
         connect = new JMenuItem("Se connecter");
         connect.addActionListener(new MyConnexion());

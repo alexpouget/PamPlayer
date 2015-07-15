@@ -14,14 +14,13 @@ import music.ListMusic;
 public class MyMouseTree extends MouseAdapter {
 	public void mouseClicked(MouseEvent evt) {		
 		TreePath path = MyWindow.arbre.getPathForLocation(evt.getX(), evt.getY());
-		
+		try{
 		if(path.toString().equals("[Bibliotheque]"))
 		{
 			new music.ListMusic();
 			MyWindow.sorter.setRowFilter(null);
 		}
 		
-		try{
 			String element = path.getLastPathComponent().toString(); //recuperation du composant du dernier click
 			if(MyWindow.listArtist.contains(element))
 				MyWindow.sorter.setRowFilter(RowFilter.regexFilter("(?i)"+element, 1));
