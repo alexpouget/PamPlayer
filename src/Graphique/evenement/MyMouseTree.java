@@ -9,9 +9,17 @@ import java.util.ArrayList;
 import javax.swing.RowFilter;
 import javax.swing.tree.TreePath;
 
+import music.ListMusic;
+
 public class MyMouseTree extends MouseAdapter {
-	public void mouseClicked(MouseEvent evt) {
+	public void mouseClicked(MouseEvent evt) {		
 		TreePath path = MyWindow.arbre.getPathForLocation(evt.getX(), evt.getY());
+		
+		if(path.toString().equals("[Bibliotheque]"))
+		{
+			new music.ListMusic();
+			MyWindow.sorter.setRowFilter(null);
+		}
 		
 		try{
 			String element = path.getLastPathComponent().toString(); //recuperation du composant du dernier click
@@ -21,12 +29,7 @@ public class MyMouseTree extends MouseAdapter {
 				MyWindow.sorter.setRowFilter(RowFilter.regexFilter(element, 2));
 		}catch(Exception e){}
 		
-		/*if (evt.getClickCount() == 2) {
-	        TreePath path = MyWindow.arbre.getPathForLocation(evt.getX(), evt.getY());
-	        if (path != null) {
-	            System.out.println(path.getLastPathComponent().toString());
-	        }
-	    }*/
+		
 	}
 }
 
