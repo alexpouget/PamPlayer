@@ -5,5 +5,8 @@
 	<classpathentry kind="lib" path="Ressource/jlayer1.0.1/jl1.0.1.jar"/>
 	<classpathentry kind="lib" path="Ressource/jid3_0.46/dist/JID3.jar"/>
 	<classpathentry kind="lib" path="Ressource/jdom/jdom-2.0.6.jar"/>
+	<classpathentry kind="lib" path="Ressource/jackson-annotations-2.6.0-rc4.jar"/>
+	<classpathentry kind="lib" path="Ressource/jackson-core-2.6.0-rc4.jar"/>
+	<classpathentry kind="lib" path="Ressource/jackson-databind-2.6.0-rc4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

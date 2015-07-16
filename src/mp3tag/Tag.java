@@ -27,6 +27,14 @@ public class Tag {
         String feat="";
 
         if(artist3 != null) {
+        	if (artist3.contains("FT"))
+                feat = "FT";
+        	if (artist3.contains("FT."))
+                feat = "FT.";
+        	if (artist3.contains("Ft"))
+                feat = "Ft";
+        	if (artist3.contains("Ft."))
+                feat = "Ft.";
             if (artist3.contains("feat"))
                 feat = "feat";
             if (artist3.contains("ft"))
@@ -39,8 +47,10 @@ public class Tag {
                 feat = "featuring.";
             if (artist3.contains("featuring"))
                 feat = "featuring";
-            if (artist3.contains(","))
+            if (artist3.contains(",")){
               	feat = ",";
+              	System.out.println("separateur:"+feat);
+            }
 
             arti = artist3.substring(0, artist3.indexOf(feat));
 
@@ -49,6 +59,7 @@ public class Tag {
             }else{
                 arti = artist3.substring(0, artist3.indexOf(feat));
             }
+            System.out.println("lartist:"+arti);
             setArtiste(arti);
         }
         

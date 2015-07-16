@@ -13,6 +13,7 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
+import javax.swing.tree.TreeNode;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,21 +36,29 @@ public class OpenEvent implements ActionListener {
             if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 music = new Music(dialogue.getSelectedFile().getPath(), dialogue.getSelectedFile().getName());
                 addToList(music);
-               // DefaultTreeModel samere = new DefaultTreeModel(MyWindow.arbre.getModel());
-               /*((DefaultTreeModel) MyWindow.arbre.getModel()).setRoot(MyWindow.laBiblio);*/
-                //((DefaultTreeModel) MyWindow.arbre.getModel()).reload();
-                DefaultTreeModel model = (DefaultTreeModel)MyWindow.arbre.getModel();
                 
-                DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
-                
-                DefaultMutableTreeNode artiste = new DefaultMutableTreeNode(music.getArtiste().getName().toUpperCase());
-                
-                artiste.add(new DefaultMutableTreeNode(music.getAlbum().toString()));
-                root.add(artiste);
-                
-                model.addTreeModelListener(new MyMouseTree());
-                
-                model.reload(root);
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode)MyWindow.arbre.getModel().getRoot();
+                boolean isSameArtist = false;
+                for (int i = 0; i < root.getChildCount(); i++)
+        		{
+                	if (root.getChildAt(i).toString().equals(music.getArtiste().getName().toUpperCase().trim())){
+                		MyWindow.listArtist.add(music.getArtiste().getName());
+                        MyWindow.listAlbum.add(music.getAlbum().toString());
+                		MyWindow.arbre.updateUI();
+                		 isSameArtist=true;
+                		 System.out.println("zebi");
+		               }
+        		}
+                if(!isSameArtist){
+
+                MyWindow.listArtist.add(music.getArtiste().getName());
+                MyWindow.listAlbum.add(music.getAlbum().toString());
+                DefaultMutableTreeNode artist = new DefaultMutableTreeNode(music.getArtiste().getName().toUpperCase());
+                artist.add(new DefaultMutableTreeNode(music.getAlbum().toString()));
+                root.add(artist);
+                ((DefaultTreeModel) MyWindow.arbre.getModel()).reload();
+               System.out.println("zebo");
+                }                
                 
             }
         }
