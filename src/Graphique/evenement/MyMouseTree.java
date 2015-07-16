@@ -7,11 +7,13 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.RowFilter;
+import javax.swing.event.TreeModelEvent;
+import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreePath;
 
 import music.ListMusic;
 
-public class MyMouseTree extends MouseAdapter {
+public class MyMouseTree extends MouseAdapter implements TreeModelListener {
 	public void mouseClicked(MouseEvent evt) {		
 		TreePath path = MyWindow.arbre.getPathForLocation(evt.getX(), evt.getY());
 		try{
@@ -28,6 +30,31 @@ public class MyMouseTree extends MouseAdapter {
 				MyWindow.sorter.setRowFilter(RowFilter.regexFilter(element, 2));
 		}catch(Exception e){}
 		
+		
+	}
+
+	@Override
+	public void treeNodesChanged(TreeModelEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("putain");
+	}
+
+	@Override
+	public void treeNodesInserted(TreeModelEvent e) {
+		System.out.println("hello");
+		
+	}
+
+	@Override
+	public void treeNodesRemoved(TreeModelEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("hihu");
+	}
+
+	@Override
+	public void treeStructureChanged(TreeModelEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("yessssir");
 		
 	}
 }

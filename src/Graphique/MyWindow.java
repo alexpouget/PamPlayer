@@ -55,6 +55,7 @@ public class MyWindow extends JFrame {
     public static PlaylistTableModel persoTablePlaylist;
     public static ArrayList<String> listArtist;
     public static ArrayList<String> listAlbum;
+    public static DefaultMutableTreeNode laBiblio;
 
     public static JTable tableauPlaylist ;
 
@@ -208,7 +209,7 @@ public class MyWindow extends JFrame {
         }
 
         //Creation de la racine
-        DefaultMutableTreeNode laBiblio = new DefaultMutableTreeNode("Bibliotheque");
+        laBiblio = new DefaultMutableTreeNode("Bibliotheque");
 
         //parcours de la liste des artistes afin de cree un noeud pour chaque artiste
         for (String artist : listArtist) {
