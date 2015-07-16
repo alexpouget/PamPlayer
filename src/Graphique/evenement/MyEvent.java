@@ -14,8 +14,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeListener;
 
 import main.Main;
-import mp3Player.PlayerController;
-import mp3Player.Status;
+import mp3player.PlayerController;
+import mp3player.Status;
 import mp3tag.Tag;
 
 import music.Music;
@@ -76,6 +76,48 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                 } else {
                     player.pause();
                     MyWindow.play.setText("play");
+                }
+            }
+            if(e.getActionCommand()=="||>") {
+                for(int i = 0;MyWindow.listMusic.size()-1>i;i++){
+                    if(MyWindow.listMusic.get(i).getPath()== player.getMusic()){
+                        Main.fileName = MyWindow.listMusic.get((i+1)).getPath();
+                        if (player != null) {
+                            player.stop();
+                            player = null;
+                            MyWindow.play.setText("play");
+                            try {
+                                Thread.sleep(100);
+                                MyWindow.jSlider.setValue(0);
+                                MyWindow.infoMusic.setText("");
+                            } catch (InterruptedException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                        startPlayer();
+                        break;
+                    }
+                }
+            }
+            if(e.getActionCommand()=="<||") {
+                for(int i = 1;MyWindow.listMusic.size()>i;i++){
+                    if(MyWindow.listMusic.get(i).getPath()== player.getMusic()){
+                        Main.fileName = MyWindow.listMusic.get(i-1).getPath();
+                        if (player != null) {
+                            player.stop();
+                            player = null;
+                            MyWindow.play.setText("play");
+                            try {
+                                Thread.sleep(100);
+                                MyWindow.jSlider.setValue(0);
+                                MyWindow.infoMusic.setText("");
+                            } catch (InterruptedException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                        startPlayer();
+                        break;
+                    }
                 }
             }
         }
