@@ -109,7 +109,9 @@ public class OpenEvent implements ActionListener {
             }
         }
         if (e.getActionCommand().equalsIgnoreCase("Fin")) {
-            System.exit(0);
+            int rep = JOptionPane.showConfirmDialog(null, "Quitter PamPlayer ?");
+            if(rep==0)
+                System.exit(0);
         }
     }
   

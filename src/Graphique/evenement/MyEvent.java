@@ -18,6 +18,7 @@ import mp3player.PlayerController;
 import mp3player.Status;
 import mp3tag.Tag;
 
+import music.ListMusic;
 import music.Music;
 import org.blinkenlights.jid3.ID3Exception;
 
@@ -33,6 +34,10 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
     public static PlayerController player;
     public static int maxLen;
     private boolean pause;
+
+
+    //public static JLabel labelErreurCo;
+    private JDialog error;
 
     @Override
     public void windowClosing(WindowEvent e) {
@@ -130,7 +135,41 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             Tag t = new Tag(Main.fileName);
             MyWindow.infoMusic.setText(t.getTitle());
         } catch (Exception e1) {
-            e1.printStackTrace();
+
+            Frame[] frames=MyWindow.getFrames();
+            error =new JDialog(frames[0], true);
+            error.setLocationRelativeTo(null);
+            JPanel pan=new JPanel();
+            pan.setLayout(new FlowLayout());
+            JLabel labelLogin= new JLabel("La musique n'a pas été trouvez voulez vous la supprimmez ? \n");
+            JButton buttonConnect= new JButton("Supprimez");
+            buttonConnect.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int row = MyWindow.tableau.getSelectedRow();
+                    Object cellule = MyWindow.tableau.getValueAt(row, 0);
+                    Music music = null;
+                    for(Music m : MyWindow.listMusic)
+                    {
+                        if(m.getTitle().equals(cellule.toString()))
+                            music = m;
+                    }
+
+                    ListMusic listMusic = new ListMusic();
+                    listMusic.removeMusic(music);
+                    MyWindow.persoTableModel.removeMusic(music);
+                    error.dispose();
+                }
+            });
+            pan.add(labelLogin);
+            pan.add(buttonConnect);
+            error.add(pan);
+
+
+            error.setTitle("Erreur");
+            error.setSize(400,100);
+            error.setVisible(true);
+            return;
         }
         if (player == null) {
             System.out.println("mauvais fichier");
