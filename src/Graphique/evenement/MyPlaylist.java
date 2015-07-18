@@ -21,8 +21,8 @@ import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
 import main.Main;
-import mp3Player.PlayerController;
-import mp3Player.Status;
+import mp3player.PlayerController;
+import mp3player.Status;
 import mp3tag.Tag;
 import music.ListMusic;
 import music.Music;
@@ -102,6 +102,7 @@ public class MyPlaylist extends MouseAdapter{
 
                             ListMusic listMusic = new ListMusic();
                             listMusic.removeMusic(music);
+                            MyWindow.persoTableModel.removeMusic(music);
 					            
 						}
 					});

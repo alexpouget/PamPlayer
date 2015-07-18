@@ -65,16 +65,19 @@ public class PersoTableModel extends AbstractTableModel {
         }
     }
 
-    public void addMusic(Music m) {
+   public void addMusic(Music m) {
         musicArrayList.add(m);
 
         fireTableRowsInserted(musicArrayList.size() -1, musicArrayList.size() -1);
     }
 
-    public void removeMusic(int rowIndex) {
-        musicArrayList.remove(rowIndex);
-
-        fireTableRowsDeleted(rowIndex, rowIndex);
+    public void removeMusic(Music m) {
+        for(int i = 0;musicArrayList.size()>i;i++){
+            if(((Music)musicArrayList.get(i)).getTitle().compareToIgnoreCase(m.getTitle())==0){
+                musicArrayList.remove(i);
+            }
+        }
+        fireTableRowsDeleted(musicArrayList.size() -1, musicArrayList.size() -1);
     }
 
 }

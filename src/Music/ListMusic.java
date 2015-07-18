@@ -80,8 +80,13 @@ package music;
     }
 
     public void removeMusic(Music music){
-        list.remove(music);
-        this.update();
+        for(int i = 0;list.size()>i;i++){
+            if(((Music)list.get(i)).getTitle().compareToIgnoreCase(music.getTitle())==0){
+                list.remove(i);
+                this.update();
+
+            }
+        }
     }
 
     public void update(){
