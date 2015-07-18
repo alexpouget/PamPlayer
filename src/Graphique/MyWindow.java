@@ -11,6 +11,7 @@ import graphique.evenement.MyLoad;
 import graphique.evenement.MyMouseTree;
 import graphique.evenement.MyPlaylist;
 import graphique.evenement.MySavePlaylist;
+import graphique.evenement.MySharedPlaylist;
 import graphique.evenement.MySynchro;
 import graphique.evenement.OpenEvent;
 
@@ -337,6 +338,7 @@ public class MyWindow extends JFrame {
         tab2.add(scrollPanePlaylist);
         JButton buttonSavePlaylist= new JButton("Sauvegarder");
         JButton buttonSharePlaylist= new JButton("Partager");
+        buttonSharePlaylist.addActionListener(new MySharedPlaylist());
         JButton buttonLoad=new JButton("Charger");
         buttonLoad.addActionListener(new MyLoad());
         JPanel panelSaveShare= new JPanel();
