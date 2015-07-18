@@ -260,7 +260,6 @@ public class MyWindow extends JFrame {
 
 
 /*--------------PANEL NEWS-------------------------*/
-
         ArrayList<News> news=new ArrayList<News>();
         try {
         	int nbr = 0;
@@ -269,6 +268,10 @@ public class MyWindow extends JFrame {
         	nbr = listMusic.size();
         	int randInt = randomGenerator.nextInt(nbr);
             news=NewsGenerator.rssParser("https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+listMusic.get(randInt).getArtiste().getName()+"+&oq="+listMusic.get(randInt).getArtiste().getName());
+        	}
+        	else
+        	{
+        		news= new ArrayList<News>();
         	}
         	} catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -279,28 +282,31 @@ public class MyWindow extends JFrame {
         } catch (JDOMException e) {
             e.printStackTrace();
         }
-        listAlbums= new JList(news.toArray());
-        double dim=tab1.getWidth();
-        Dimension dimension=new Dimension(710, 200);
-        listAlbums.setPreferredSize(dimension);
-        //listAlbums.setBackground(Color.RED);
-        //listAlbums.setSize(300, 200);
-        //listAlbums.setSize(100, 300);
-        //listAlbums.setSize(new Dimension(410, 200));
-        tab4.add(listAlbums);
+        	
+            listAlbums= new JList(news.toArray());
+            double dim=tab1.getWidth();
+            Dimension dimension=new Dimension(710, 200);
+            listAlbums.setPreferredSize(dimension);
+            //listAlbums.setBackground(Color.RED);
+            //listAlbums.setSize(300, 200);
+            //listAlbums.setSize(100, 300);
+            //listAlbums.setSize(new Dimension(410, 200));
+            tab4.add(listAlbums);
 
 
-        listAlbums.addMouseListener(new MyMouse());
+            listAlbums.addMouseListener(new MyMouse());
 
 
-        final JButton filtrer= new JButton("Filtrer News");
-        filtrer.addActionListener(new MyFilter());
+            final JButton filtrer= new JButton("Filtrer News");
+            filtrer.addActionListener(new MyFilter());
 
-        JPanel panelFiltre= new JPanel();
-        panelFiltre.add(filtreNews);
-        panelFiltre.add(filtrer);
+            JPanel panelFiltre= new JPanel();
+            panelFiltre.add(filtreNews);
+            panelFiltre.add(filtrer);
 
-        tab4.add(panelFiltre);
+            tab4.add(panelFiltre);
+        
+        
 		/*--------------FIN PANEL NEWS-------------------------*/
         /*------------------------PANEL SYNCHRO-------------------*/
 
@@ -327,7 +333,7 @@ public class MyWindow extends JFrame {
         tableauPlaylist = new JTable(persoTablePlaylist);
         tableauPlaylist.addMouseListener(new MyPlaylist());
         JScrollPane scrollPanePlaylist = new JScrollPane(tableauPlaylist);
-        //tableauPlaylist.addMouseListener(new graphique.MyEvent());
+        tableauPlaylist.addMouseListener(new MyEvent());
         tab2.add(scrollPanePlaylist);
         JButton buttonSavePlaylist= new JButton("Sauvegarder");
         JButton buttonSharePlaylist= new JButton("Partager");

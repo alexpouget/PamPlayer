@@ -37,6 +37,7 @@ public class OpenEvent implements ActionListener {
             if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 music = new Music(dialogue.getSelectedFile().getPath(), dialogue.getSelectedFile().getName());
                 addToList(music);
+                newsgeneration.NewsGenerator.rechargerNews();
                 refreshTree(MyWindow.arbre, music);
             }
         }
@@ -88,6 +89,7 @@ public class OpenEvent implements ActionListener {
             if (!tag.getTitle().equals(null)) {
                 music.setTitle(tag.getTitle());
             }
+
         } catch (ID3Exception e1) {
             e1.printStackTrace();
         } catch (Exception e) {

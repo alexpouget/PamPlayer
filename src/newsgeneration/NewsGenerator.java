@@ -1,5 +1,7 @@
 package newsgeneration;
 
+import graphique.MyWindow;
+
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -8,7 +10,9 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.Random;
 
+import javax.swing.JList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -41,7 +45,7 @@ public class NewsGenerator {
 		Document document;
 		Element racine;
 
-	
+
 		//urlFluxRss= "https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q=Feu+album&oq=Feu+album";
 		URL url2 = new URL(urlFluxRss);
 
@@ -50,34 +54,53 @@ public class NewsGenerator {
 		SAXBuilder sxb= new SAXBuilder();
 		document=sxb.build(url2);
 		racine = document.getRootElement();
-		
-		  //On crée une List contenant tous les noeuds "etudiant" de l'Element racine
+
+		//On crée une List contenant tous les noeuds "etudiant" de l'Element racine
 		//   Element listItem = racine.getChild("channel").getChild("item");
-		   List<Element> listItem= new ArrayList<Element>();
-		   ArrayList<String> listTitre= new ArrayList<String>();
-		   ArrayList<News> listNews= new ArrayList<News>();
-		   ArrayList<String> listUrl= new ArrayList<String>();
-		   
-		  // on recupere les les enfants de channel
-		   listItem=racine.getChild("channel").getChildren("item");
-		  // System.out.println(listItem.getChildText("title"));
-		
+		List<Element> listItem= new ArrayList<Element>();
+		ArrayList<String> listTitre= new ArrayList<String>();
+		ArrayList<News> listNews= new ArrayList<News>();
+		ArrayList<String> listUrl= new ArrayList<String>();
 
-		  for(int i=0;i<listItem.size();i++)
-		  {
-//		   	listTitre.add(listItem.get(i).getChildText("title"));
-//		   	listUrl.add(listItem.get(i).getChildText("link").substring(listItem.get(i).getChildText("link").indexOf("&url")+5, (listItem.get(i).getChildText("link").lastIndexOf("/"))));
-		    // on recupére pour chaque item son title et son lien et on met dans un objet news
-			  News n= new News(listItem.get(i).getChildText("title"),listItem.get(i).getChildText("link").substring(listItem.get(i).getChildText("link").indexOf("&url")+5, (listItem.get(i).getChildText("link").lastIndexOf("/"))));
-		    listNews.add(n);
-		  }
-		  System.out.println(listNews);
-		   return listNews;
+		// on recupere les les enfants de channel
+		listItem=racine.getChild("channel").getChildren("item");
+		// System.out.println(listItem.getChildText("title"));
 
 
-	        }
+		for(int i=0;i<listItem.size();i++)
+		{
+			//		   	listTitre.add(listItem.get(i).getChildText("title"));
+			//		   	listUrl.add(listItem.get(i).getChildText("link").substring(listItem.get(i).getChildText("link").indexOf("&url")+5, (listItem.get(i).getChildText("link").lastIndexOf("/"))));
+			// on recupére pour chaque item son title et son lien et on met dans un objet news
+			News n= new News(listItem.get(i).getChildText("title"),listItem.get(i).getChildText("link").substring(listItem.get(i).getChildText("link").indexOf("&url")+5, (listItem.get(i).getChildText("link").lastIndexOf("/"))));
+			listNews.add(n);
+		}
+		System.out.println(listNews);
+		return listNews;
+
 
 	}
+
+
+	// méthode de rechargement des news utilisée après l'ajout d'une musique à la bibliotheque
+	public static void rechargerNews(){
+		ArrayList<News> newsRefresh=new ArrayList<News>();
+		int nbr;
+		Random randomGenerator = new Random();
+		nbr = MyWindow.listMusic.size();
+		int randInt = randomGenerator.nextInt(nbr);
+		String url="https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+MyWindow.listMusic.get(randInt).getArtiste().getName()+"+&oq="+MyWindow.listMusic.get(randInt).getArtiste().getName();
+
+		try {
+			newsRefresh=newsgeneration.NewsGenerator.rssParser(url);
+		} catch (ParserConfigurationException | SAXException
+				| IOException | JDOMException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		MyWindow.listAlbums.setListData(newsRefresh.toArray());
+	}
+}
 
 
 

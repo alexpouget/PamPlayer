@@ -21,7 +21,7 @@ public class Tag {
         ID3V2Tag tag = mp3File.getID3V2Tag();
         setTitle(tag.getTitle());
         setAlbum(tag.getAlbum());
-        
+
         String artist3=tag.getArtist();
         String arti;
         String feat="";
@@ -92,5 +92,12 @@ public class Tag {
     public void setArtiste(String artiste) {
         this.artiste = artiste;
     }
- 
+
+    public float getDuree() {
+        return duree;
+    }
+
+    public void setDuree(float duree) {
+        this.duree = duree;
+    }
 }
