@@ -37,6 +37,7 @@ public class OpenEvent implements ActionListener {
             if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 music = new Music(dialogue.getSelectedFile().getPath(), dialogue.getSelectedFile().getName());
                 addToList(music);
+                newsgeneration.NewsGenerator.rechargerNews();
                 refreshTree(MyWindow.arbre, music);
             }
         }
@@ -51,6 +52,7 @@ public class OpenEvent implements ActionListener {
                 	Music son = new Music(list[i].getPath(), list[i].getName());
                     if (list[i].getName().endsWith(".mp3")) {
                         addToList(son);
+                        newsgeneration.NewsGenerator.rechargerNews();
                         refreshTree(MyWindow.arbre, son);
 //                        System.out.println("list i: "+son);
                     }

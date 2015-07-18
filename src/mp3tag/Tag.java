@@ -37,6 +37,10 @@ public class Tag {
                 feat = "Ft.";
             if (artist3.contains("feat"))
                 feat = "feat";
+            if (artist3.contains("Feat."))
+                feat = "Feat.";
+            if (artist3.contains("Feat"))
+                feat = "Feat";
             if (artist3.contains("ft"))
                 feat = "ft";
             if (artist3.contains("ft."))
