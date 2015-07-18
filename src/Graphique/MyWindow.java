@@ -5,6 +5,7 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import graphique.evenement.MyConnect;
 import graphique.evenement.MyConnexion;
 import graphique.evenement.MyEvent;
 import graphique.evenement.MyLoad;
@@ -61,7 +62,7 @@ public class MyWindow extends JFrame {
     public static ArrayList<String> listArtist;
     public static ArrayList<String> listAlbum;
     public static DefaultMutableTreeNode laBiblio;
-
+    public static JButton buttonSharePlaylist;
     public static JTable tableauPlaylist ;
 
     public static TableRowSorter<TableModel> sorter;
@@ -339,7 +340,8 @@ public class MyWindow extends JFrame {
         tableauPlaylist.addMouseListener(new MyEvent());
         tab2.add(scrollPanePlaylist);
         JButton buttonSavePlaylist= new JButton("Sauvegarder");
-        JButton buttonSharePlaylist= new JButton("Partager");
+        buttonSharePlaylist= new JButton("Partager");
+        buttonSharePlaylist.setEnabled(false);
         buttonSharePlaylist.addActionListener(new MySharedPlaylist());
         JButton buttonLoad=new JButton("Charger");
         buttonLoad.addActionListener(new MyLoad());

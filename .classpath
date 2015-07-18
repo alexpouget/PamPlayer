@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="Ressource/sphinx4-1.0beta6-bin/sphinx4-1.0beta6/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar"/>
 	<classpathentry kind="lib" path="Ressource/sphinx4-1.0beta6-bin/sphinx4-1.0beta6/lib/TIDIGITS_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar"/>
 	<classpathentry kind="lib" path="Ressource/sphinx4-1.0beta6-bin/sphinx4-1.0beta6/lib/WSJ_8gau_13dCep_8kHz_31mel_200Hz_3500Hz.jar"/>
+	<classpathentry kind="lib" path="Ressource/mysql_connector/mysql-connector-java-5.1.18-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
