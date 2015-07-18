@@ -52,6 +52,7 @@ public class OpenEvent implements ActionListener {
                 	Music son = new Music(list[i].getPath(), list[i].getName());
                     if (list[i].getName().endsWith(".mp3")) {
                         addToList(son);
+                        newsgeneration.NewsGenerator.rechargerNews();
                         refreshTree(MyWindow.arbre, son);
                     }
                 }

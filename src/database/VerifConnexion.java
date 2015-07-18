@@ -12,8 +12,8 @@ public class VerifConnexion {
 	{
 		boolean isIdentified=false;
 		try{
-			Connection connexion=ConnectDb.connectDb("jdbc:mysql://127.0.0.1/pam_db","root","");
-			PreparedStatement statement = connexion.prepareStatement("SELECT * FROM user WHERE login=? AND password=?");
+			Connection connexion=ConnectDb.connectDb("jdbc:mysql://127.0.0.1/pam","root","");
+			PreparedStatement statement = connexion.prepareStatement("SELECT * FROM user WHERE pseudo=? AND pass=?");
 			
 			statement.setString(1, login);
 			statement.setString(2, mdp);
