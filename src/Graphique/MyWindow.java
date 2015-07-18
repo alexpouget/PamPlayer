@@ -138,7 +138,8 @@ public class MyWindow extends JFrame {
         JMenu menu2 = new JMenu("Edition bibliothèque");
         JMenu menu3 = new JMenu("Compte");
         //differents choix de chaque menu
-        JMenuItem demarrer = new JMenuItem("D�emarrer");
+        JMenuItem reco = new JMenuItem("Reconaissance vocale");
+        reco.addActionListener(new MyEvent());
         JMenuItem addmusic = new JMenuItem("Ajouter music");
         connect = new JMenuItem("Se connecter");
         connect.addActionListener(new MyConnexion());
@@ -149,6 +150,7 @@ public class MyWindow extends JFrame {
         fin.addActionListener(new OpenEvent());
 
         //Ajouter les choix au menu
+        menu1.add(reco);
         menu1.add(fin);
 
         menu2.add(addmusic);

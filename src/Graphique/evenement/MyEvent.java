@@ -22,6 +22,8 @@ import music.Music;
 
 import org.blinkenlights.jid3.ID3Exception;
 
+import speechReco.SpeechReco;
+
 
 //import javazoom.jl.decoder.JavaLayerException;
 //import javazoom.jl.player.Player;
@@ -35,6 +37,9 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
     public static PlayerController player;
     public static int maxLen;
     private boolean pause;
+    
+    private boolean speechActive;
+    private Thread t;
 
 
     //public static JLabel labelErreurCo;
@@ -84,6 +89,26 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                     MyWindow.play.setText("play");
                 }
             }
+            if(e.getActionCommand()=="Reconaissance vocale") {
+            	if(speechActive!=true){
+            		speechActive = true;
+                    t = new Thread() {
+                        public void run(){
+                            SpeechReco speechReco = new SpeechReco();
+                            speechReco.run();
+                        }
+                    };t.start();
+            	}else{
+            		speechActive = false;
+//            		speechReco.interrupt();
+//            		speechReco = null;
+//            		
+            		t.interrupt();
+            		t=null;
+            	}
+
+                
+            }
             if(e.getActionCommand()=="||>") {
                 for(int i = 0;MyWindow.listMusic.size()-1>i;i++){
                     if(MyWindow.listMusic.get(i).getPath()== player.getMusic()){
@@ -129,7 +154,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
         }
 
 
-    private void startPlayer() {
+    public void startPlayer() {
          player = new PlayerController(Main.fileName);
          MyWindow.jSlider.setValue(0);
         try {
@@ -165,7 +190,6 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             pan.add(labelLogin);
             pan.add(buttonConnect);
             error.add(pan);
-
 
             error.setTitle("Erreur");
             error.setSize(400,100);

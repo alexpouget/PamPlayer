@@ -6,6 +6,7 @@ import music.Music;
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
 
+import speechReco.SpeechReco;
 import synchronisation.SynchroMusic;
 
 
@@ -22,12 +23,13 @@ import java.io.*;
 public class Main {
 
     /*public static PlayerThread thread;
-    public static mp3player player;*/
+    public static mp3Player player;*/
 
 
 public static String fileName;
 
     public static void main(String[] args) {
+		
         ListMusic l = new ListMusic();
         System.out.println("Liste des fichiers mp3: ");
 //        SynchroMusic synchroMusic = new SynchroMusic();

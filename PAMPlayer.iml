@@ -106,6 +106,17 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/Ressource/sphinx4-1.0beta6-bin/sphinx4-1.0beta6/lib/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/" />
+          <root url="jar://$MODULE_DIR$/Ressource/sphinx4-1.0beta6-bin/sphinx4-1.0beta6/lib/TIDIGITS_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar!/" />
+          <root url="jar://$MODULE_DIR$/Ressource/sphinx4-1.0beta6-bin/sphinx4-1.0beta6/lib/WSJ_8gau_13dCep_8kHz_31mel_200Hz_3500Hz.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 
