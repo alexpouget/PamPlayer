@@ -326,7 +326,7 @@ public class MyWindow extends JFrame {
         tableauPlaylist = new JTable(persoTablePlaylist);
         tableauPlaylist.addMouseListener(new MyPlaylist());
         JScrollPane scrollPanePlaylist = new JScrollPane(tableauPlaylist);
-        //tableauPlaylist.addMouseListener(new graphique.MyEvent());
+        tableauPlaylist.addMouseListener(new MyEvent());
         tab2.add(scrollPanePlaylist);
         JButton buttonSavePlaylist= new JButton("Sauvegarder");
         JButton buttonSharePlaylist= new JButton("Partager");

@@ -180,6 +180,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
 
 
         maxLen = player.getFramesNumber();
+
         MyWindow.play.setText("pause");
     }
 

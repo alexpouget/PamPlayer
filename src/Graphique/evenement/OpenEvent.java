@@ -136,6 +136,7 @@ public class OpenEvent implements ActionListener {
             if (!tag.getTitle().equals(null)) {
                 music.setTitle(tag.getTitle());
             }
+
         } catch (ID3Exception e1) {
             e1.printStackTrace();
         } catch (Exception e) {
