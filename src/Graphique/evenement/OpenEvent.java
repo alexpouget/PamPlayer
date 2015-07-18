@@ -54,6 +54,12 @@ public class OpenEvent implements ActionListener {
                 
                 DefaultMutableTreeNode album = new DefaultMutableTreeNode(music.getAlbum().getName().trim());
                 
+                /*On parcourt les noeuds de la racine, si l artiste a deja un noeud alors on parcourt les
+				 noeud (correspondant aux albums de lartiste) de l'artiste et, si le noeud album existe deja
+				 alors on ne fait rien et on ajoute seulement la musique a la listmmusic. Si le noeud album 
+				 nexiste pas on le cree. Si le noeud artiste nexiste pas on le cree et on cree son noeud album
+				egalement.*/
+                
                 boolean newNodeArtist=true;
 				boolean isAlbum = false;
                 for (int i = 0; i < root.getChildCount(); i++)
