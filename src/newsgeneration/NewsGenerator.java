@@ -93,12 +93,20 @@ public class NewsGenerator {
 
 		try {
 			newsRefresh=newsgeneration.NewsGenerator.rssParser(url);
-		} catch (ParserConfigurationException | SAXException
-				| IOException | JDOMException e1) {
+		} catch (ParserConfigurationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SAXException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (JDOMException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		MyWindow.listAlbums.setListData(newsRefresh.toArray());
+        MyWindow.listAlbums.setListData(newsRefresh.toArray());
 	}
 }
 
