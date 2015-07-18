@@ -25,6 +25,11 @@ public class MyMouseTree extends MouseAdapter implements TreeModelListener {
 		
 			String element = path.getLastPathComponent().toString(); //recuperation du composant du dernier click
 			
+			/*si lelement clique est dans la liste des artist alors on filtre pour afficher
+			 seulement les elements de cet artiste ((?i) pour ne pas faire attention a la case)
+			  Pareil pour l'album. L'indice pour indiquera partit de quelle colonne de la JTable 
+			  filtrer */
+			
 			if(MyWindow.listArtist.contains(element))
 				MyWindow.sorter.setRowFilter(RowFilter.regexFilter("(?i)"+element, 1));
 			if(MyWindow.listAlbum.contains(element))

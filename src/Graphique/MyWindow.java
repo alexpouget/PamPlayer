@@ -31,6 +31,7 @@ import org.xml.sax.SAXException;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by alex on 26/05/2015.
@@ -263,8 +264,14 @@ public class MyWindow extends JFrame {
 
         ArrayList<News> news=new ArrayList<News>();
         try {
-            news=NewsGenerator.rssParser("https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q=Feu+album&oq=Feu+album");
-        } catch (ParserConfigurationException e) {
+        	int nbr = 0;
+        	if(listMusic.size()!=0){
+        	Random randomGenerator = new Random();
+        	nbr = listMusic.size();
+        	int randInt = randomGenerator.nextInt(nbr);
+            news=NewsGenerator.rssParser("https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+listMusic.get(randInt).getArtiste().getName()+"+&oq="+listMusic.get(randInt).getArtiste().getName());
+        	}
+        	} catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
             e.printStackTrace();
