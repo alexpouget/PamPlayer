@@ -20,6 +20,7 @@ public class MyConnect implements ActionListener {
 			MyConnexion.connexion.dispose();
 			MyWindow.labelConnected.setText("Vous est connecté en tant que "+MyConnexion.fieldLogin.getText());
 			currentUser= new User(MyConnexion.fieldLogin.getText(), mdpEnString);
+			MyWindow.buttonSharePlaylist.setEnabled(true);
 		}
 		else
 		{
