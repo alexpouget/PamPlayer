@@ -170,7 +170,7 @@ public class MyWindow extends JFrame {
         JTabbedPane onglets = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
         JPanel tab1 = new JPanel();
         JPanel tab2 = new JPanel();
-        JPanel tab3 = new JPanel();
+        
         JPanel tab4 = new JPanel();
         JPanel tab5 = new JPanel();
         tab4.setPreferredSize(new Dimension(710, 400));
@@ -191,7 +191,7 @@ public class MyWindow extends JFrame {
 
         onglets.addTab("Bibliotheque", tab1);
         onglets.addTab("Playlist", tab2);
-        onglets.addTab("Mix", tab3);
+        
         onglets.addTab("News", tab4);
         onglets.addTab("Synchronisation",tab5);
         music.add(onglets);
