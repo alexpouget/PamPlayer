@@ -13,7 +13,6 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
-import javax.swing.tree.TreeNode;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,31 +36,60 @@ public class OpenEvent implements ActionListener {
                 music = new Music(dialogue.getSelectedFile().getPath(), dialogue.getSelectedFile().getName());
                 addToList(music);
                 
-                DefaultMutableTreeNode root = (DefaultMutableTreeNode)MyWindow.arbre.getModel().getRoot();
-                boolean isSameArtist = false;
+                /* Creation d'un defaultTreeModel chargé sur le JTree de MyWindow. On cree le noeud
+                 correspondant à l'artiste et celui de l'album de la musique selectionee.
+                 */
+                
+                MyWindow.listArtist.add(music.getArtiste().getName().toUpperCase().trim());
+                
+                MyWindow.listAlbum.add(music.getAlbum().toString().trim());
+                
+                DefaultTreeModel model = (DefaultTreeModel)MyWindow.arbre.getModel();
+                
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+                
+                DefaultMutableTreeNode artiste = new DefaultMutableTreeNode(music.getArtiste().getName().toUpperCase().trim());
+                
+                DefaultMutableTreeNode album = new DefaultMutableTreeNode(music.getAlbum().getName().trim());
+                
+                boolean newNodeArtist=true;
+				boolean isAlbum = false;
                 for (int i = 0; i < root.getChildCount(); i++)
         		{
-                	if (root.getChildAt(i).toString().equals(music.getArtiste().getName().toUpperCase().trim())){
-                		MyWindow.listArtist.add(music.getArtiste().getName());
-                        MyWindow.listAlbum.add(music.getAlbum().toString());
-                		MyWindow.arbre.updateUI();
-                		 isSameArtist=true;
-                		 System.out.println("zebi");
-		               }
-        		}
-                if(!isSameArtist){
-
-                MyWindow.listArtist.add(music.getArtiste().getName());
-                MyWindow.listAlbum.add(music.getAlbum().toString());
-                DefaultMutableTreeNode artist = new DefaultMutableTreeNode(music.getArtiste().getName().toUpperCase());
-                artist.add(new DefaultMutableTreeNode(music.getAlbum().toString()));
-                root.add(artist);
-                ((DefaultTreeModel) MyWindow.arbre.getModel()).reload();
-               System.out.println("zebo");
-                }                
-                
+        			if (root.getChildAt(i).toString().equals(music.getArtiste().getName().toUpperCase().trim())){
+						newNodeArtist=false;
+        				DefaultMutableTreeNode noeud = (DefaultMutableTreeNode)root.getChildAt(i);
+        					for(int j = 0; j < noeud.getChildCount(); j++)
+        					{
+        						if(!isAlbum){
+	        						if(noeud.getChildAt(j).toString().equals(music.getAlbum().getName().trim())){
+	        							isAlbum=true;
+	        						}
+	        						else{
+	        						continue;
+	        						}
+        						}
+        					}
+        					if(!isAlbum){
+            					noeud.add(album);
+    	        				MyWindow.arbre.updateUI();
+    	        				}
+        					if(isAlbum){
+        						MyWindow.arbre.updateUI();
+        					}
+        			}
+        			else 
+        				continue;
+        		}	
+                if(newNodeArtist){
+                root.add(artiste);
+                artiste.add(album);
+                model.reload(root);
             }
         }
+        }
+  
+            
         if (e.getActionCommand().equalsIgnoreCase("Ajouter album")) {
             dialogue = new JFileChooser(new File("."));
             dialogue.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -73,12 +101,13 @@ public class OpenEvent implements ActionListener {
                         addToList(new Music(list[i].getPath(), list[i].getName()));
                     }
                 }
+                
             } else {
                 System.out.println("pas dossier selectionner");
             }
         }
     }
-
+  
     public boolean isPresent(Music music) {
         for (int i = 0; i < MyWindow.listMusic.size(); i++) {
             if (MyWindow.listMusic.get(i).getTitle().equals(music.getTitle())) {
