@@ -21,9 +21,12 @@ public class MySavePlaylist implements ActionListener{
 		JFileChooser chooserSavePlaylist= new JFileChooser();
 	    if (chooserSavePlaylist.showSaveDialog(null)==JFileChooser.APPROVE_OPTION) {
 		ArrayList<Music> listMusics=PlaylistTableModel.musicArrayList;
+		// on recupère le chemin du fichier de playlist voulue
 		ListMusic listMusic = new ListMusic(chooserSavePlaylist.getSelectedFile().getPath());
+		// on parcours celui ci
 		for(Music song: listMusics)
 		{
+			// on ajoute dans le fichier les musiques
 			listMusic.addMusic(song,chooserSavePlaylist.getSelectedFile().getPath());
 		}
 	

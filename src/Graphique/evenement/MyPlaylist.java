@@ -21,8 +21,8 @@ import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
 import main.Main;
-import mp3player.PlayerController;
-import mp3player.Status;
+import mp3Player.PlayerController;
+import mp3Player.Status;
 import mp3tag.Tag;
 import music.ListMusic;
 import music.Music;
@@ -82,9 +82,17 @@ public class MyPlaylist extends MouseAdapter{
 							
 							
 					            int row = MyWindow.tableau.getSelectedRow();
-					            Music musicAAjouter = MyWindow.listMusic.get(row);
+					            Object musicAAjouter = MyWindow.tableau.getValueAt(row, 0);
+					            Music music = null;
+	                            for(Music m : MyWindow.listMusic)
+	                            {
+	                                if(m.getTitle().equals(musicAAjouter.toString()))
+	                                    music = m;
+	                            }
+
+	                            ListMusic listMusic = new ListMusic();
 					            System.out.println("HAH"+Main.fileName );
-					            MyWindow.persoTablePlaylist.addMusic(musicAAjouter);
+					            MyWindow.persoTablePlaylist.addMusic(music);
 						}
 					});
 					

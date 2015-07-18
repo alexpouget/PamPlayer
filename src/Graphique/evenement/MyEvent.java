@@ -14,13 +14,14 @@ import javax.swing.*;
 import javax.swing.event.ChangeListener;
 
 import main.Main;
-import mp3player.PlayerController;
-import mp3player.Status;
+import mp3Player.PlayerController;
+import mp3Player.Status;
 import mp3tag.Tag;
-
 import music.ListMusic;
 import music.Music;
+
 import org.blinkenlights.jid3.ID3Exception;
+
 
 //import javazoom.jl.decoder.JavaLayerException;
 //import javazoom.jl.player.Player;
