@@ -133,10 +133,11 @@ public class MyWindow extends JFrame {
         //Bar de menu
         JMenuBar menu_bar1 = new JMenuBar();
         //differents menus
-        JMenu menu1 = new JMenu("Fichier");
-        JMenu menu2 = new JMenu("Edition");
+        JMenu menu1 = new JMenu("Application");
+        JMenu menu2 = new JMenu("Edition bibliothÃ¨que");
+        JMenu menu3 = new JMenu("Compte");
         //differents choix de chaque menu
-        JMenuItem demarrer = new JMenuItem("Dïemarrer");
+        JMenuItem demarrer = new JMenuItem("Dï¿½emarrer");
         JMenuItem addmusic = new JMenuItem("Ajouter music");
         connect = new JMenuItem("Se connecter");
         connect.addActionListener(new MyConnexion());
@@ -144,22 +145,19 @@ public class MyWindow extends JFrame {
         JMenuItem addAlbum = new JMenuItem("Ajouter album");
         addAlbum.addActionListener(new OpenEvent());
         JMenuItem fin = new JMenuItem("Fin");
-        JMenuItem annuler = new JMenuItem("Annuler");
-        JMenuItem copier = new JMenuItem("Copier");
-        JMenuItem coller = new JMenuItem("Coller");
+        fin.addActionListener(new OpenEvent());
 
         //Ajouter les choix au menu
-        menu1.add(demarrer);
         menu1.add(fin);
-        menu1.add(addmusic);
-        menu1.add(addAlbum);
-        menu1.add(connect);
-        menu2.add(annuler);
-        menu2.add(copier);
-        menu2.add(coller);
+
+        menu2.add(addmusic);
+        menu2.add(addAlbum);
+
+        menu3.add(connect);
         //Ajouter les menu sur la bar de menu
         menu_bar1.add(menu1);
         menu_bar1.add(menu2);
+        menu_bar1.add(menu3);
         //Ajouter la bar du menu a la frame
         setJMenuBar(menu_bar1);
         

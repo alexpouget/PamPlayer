@@ -16,6 +16,8 @@ import javax.swing.tree.MutableTreeNode;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.nio.file.FileSystem;
 import java.nio.file.WatchService;
@@ -36,8 +38,8 @@ public class OpenEvent implements ActionListener {
                 music = new Music(dialogue.getSelectedFile().getPath(), dialogue.getSelectedFile().getName());
                 addToList(music);
                 
-                /* Creation d'un defaultTreeModel chargé sur le JTree de MyWindow. On cree le noeud
-                 correspondant à l'artiste et celui de l'album de la musique selectionee.
+                /* Creation d'un defaultTreeModel chargï¿½ sur le JTree de MyWindow. On cree le noeud
+                 correspondant ï¿½ l'artiste et celui de l'album de la musique selectionee.
                  */
                 
                 MyWindow.listArtist.add(music.getArtiste().getName().toUpperCase().trim());
@@ -105,6 +107,9 @@ public class OpenEvent implements ActionListener {
             } else {
                 System.out.println("pas dossier selectionner");
             }
+        }
+        if (e.getActionCommand().equalsIgnoreCase("Fin")) {
+            System.exit(0);
         }
     }
   
