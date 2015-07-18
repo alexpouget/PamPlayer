@@ -7,6 +7,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 
 import graphique.evenement.MyConnexion;
 import graphique.evenement.MyEvent;
+import graphique.evenement.MyLoad;
 import graphique.evenement.MyMouseTree;
 import graphique.evenement.MyPlaylist;
 import graphique.evenement.MySavePlaylist;
@@ -331,6 +332,7 @@ public class MyWindow extends JFrame {
         JButton buttonSavePlaylist= new JButton("Sauvegarder");
         JButton buttonSharePlaylist= new JButton("Partager");
         JButton buttonLoad=new JButton("Charger");
+        buttonLoad.addActionListener(new MyLoad());
         JPanel panelSaveShare= new JPanel();
         panelSaveShare.add(buttonSavePlaylist);
         buttonSavePlaylist.addActionListener(new MySavePlaylist());
