@@ -105,15 +105,73 @@ public class OpenEvent implements ActionListener {
             if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 File[] list = dialogue.getSelectedFile().listFiles();
                 for (int i = 0; i < list.length; i++) {
+                	Music son = new Music(list[i].getPath(), list[i].getName());
                     if (list[i].getName().endsWith(".mp3")) {
-                        addToList(new Music(list[i].getPath(), list[i].getName()));
+                        addToList(son);
+                        /* Creation d'un defaultTreeModel charg� sur le JTree de MyWindow. On cree le noeud
+                        correspondant � l'artiste et celui de l'album de la musique selectionee.
+                        */
+                       
+                       MyWindow.listArtist.add(son.getArtiste().getName().toUpperCase().trim());
+                       
+                       MyWindow.listAlbum.add(son.getAlbum().toString().trim());
+                       
+                       DefaultTreeModel model = (DefaultTreeModel)MyWindow.arbre.getModel();
+                       
+                       DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+                       
+                       DefaultMutableTreeNode artiste = new DefaultMutableTreeNode(son.getArtiste().getName().toUpperCase().trim());
+                       
+                       DefaultMutableTreeNode album = new DefaultMutableTreeNode(son.getAlbum().getName().trim());
+                       
+                       /*On parcourt les noeuds de la racine, si l artiste a deja un noeud alors on parcourt les
+       				 noeud (correspondant aux albums de lartiste) de l'artiste et, si le noeud album existe deja
+       				 alors on ne fait rien et on ajoute seulement la musique a la listmmusic. Si le noeud album 
+       				 nexiste pas on le cree. Si le noeud artiste nexiste pas on le cree et on cree son noeud album
+       				egalement.*/
+                       
+                       boolean newNodeArtist=true;
+       				boolean isAlbum = false;
+                       for (int h = 0; h < root.getChildCount(); h++)
+               		{
+               			if (root.getChildAt(h).toString().equals(son.getArtiste().getName().toUpperCase().trim())){
+       						newNodeArtist=false;
+               				DefaultMutableTreeNode noeud = (DefaultMutableTreeNode)root.getChildAt(h);
+               					for(int j = 0; j < noeud.getChildCount(); j++)
+               					{
+               						if(!isAlbum){
+       	        						if(noeud.getChildAt(j).toString().equals(son.getAlbum().getName().trim())){
+       	        							isAlbum=true;
+       	        						}
+       	        						else{
+       	        						continue;
+       	        						}
+               						}
+               					}
+               					if(!isAlbum){
+                   					noeud.add(album);
+           	        				MyWindow.arbre.updateUI();
+           	        				}
+               					if(isAlbum){
+               						MyWindow.arbre.updateUI();
+               					}
+               			}
+               			else 
+               				continue;
+               		}	
+                       if(newNodeArtist){
+                       root.add(artiste);
+                       artiste.add(album);
+                       model.reload(root);
+                   }
+//                        System.out.println("list i: "+son);
                     }
                 }
                 
             } else {
                 System.out.println("pas dossier selectionner");
             }
-        }
+        } 
         if (e.getActionCommand().equalsIgnoreCase("Fin")) {
             int rep = JOptionPane.showConfirmDialog(null, "Quitter PamPlayer ?");
             if(rep==0)
