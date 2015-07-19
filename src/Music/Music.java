@@ -4,12 +4,15 @@ import java.io.Serializable;
 
 /**
  * Created by alex on 10/06/2015.
+ *
+ * classe Music qui contiens les informations du fichier mp3 avec nottament les objets Album,Artiste
  */
 public class Music implements Serializable {
     private int duree; //in milliseconds
     private String path,title;
     private Artiste artiste;
     private Album album;
+
 
     public Music(int duree, String path, String title, Artiste artiste, Album album) {
         this.duree = duree;
@@ -25,6 +28,7 @@ public class Music implements Serializable {
         this.title = title;
     }
 
+    //constructeur le plus souvent utilisé
     public Music(String path, String title) {
         this.path = path;
         this.title = title;

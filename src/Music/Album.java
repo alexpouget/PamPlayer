@@ -1,6 +1,11 @@
 package music;
 
 import java.io.Serializable;
+/**
+ * Created by alex on 10/06/2015.
+ *
+ * Classe Album qui contiens un name qui est le titre de l'album
+ */
 
 public class Album implements Serializable {
     String name;

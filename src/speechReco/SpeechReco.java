@@ -12,6 +12,8 @@ import graphique.evenement.MyEvent;
 
 /**
  * Created by alex on 26/06/2015.
+ *
+ * Classe de reconnaissance vocal etendu de thread utilise l'Api sphinx
  */
 public class SpeechReco extends Thread{
     private ConfigurationManager cm;
@@ -22,13 +24,15 @@ public class SpeechReco extends Thread{
     private MyEvent m;
 
     public SpeechReco(){
+        /*on definit le fichier de configuration qui contient
+         * notamment le fichier de grammaire et le dictionnaire
+         */
         cm = new ConfigurationManager(SpeechReco.class.getResource("helloworld.config.xml"));
         recognizer = (Recognizer) cm.lookup("recognizer");
         recognizer.allocate();
         
         microphone = (Microphone) cm.lookup("microphone");
         if (!microphone.startRecording()) {
-            System.out.println("probleme micro !!");
             recognizer.deallocate();
             System.exit(1);
         }
@@ -37,20 +41,17 @@ public class SpeechReco extends Thread{
 
     }
 
+    //réecriture de la method run de Thread
     public void run(){
         running = true;
         while(running)
         {
-            System.out.println("quel commande ?\n");
-
             result = recognizer.recognize();
-
+            //traitement des resultats obtenue
             if (result != null) {
                 String resultText = result.getBestFinalResultNoFiller();
-                System.out.println("commande : " + resultText + '\n');
                 if(resultText.compareToIgnoreCase("play")==0) {
                 	if(m.player!=null){
-                		
                 	}else{
 	                	if(Main.fileName==null){
 	                		Main.fileName = MyWindow.listMusic.get(0).getPath();
@@ -60,7 +61,6 @@ public class SpeechReco extends Thread{
                 }
                 if(resultText.compareToIgnoreCase("stop")==0) {
                 	if (m.player == null) {
-                		
                     }else{
 	                    m.player.stop();
 	                    m.player = null;
