@@ -28,11 +28,10 @@ public class MyLoad implements ActionListener {
 		chooserLoadPlaylist.setFileFilter(filter);
 		if (chooserLoadPlaylist.showOpenDialog(null)==JFileChooser.APPROVE_OPTION) {
 			int lignes=MyWindow.persoTablePlaylist.getRowCount();
-			System.out.println("lignes"+lignes);
 			for(int i=0;i<lignes;i++)
 			{
 				MyWindow.persoTablePlaylist.removeMusic(0);
-				System.out.println(MyWindow.persoTablePlaylist.getRowCount());
+				
 				
 			}
 			ListMusic listMusic = new ListMusic(chooserLoadPlaylist.getSelectedFile().getPath(), true);
