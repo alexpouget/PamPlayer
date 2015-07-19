@@ -5,12 +5,14 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import graphique.evenement.MyConnect;
 import graphique.evenement.MyConnexion;
 import graphique.evenement.MyEvent;
 import graphique.evenement.MyLoad;
 import graphique.evenement.MyMouseTree;
 import graphique.evenement.MyPlaylist;
 import graphique.evenement.MySavePlaylist;
+import graphique.evenement.MySharedPlaylist;
 import graphique.evenement.MySynchro;
 import graphique.evenement.OpenEvent;
 
@@ -60,7 +62,7 @@ public class MyWindow extends JFrame {
     public static ArrayList<String> listArtist;
     public static ArrayList<String> listAlbum;
     public static DefaultMutableTreeNode laBiblio;
-
+    public static JButton buttonSharePlaylist;
     public static JTable tableauPlaylist ;
 
     public static TableRowSorter<TableModel> sorter;
@@ -138,7 +140,8 @@ public class MyWindow extends JFrame {
         JMenu menu2 = new JMenu("Edition bibliothèque");
         JMenu menu3 = new JMenu("Compte");
         //differents choix de chaque menu
-        JMenuItem demarrer = new JMenuItem("D�emarrer");
+        JMenuItem reco = new JMenuItem("Reconaissance vocale");
+        reco.addActionListener(new MyEvent());
         JMenuItem addmusic = new JMenuItem("Ajouter music");
         connect = new JMenuItem("Se connecter");
         connect.addActionListener(new MyConnexion());
@@ -149,6 +152,7 @@ public class MyWindow extends JFrame {
         fin.addActionListener(new OpenEvent());
 
         //Ajouter les choix au menu
+        menu1.add(reco);
         menu1.add(fin);
 
         menu2.add(addmusic);
@@ -168,7 +172,7 @@ public class MyWindow extends JFrame {
         JTabbedPane onglets = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
         JPanel tab1 = new JPanel();
         JPanel tab2 = new JPanel();
-        JPanel tab3 = new JPanel();
+        
         JPanel tab4 = new JPanel();
         JPanel tab5 = new JPanel();
         tab4.setPreferredSize(new Dimension(710, 400));
@@ -189,7 +193,7 @@ public class MyWindow extends JFrame {
 
         onglets.addTab("Bibliotheque", tab1);
         onglets.addTab("Playlist", tab2);
-        onglets.addTab("Mix", tab3);
+        
         onglets.addTab("News", tab4);
         onglets.addTab("Synchronisation",tab5);
         music.add(onglets);
@@ -338,7 +342,9 @@ public class MyWindow extends JFrame {
         tableauPlaylist.addMouseListener(new MyEvent());
         tab2.add(scrollPanePlaylist);
         JButton buttonSavePlaylist= new JButton("Sauvegarder");
-        JButton buttonSharePlaylist= new JButton("Partager");
+        buttonSharePlaylist= new JButton("Partager");
+        buttonSharePlaylist.setEnabled(false);
+        buttonSharePlaylist.addActionListener(new MySharedPlaylist());
         JButton buttonLoad=new JButton("Charger");
         buttonLoad.addActionListener(new MyLoad());
         JPanel panelSaveShare= new JPanel();

@@ -90,7 +90,7 @@
 	<component name="jsgfGrammar" type="edu.cmu.sphinx.jsgf.JSGFGrammar">
 		<property name="dictionary" value="dictionary" />
 		<property name="grammarLocation" value="resource:/SpeechReco/" />
-		<property name="grammarName" value="hello" />
+		<property name="grammarName" value="gram" />
 		<property name="logMath" value="logMath" />
 	</component>
 

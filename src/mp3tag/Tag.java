@@ -9,19 +9,24 @@ import java.io.FileOutputStream;
 
 /**
  * Created by alex on 11/06/2015.
+ *
+ * Classe qui utilise l'API ID3V2Tag pour lire les meta-data contenue dans les fichier MP3
+ * et ainsi connaitre si renseigner le titre l'album etc ...
  */
 public class Tag {
-    String title,album,artiste;
-    float duree;
+    private String title,album,artiste;
 
+    //constructeur
     public Tag(String s) throws ID3Exception, Exception {
+
         File file = new File(s);
         MP3File mp3File = new MP3File(file);
-        mp3File.getID3V2Tag();
+        // Appel de l'api ID3V2Tag et application sur notre fichier
         ID3V2Tag tag = mp3File.getID3V2Tag();
         setTitle(tag.getTitle());
         setAlbum(tag.getAlbum());
 
+        //initialisation des valeurs en fonction des meta-data et sub-string artiste en featuring contenue dans le titre
         String artist3=tag.getArtist();
         String arti;
         String feat="";
@@ -53,17 +58,14 @@ public class Tag {
                 feat = "featuring";
             if (artist3.contains(",")){
               	feat = ",";
-              	System.out.println("separateur:"+feat);
             }
-
-            arti = artist3.substring(0, artist3.indexOf(feat));
 
             if(feat.equalsIgnoreCase("")) {
                 arti = artist3;
             }else{
                 arti = artist3.substring(0, artist3.indexOf(feat));
             }
-            System.out.println("lartist:"+arti);
+
             setArtiste(arti);
         }
         
@@ -93,11 +95,4 @@ public class Tag {
         this.artiste = artiste;
     }
 
-    public float getDuree() {
-        return duree;
-    }
-
-    public void setDuree(float duree) {
-        this.duree = duree;
-    }
 }
