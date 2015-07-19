@@ -51,7 +51,7 @@ public class MySharedPlaylist implements ActionListener {
 		
 		try {
 			playlistApresTraitement = mapper.writeValueAsString(publi);
-			System.out.println(playlistApresTraitement);
+			
 		} catch (JsonProcessingException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
