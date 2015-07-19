@@ -34,12 +34,12 @@ public class NewsGenerator {
 
 	public static void Redirect(String keyWord) throws ParserConfigurationException, SAXException, IOException, JDOMException {
 
-		//		   String url = "https://www.google.fr/search?q="+keyWord+"+album&tbm=nws";
+		
 		String url= "https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+keyWord+"+album&oq="+keyWord+"album";
 		rssParser(url);
 
 	}        
-	// TEST FLUX RSS
+	
 	public static ArrayList<News> rssParser(String urlFluxRss) throws ParserConfigurationException, SAXException, IOException, JDOMException
 	{
 		Document document;
@@ -56,7 +56,7 @@ public class NewsGenerator {
 		racine = document.getRootElement();
 
 		//On crée une List contenant tous les noeuds "etudiant" de l'Element racine
-		//   Element listItem = racine.getChild("channel").getChild("item");
+	
 		List<Element> listItem= new ArrayList<Element>();
 		ArrayList<String> listTitre= new ArrayList<String>();
 		ArrayList<News> listNews= new ArrayList<News>();
@@ -64,18 +64,17 @@ public class NewsGenerator {
 
 		// on recupere les les enfants de channel
 		listItem=racine.getChild("channel").getChildren("item");
-		// System.out.println(listItem.getChildText("title"));
+	
 
 
 		for(int i=0;i<listItem.size();i++)
 		{
-			//		   	listTitre.add(listItem.get(i).getChildText("title"));
-			//		   	listUrl.add(listItem.get(i).getChildText("link").substring(listItem.get(i).getChildText("link").indexOf("&url")+5, (listItem.get(i).getChildText("link").lastIndexOf("/"))));
+			
 			// on recupére pour chaque item son title et son lien et on met dans un objet news
 			News n= new News(listItem.get(i).getChildText("title"),listItem.get(i).getChildText("link").substring(listItem.get(i).getChildText("link").indexOf("&url")+5, (listItem.get(i).getChildText("link").lastIndexOf("/"))));
 			listNews.add(n);
 		}
-		System.out.println(listNews);
+	
 		return listNews;
 
 

@@ -10,17 +10,20 @@ import java.util.List;
 
 /**
  * Created by alex on 05/07/2015.
+ *
+ * class pour configurer le model du tableau
  */
 public class PersoTableModel extends AbstractTableModel {
 
     private ArrayList<Music> musicArrayList;
+    //on definit les entete de colonne tu tableau
     private final String[] entetes = {"Titre", "Artiste", "Album", "Duree"};
 
+    //constructeur du tableau et on charge la liste
     public PersoTableModel() {
         super();
         ListMusic list = new ListMusic();
         musicArrayList = list.getList();
-
     }
 
     public int getRowCount() {
@@ -65,12 +68,14 @@ public class PersoTableModel extends AbstractTableModel {
         }
     }
 
+    //ajoute une ligne
    public void addMusic(Music m) {
         musicArrayList.add(m);
-
+        //on insert la ligne en prenant ce qui est en dernier dans la liste
         fireTableRowsInserted(musicArrayList.size() -1, musicArrayList.size() -1);
     }
 
+    //on supprimme l'element de la liste et on suprimme une ligne
     public void removeMusic(Music m) {
         for(int i = 0;musicArrayList.size()>i;i++){
             if(((Music)musicArrayList.get(i)).getTitle().compareToIgnoreCase(m.getTitle())==0){

@@ -86,24 +86,22 @@ public class MyWindow extends JFrame {
         JPanel music = new JPanel();
         JPanel player = new JPanel();
         JPanel recherche = new JPanel();
+        JPanel panelLogo= new JPanel();
         JPanel nothing = new JPanel();
         JButton btnRechercher = new JButton("Rechercher");
         btnRechercher.addActionListener(new MyTableFilter());
         txtRechercher = new JTextField(15);
 
-        //biblio.setBackground(Color.orange);
-        //player.setBackground(Color.blue);
-        //music.setBackground(Color.red);
-        //recherche.setBackground(Color.green);
-
         biblio.setSize(245, 555);
         biblio.setLocation(5, 105);
-        player.setSize(750, 100);
-        player.setLocation(5, 0);
+        player.setSize(640, 100);
+        player.setLocation(140, 25);
         music.setSize(725, 555);
         music.setLocation(255, 105);
         recherche.setSize(220, 100);
         recherche.setLocation(760, 0);
+        panelLogo.setSize(90,100);
+        panelLogo.setLocation(40,0);
 
     /*---------------Player ----------------*/
 
@@ -122,16 +120,16 @@ public class MyWindow extends JFrame {
         jSlider.addMouseListener(new MyEvent());
 
         infoMusic = new JLabel("");
-
+        JLabel lab = new JLabel(new ImageIcon("Ressource/icon/deadbeef_logo6.png"));
+        panelLogo.add(lab);
         player.add(prev);
         player.add(play);
         player.add(stop);
         player.add(next);
-
         player.add(jSlider);
         player.add(infoMusic);
-
-
+      
+       
 	/*---------------BARRE DE MENU----------------*/
         //Bar de menu
         JMenuBar menu_bar1 = new JMenuBar();
@@ -293,10 +291,6 @@ public class MyWindow extends JFrame {
             double dim=tab1.getWidth();
             Dimension dimension=new Dimension(710, 200);
             listAlbums.setPreferredSize(dimension);
-            //listAlbums.setBackground(Color.RED);
-            //listAlbums.setSize(300, 200);
-            //listAlbums.setSize(100, 300);
-            //listAlbums.setSize(new Dimension(410, 200));
             tab4.add(listAlbums);
 
 
@@ -321,7 +315,6 @@ public class MyWindow extends JFrame {
 
         JButton buttonSynchro= new JButton("Lancer Synchro musique");
         panelSynchro.add(buttonSynchro);
-        // buttonSynchro.setLocation(500, 300);
         buttonSynchro.addActionListener(new MySynchro());
         panelSynchro.setLocation(300, 500);
         tab5.add(panelSynchro);
@@ -370,6 +363,7 @@ public class MyWindow extends JFrame {
         cp.add(music);
         cp.add(player);
         cp.add(recherche); //j'ajoute le panel o� est le textField au container
+        cp.add(panelLogo);
         cp.add(nothing);
         //pack();
         setVisible(true);

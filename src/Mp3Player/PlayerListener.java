@@ -11,18 +11,21 @@ import mp3tag.Tag;
 public class PlayerListener {
     private String nextSong;
 
+    //la method start permet de faire avancer le slider
     public void start(int frame) {
         if (MyEvent.maxLen != 0) {
-            //System.out.println(frame);
             MyWindow.jSlider.setValue(100 * frame / MyEvent.maxLen);
         }
     }
 
     public void stop() {
-
+        // remet le slider a 0
         MyWindow.jSlider.setValue(0);
         MyWindow.infoMusic.setText("");
+        // comme la musique est terminer on lance la suivante
+        //la methode next recherche dans la list la musique d'apres
         nextSong=next();
+        //on stop le player
         MyEvent.player.stop();
         MyEvent.player = null;
         try {
@@ -34,6 +37,7 @@ public class PlayerListener {
         if(nextSong == null){
             return;
         }
+        //on cree un nouveau player avec le fichier trouvé
         Main.fileName =nextSong;
         MyEvent.player = new PlayerController(Main.fileName);
         MyWindow.jSlider.setValue(0);
@@ -49,12 +53,11 @@ public class PlayerListener {
             return;
         }
         MyEvent.player.play();
-
         MyEvent.maxLen = MyEvent.player.getFramesNumber();
         MyWindow.play.setText("pause");
-
     }
 
+    //on parcours la liste et on trouve la musique suivante si elle existe
     public String next(){
         for(int i = 0;MyWindow.listMusic.size()-1>i;i++){
             if(MyWindow.listMusic.get(i).getPath()==MyEvent.player.getMusic()){

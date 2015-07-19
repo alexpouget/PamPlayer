@@ -1,6 +1,7 @@
 package graphique.evenement;
 
 import graphique.MyWindow;
+import graphique.tableau.PlaylistTableModel;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -23,6 +24,7 @@ import music.Music;
 import org.blinkenlights.jid3.ID3Exception;
 
 import speechReco.SpeechReco;
+
 
 
 //import javazoom.jl.decoder.JavaLayerException;
@@ -211,16 +213,36 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
 
     @Override
     public void mouseClicked(MouseEvent e) {
+    	String path=null;
+    	if(e.getComponent()==MyWindow.tableau)
+    	{
     	int row = MyWindow.tableau.getSelectedRow();
         Object cellule = MyWindow.tableau.getValueAt(row, 0);
-        String path = null;
+        path = null;
         for(Music music : MyWindow.listMusic)
         {
         	if(music.getTitle().equals(cellule.toString()))
         		path = music.getPath();
         }
+    	}
+    	 if(e.getComponent()==MyWindow.tableauPlaylist)
+         {         	
+         	int row = MyWindow.tableauPlaylist.getSelectedRow();
+         	Object cellule = MyWindow.tableauPlaylist.getValueAt(row, 0);
+         	  for(Music music : MyWindow.listMusic)
+               {
+         		
+         			 
+               	if(music.getTitle().equals(cellule.toString()))
+               	{
+               		path = music.getPath();
+               		break;
+               	}
+               		
+               }
+         	
+         }
         if (e.getClickCount() == 2) {
-            
             Main.fileName = path;
             if (Main.fileName == null)
                 return;

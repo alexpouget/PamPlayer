@@ -11,6 +11,9 @@ import java.io.InputStream;
 
 /**
  * Created by alex on 06/06/2015.
+ *
+ * classe qui etends la classe Player de javazoom pour réecrire certaines de ses methodes
+ *
  */
 public class SongPlayer extends Player {
     private int maxFramesNumber;
@@ -22,13 +25,12 @@ public class SongPlayer extends Player {
     private boolean isActive;
     private PlayerListener listener;
 
-    public SongPlayer(FileInputStream fileInputStream,String title) throws JavaLayerException, FileNotFoundException {
+    //constructeur du player
+    public SongPlayer(FileInputStream fileInputStream,String path) throws JavaLayerException, FileNotFoundException {
         super(fileInputStream);
-
         fileStream = fileInputStream;
         bitstream = new Bitstream(fileStream);
-        maxFramesNumber = getFramesCount(title);
-
+        maxFramesNumber = getFramesCount(path);
     }
 
 
@@ -36,8 +38,9 @@ public class SongPlayer extends Player {
         return currentFrame;
     }
 
-    private int getFramesCount(String string){
-        Bitstream tmp = new Bitstream(getInputStream(string));
+    //parcour le fichier et retourne le nombre de frame
+    private int getFramesCount(String path){
+        Bitstream tmp = new Bitstream(getInputStream(path));
         int frame = 0;
         try {
             while (skipFrame(tmp)){
@@ -59,10 +62,7 @@ public class SongPlayer extends Player {
         }
     }
 
-    public SongPlayer(InputStream inputStream, AudioDevice audioDevice) throws JavaLayerException {
-        super(inputStream, audioDevice);
-    }
-
+    //return true si il reste des frame a lire
     private boolean skipFrame(Bitstream stream) throws BitstreamException {
         Header header = stream.readFrame();
         if (header != null) {
@@ -73,36 +73,44 @@ public class SongPlayer extends Player {
         }
     }
 
+    // method de lecture end est le plus souvent a Max integer et on ne s'en sert pas
     public void play(int start, int end) throws JavaLayerException {
-
         isActive = true;
+        //on avance dans le fichier tant que la frame n'est pas au niveau du start
         while (currentFrame < start) {
             skipFrame(bitstream);
             currentFrame++;
         }
 
+        //on defini la sortie audio sur laquelle on va ecrire
         audioDevice = FactoryRegistry.systemRegistry().createAudioDevice();
+        //on defini le decoder qui va lire le fichier frame par frame
         decoder = new Decoder();
         audioDevice.open(decoder);
 
         while(isActive && currentFrame < maxFramesNumber) {
+            //decode frame et ecrit sur la sortie audio
             decodeFrame();
             currentFrame++;
             if(listener != null){
+                //on fait avancer la frame dans listener
                 listener.start(currentFrame);
             }
         }
 
+        //on libere le buffer
         if (audioDevice != null) {
             audioDevice.flush();
         }
 
+        //a la fin de la musique si elle n'est pas stopper on stop le listener et le player
         if(listener !=null && currentFrame >= maxFramesNumber){
             listener.stop();
             this.stop();
         }
     }
 
+    //on arrete le lecteur et declare le boolean false
     public void stop()  {
         isActive = false;
     }

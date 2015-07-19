@@ -1,6 +1,7 @@
 package graphique.evenement;
 
 import graphique.MyWindow;
+import graphique.tableau.PlaylistTableModel;
 
 import java.awt.Point;
 import java.awt.event.ActionEvent;
@@ -8,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import javax.swing.AbstractAction;
 import javax.swing.JMenu;
@@ -30,8 +32,8 @@ import mp3tag.Tag;
 import music.ListMusic;
 import music.Music;
 
+// Listerner qui permet la gestion des actions du clique droit la liste des musiques
 public class MyPlaylist extends MouseAdapter{
-
 	public void mouseClicked(MouseEvent e) {
 		
 	}
@@ -81,6 +83,7 @@ public class MyPlaylist extends MouseAdapter{
 			
 						
 						@Override
+						// ajout de la musique à la playlist
 						public void actionPerformed(ActionEvent e) {
 							
 							
@@ -93,11 +96,13 @@ public class MyPlaylist extends MouseAdapter{
 	                                    music = m;
 	                            }
 
-	                            ListMusic listMusic = new ListMusic();
+	                         
 					            MyWindow.persoTablePlaylist.addMusic(music);
+					          
 						}
 					});
 					
+					// suppression de la musique de la bibliotheque
 					itemMenuClickDroit2.addActionListener(new ActionListener() {
 						
 						public void actionPerformed(ActionEvent e) {

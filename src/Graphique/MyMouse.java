@@ -26,28 +26,8 @@ import newsgeneration.NewsGenerator;
 public class MyMouse extends MouseAdapter {
 		public void mouseClicked(MouseEvent evt) {
 
-//            if (evt.getClickCount() == 2) {
-//                JList list=(JList)evt.getSource();
-//
-//                News news= (News) list.getSelectedValue();
-//                Properties sys = System.getProperties();
-//                String os = sys.getProperty("os.name");
-//                Runtime r = Runtime.getRuntime();
-//                if(Desktop.isDesktopSupported())
-//                {
-//                    try {
-//                        Desktop.getDesktop().browse(new URI(news.getUrl()));
-//                    } catch (IOException e) {
-//                        // TODO Auto-generated catch block
-//                        e.printStackTrace();
-//                    } catch (URISyntaxException e) {
-//                        // TODO Auto-generated catch block
-//                        e.printStackTrace();
-//                    }
-//                }
-//
-//            }
-
+			
+			// redirection vers le site pour l'écran des news lors du double clique sur une news
 	        if (evt.getClickCount() == 2) {
 	        	JList list=(JList)evt.getSource();
 
