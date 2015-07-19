@@ -1,4 +1,4 @@
-package mp3player;
+package mp3Player;
 
 import javazoom.jl.decoder.*;
 import javazoom.jl.player.AudioDevice;

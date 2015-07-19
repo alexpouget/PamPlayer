@@ -1,36 +1,21 @@
 package graphique;
 
-import javax.swing.*;
-import javax.swing.event.TableModelListener;
-import javax.swing.table.*;
-import javax.swing.tree.DefaultMutableTreeNode;
-
-import graphique.evenement.MyConnect;
-import graphique.evenement.MyConnexion;
-import graphique.evenement.MyEvent;
-import graphique.evenement.MyLoad;
-import graphique.evenement.MyMouseTree;
-import graphique.evenement.MyPlaylist;
-import graphique.evenement.MySavePlaylist;
-import graphique.evenement.MySharedPlaylist;
-import graphique.evenement.MySynchro;
-import graphique.evenement.OpenEvent;
-
-import javax.xml.parsers.ParserConfigurationException;
-
+import graphique.evenement.*;
 import graphique.tableau.MyTableFilter;
 import graphique.tableau.PersoTableModel;
 import graphique.tableau.PlaylistTableModel;
+import music.ListMusic;
+import music.Music;
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
-import music.Music;
-import music.ListMusic;
-import music.Album;
-import music.Artiste;
-
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
 
+import javax.swing.*;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.xml.parsers.ParserConfigurationException;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,12 +23,11 @@ import java.util.Random;
 
 /**
  * Created by alex on 26/05/2015.
+ *
+ * fenetre principal
  */
 public class MyWindow extends JFrame {
-
-
     public static ArrayList<Music> listMusic;
-
     public static JButton play;
     private JButton stop;
     private JButton next;
@@ -64,7 +48,6 @@ public class MyWindow extends JFrame {
     public static DefaultMutableTreeNode laBiblio;
     public static JButton buttonSharePlaylist;
     public static JTable tableauPlaylist ;
-
     public static TableRowSorter<TableModel> sorter;
     public static JTextField txtRechercher;
 
@@ -72,8 +55,6 @@ public class MyWindow extends JFrame {
     public MyWindow() {
         persoTableModel = new PersoTableModel();
         persoTablePlaylist= new PlaylistTableModel();
-        
-
 
         setTitle("PamPlayer");
         setSize(1000, 725);
@@ -104,8 +85,6 @@ public class MyWindow extends JFrame {
         panelLogo.setLocation(40,0);
 
     /*---------------Player ----------------*/
-
-    /*---------------fin Player----------------*/
         play = new JButton("play");
         stop = new JButton("stop");
         next = new JButton("||>");
@@ -128,7 +107,7 @@ public class MyWindow extends JFrame {
         player.add(next);
         player.add(jSlider);
         player.add(infoMusic);
-      
+    /*---------------fin Player----------------*/
        
 	/*---------------BARRE DE MENU----------------*/
         //Bar de menu
@@ -195,10 +174,10 @@ public class MyWindow extends JFrame {
         onglets.addTab("News", tab4);
         onglets.addTab("Synchronisation",tab5);
         music.add(onglets);
-	  /*-------------- FIN PANEL PRINCIPAL-------------*/
+	/*-------------- FIN PANEL PRINCIPAL-------------*/
 
 
-    	/*--------------PANEL BIBLIOTHEQUE-------------*/
+    /*--------------PANEL BIBLIOTHEQUE-------------*/
 
         ListMusic list = new ListMusic();
         listMusic = list.getList();
@@ -258,10 +237,10 @@ public class MyWindow extends JFrame {
         arbre.addMouseListener(new MyMouseTree());
         tree.setPreferredSize(new Dimension(240, 547));
         biblio.add(tree);
-    	/*--------------FIN PANEL BIBLIOTHEQUE-------------*/
+    /*--------------FIN PANEL BIBLIOTHEQUE-------------*/
 
 
-/*--------------PANEL NEWS-------------------------*/
+    /*--------------PANEL NEWS-------------------------*/
         ArrayList<News> news=new ArrayList<News>();
         try {
         	int nbr = 0;
@@ -303,9 +282,9 @@ public class MyWindow extends JFrame {
             panelFiltre.add(filtrer);
 
             tab4.add(panelFiltre);
-        
-        
+
 		/*--------------FIN PANEL NEWS-------------------------*/
+
         /*------------------------PANEL SYNCHRO-------------------*/
 
         JPanel panelSynchro= new JPanel();
@@ -347,10 +326,9 @@ public class MyWindow extends JFrame {
         tab2.add(buttonSharePlaylist);
         tab2.add(buttonLoad);
         panelSaveShare.setLocation(100, 490);
-   
+
+    /*-----------------------Fin Panel Playlist-------------------------------------------*/
         
-        
-        /*-----------------------Fin Panel Playlist-------------------------------------------*/
         recherche.add(txtRechercher); //je met le textfield dans le panel
         recherche.add(btnRechercher); //je met le bouton dans le panel
         cp.add(biblio);
