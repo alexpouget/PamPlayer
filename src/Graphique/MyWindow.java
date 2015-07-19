@@ -347,11 +347,7 @@ public class MyWindow extends JFrame {
         tab2.add(buttonSharePlaylist);
         tab2.add(buttonLoad);
         panelSaveShare.setLocation(100, 490);
-        /*
-        tableauPlaylist.setAutoCreateRowSorter(true);
-        TableRowSorter<TableModel> sorterPlaylist = new TableRowSorter<TableModel>(tableauPlaylist.getModel());
-        tableauPlaylist.setRowSorter(sorterPlaylist);
-        */
+   
         
         
         /*-----------------------Fin Panel Playlist-------------------------------------------*/
