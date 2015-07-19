@@ -11,6 +11,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import music.Album;
+import music.Artiste;
 import music.ListMusic;
 import music.Music;
 import database.ConnectDb;
@@ -20,18 +25,37 @@ public class MySharedPlaylist implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		HashMap<String, String> playlistToShare= new HashMap();
-		Connection connexion=ConnectDb.connectDb("jdbc:mysql://127.0.0.1/pam","root","");
+		
+		Connection connexion=ConnectDb.connectDb("jdbc:mysql://127.0.0.1/pam","root","root");
 
 		// recupération des valeurs de la jtable de playlist pour les mettre dans la hashmap
-		for(int i=0;i<MyWindow.tableauPlaylist.getRowCount();i++)
-		{
-			playlistToShare.put(MyWindow.tableauPlaylist.getValueAt(i, 0).toString(), MyWindow.tableauPlaylist.getValueAt(i, 1).toString());
+		ArrayList<Music> publi = new ArrayList<Music>();
+
+		for(int i=0;i<MyWindow.tableauPlaylist.getRowCount();i++){
+			Music m = new Music();
+			if(MyWindow.tableauPlaylist.getValueAt(i, 0)!=null){
+				m.setTitle(MyWindow.tableauPlaylist.getValueAt(i, 0).toString());
+			}
+			if(MyWindow.tableauPlaylist.getValueAt(i, 1)!=null){
+				m.setArtiste(new Artiste(MyWindow.tableauPlaylist.getValueAt(i, 1).toString()));
+			}
+			if(MyWindow.tableauPlaylist.getValueAt(i, 2)!=null){
+				m.setAlbum(new Album(MyWindow.tableauPlaylist.getValueAt(i, 2).toString()));
+			}
+			publi.add(m);
 		}
-
-		String recupPlaylist=playlistToShare.entrySet().toString();
-		String playlistApresTraitement=recupPlaylist.replaceAll("=", "-");
-
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+		String playlistApresTraitement="";
+		
+		try {
+			playlistApresTraitement = mapper.writeValueAsString(publi);
+			System.out.println(playlistApresTraitement);
+		} catch (JsonProcessingException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 
 		int userId=0;
 		
