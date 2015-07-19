@@ -25,7 +25,7 @@ public class MyFilter implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			System.out.println(MyWindow.filtreNews.getText());
+			
 			try {
 				String url= "https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+MyWindow.filtreNews.getText()+"&oq="+MyWindow.filtreNews.getText();
 				newsRefresh=newsgeneration.NewsGenerator.rssParser(url);

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
 
 import music.ListMusic;
 import music.Music;
@@ -26,11 +27,15 @@ public class MyLoad implements ActionListener {
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("fichiers txt format Json", "txt");
 		chooserLoadPlaylist.setFileFilter(filter);
 		if (chooserLoadPlaylist.showOpenDialog(null)==JFileChooser.APPROVE_OPTION) {
-
-
+			int lignes=MyWindow.persoTablePlaylist.getRowCount();
+			for(int i=0;i<lignes;i++)
+			{
+				MyWindow.persoTablePlaylist.removeMusic(0);
+				
+				
+			}
 			ListMusic listMusic = new ListMusic(chooserLoadPlaylist.getSelectedFile().getPath(), true);
-
-
+			
 		}
 	}
 

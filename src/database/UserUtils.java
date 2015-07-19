@@ -10,7 +10,7 @@ public class UserUtils {
 	public static int recupererIdUser(String pseudo) throws SQLException
 	{
 		Integer userId=0;
-		Connection connexion=ConnectDb.connectDb("jdbc:mysql://127.0.0.1/pam","root","");
+		Connection connexion=ConnectDb.connectDb("jdbc:mysql://127.0.0.1/pam","root","root");
 		PreparedStatement statement = connexion.prepareStatement("SELECT Id FROM user WHERE Pseudo=?");
 
 		statement.setString(1, pseudo);

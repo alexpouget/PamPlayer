@@ -13,7 +13,7 @@ public class VerifConnexion {
 		boolean isIdentified=false;
 		try{
 			// connexion a la base de donnees
-			Connection connexion=ConnectDb.connectDb("jdbc:mysql://127.0.0.1/pam","root","");
+			Connection connexion=ConnectDb.connectDb("jdbc:mysql://127.0.0.1/pam","root","root");
 			// preparation de la requete
 			PreparedStatement statement = connexion.prepareStatement("SELECT * FROM user WHERE pseudo=? AND pass=?");
 			
