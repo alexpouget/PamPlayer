@@ -268,6 +268,8 @@ public class MyWindow extends JFrame {
         	nbr = listMusic.size();
         	int randInt = randomGenerator.nextInt(nbr);
             news=NewsGenerator.rssParser("https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+listMusic.get(randInt).getArtiste().getName()+"+&oq="+listMusic.get(randInt).getArtiste().getName());
+        	String newz= "https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+listMusic.get(randInt).getArtiste().getName()+"+&oq="+listMusic.get(randInt).getArtiste().getName();
+            System.out.println("URL:"+newz);
         	}
         	else
         	{

@@ -19,6 +19,8 @@ import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 import main.Main;
 import mp3player.PlayerController;
@@ -106,11 +108,33 @@ public class MyPlaylist extends MouseAdapter{
                                 if(m.getTitle().equals(cellule.toString()))
                                     music = m;
                             }
-
+                            
                             ListMusic listMusic = new ListMusic();
                             listMusic.removeMusic(music);
                             MyWindow.persoTableModel.removeMusic(music);
-					            
+                            
+                            DefaultTreeModel model = (DefaultTreeModel)MyWindow.arbre.getModel();
+                            
+                            DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+                            String lartiste = music.getArtiste().getName().toUpperCase().trim();
+                            String lalbum = music.getAlbum().getName().trim();
+
+                            DefaultMutableTreeNode artiste = new DefaultMutableTreeNode(lartiste);
+                            
+                            DefaultMutableTreeNode album = new DefaultMutableTreeNode(lalbum);
+                            
+                            boolean artistExist = false;
+                            
+                            for (int i = 0; i < root.getChildCount(); i++){
+                            		if(root.getChildAt(i).toString().equals(lartiste)){
+                            			if(root.getChildAt(i).getChildCount()==1)
+                            				root.remove(i);
+                            			artistExist = true;
+                            			System.out.println("egal, GetChildCount: "+root.getChildAt(i).getChildCount());
+                            		}
+                            		MyWindow.arbre.updateUI();
+                            		model.reload(root);
+                            }
 						}
 					});
 				}
