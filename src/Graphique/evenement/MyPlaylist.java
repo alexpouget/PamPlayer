@@ -21,10 +21,11 @@ import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.MutableTreeNode;
 
 import main.Main;
-import mp3Player.PlayerController;
-import mp3Player.Status;
+import mp3player.PlayerController;
+import mp3player.Status;
 import mp3tag.Tag;
 import music.ListMusic;
 import music.Music;
@@ -113,6 +114,10 @@ public class MyPlaylist extends MouseAdapter{
                             listMusic.removeMusic(music);
                             MyWindow.persoTableModel.removeMusic(music);
                             
+                            	if(MyWindow.listMusic.contains(music)){
+                            			MyWindow.listMusic.remove(music);
+                            	}
+                            
                             DefaultTreeModel model = (DefaultTreeModel)MyWindow.arbre.getModel();
                             
                             DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
@@ -124,6 +129,7 @@ public class MyPlaylist extends MouseAdapter{
                             DefaultMutableTreeNode album = new DefaultMutableTreeNode(lalbum);
                             
                             boolean artistExist = false;
+                            boolean multipleAlbum = false;
                             
                             for (int i = 0; i < root.getChildCount(); i++){
                             		if(root.getChildAt(i).toString().equals(lartiste)){
@@ -132,15 +138,49 @@ public class MyPlaylist extends MouseAdapter{
                             			artistExist = true;
                             			System.out.println("egal, GetChildCount: "+root.getChildAt(i).getChildCount());
                             		}
-                            		MyWindow.arbre.updateUI();
-                            		model.reload(root);
+
+                        			int j=0, k=0, albumNodeInt=0;
+                            		if(root.getChildAt(i).getChildCount()>1){
+                            			for( k=0; k < root.getChildAt(i).getChildCount(); k++){
+                                			if(root.getChildAt(i).getChildAt(k).toString().equals(lalbum)){
+                                				System.out.println("lalbum:"+root.getChildAt(i).getChildAt(k).toString()+", k:"+k);
+                                				albumNodeInt=k;
+                                			}
+                            			}
+                            			for(Music son : MyWindow.listMusic){
+//                        					System.out.println("son: "+son);
+                        					if(son.getAlbum().getName().equals(lalbum)){
+                        						j++;
+                        						System.out.println("j: "+j);
+//                        						if(j>1)
+//                        							break;
+                        				}
+                        			}
+
+                            			if(j==1){
+                            				//DefaultMutableTreeNode artNode = new DefaultMutableTreeNode(root.getChildAt(i));				
+                            				//DefaultMutableTreeNode albumNode = new DefaultMutableTreeNode(root.getChildAt(i).getChildAt(albumNodeInt));
+//                            				artNode.remove(albumNode);
+                            				model.removeNodeFromParent(root.getChildAt(i));
+//                            				root.add(artNode);
+//                            				artNode.add(albumNode);
+                            				//System.out.println("artNode: "+artNode+", artnodecount: "+artNode.getChildCount()+", getchildcount:"+root.getChildAt(i).getChildCount());
+                            				//artNode.remove(albumNodeInt);
+//                            				model.removeNodeFromParent((MutableTreeNode) root.getChildAt(i).getChildAt(albumNodeInt));
+//                            				
+                            				//System.out.println("albumNode: "+albumNode);
+                        				}
                             }
 						}
-					});
-				}
+                            
+                            MyWindow.arbre.updateUI();
+                    		model.reload(root);
+					}
+				});
 		
 	}
 
 
 
+	}
 }
