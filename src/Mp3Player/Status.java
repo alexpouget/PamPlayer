@@ -2,6 +2,8 @@ package mp3player;
 
 /**
  * Created by alex on 06/06/2015.
+ *
+ * Enumeration des status possible du player
  */
 public enum Status {
     ACTIVE,
