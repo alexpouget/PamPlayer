@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import synchronisation.SynchroMusic;
 
+// Listener pour la synchronisation de musiques
 public class MySynchro implements ActionListener{
 
 	@Override

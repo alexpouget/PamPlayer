@@ -17,6 +17,7 @@ import newsgeneration.News;
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
 
+// Listener permettant d'afficher les news en fonction de ce qui est saisie dans le champs filtrer news
 public class MyFilter implements ActionListener {
 	  static ArrayList<News> newsRefresh=new ArrayList<News>();
 	

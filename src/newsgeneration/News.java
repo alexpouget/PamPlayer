@@ -1,5 +1,6 @@
 package newsgeneration;
 
+// Class news possédant un titre de news et url
 public class News {
 	
 	private String titre;
