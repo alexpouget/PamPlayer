@@ -9,6 +9,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+import main.Main;
+
 /**
  * Created by alex on 06/06/2015.
  *
@@ -49,6 +51,7 @@ public class SongPlayer extends Player {
             tmp.close();
         } catch (BitstreamException e1) {
             e1.printStackTrace();
+            Main.logger.error(e1.getMessage());
         }
         return frame;
     }
@@ -58,6 +61,7 @@ public class SongPlayer extends Player {
             return new FileInputStream(name);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            Main.logger.error(e.getMessage());
             return null;
         }
     }

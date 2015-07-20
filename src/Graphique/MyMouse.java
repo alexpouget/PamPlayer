@@ -1,7 +1,6 @@
 package graphique;
 
 import java.awt.*;
-import java.awt.Desktop;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -13,10 +12,12 @@ import javax.swing.JList;
 import javax.xml.parsers.ParserConfigurationException;
 
 
+
+import main.Main;
 import newsgeneration.News;
+
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
-
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
 
@@ -40,9 +41,11 @@ public class MyMouse extends MouseAdapter {
 				  try {
 					Desktop.getDesktop().browse(new URI(news.getUrl()));
 				} catch (IOException e) {
+					Main.logger.error(e.getMessage());
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (URISyntaxException e) {
+					Main.logger.error(e.getMessage());
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

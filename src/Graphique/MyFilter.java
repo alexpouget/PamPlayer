@@ -12,6 +12,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
 import javax.xml.parsers.ParserConfigurationException;
 
+import main.Main;
 import newsgeneration.News;
 
 import org.jdom2.JDOMException;
@@ -30,16 +31,20 @@ public class MyFilter implements ActionListener {
 				String url= "https://news.google.fr/?output=rss&hl=fr&gl=fr&tbm=nws&authuser=0&q="+MyWindow.filtreNews.getText()+"&oq="+MyWindow.filtreNews.getText();
 				newsRefresh=newsgeneration.NewsGenerator.rssParser(url);
 			} catch (ParserConfigurationException e1) {
+				Main.logger.error(e1.getMessage());
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			} catch (SAXException e1) {
+				Main.logger.error(e1.getMessage());
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			} catch (IOException e1) {
+				Main.logger.error(e1.getMessage());
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			} catch (JDOMException e1) {
 				// TODO Auto-generated catch block
+				Main.logger.error(e1.getMessage());
 				e1.printStackTrace();
 			}
 

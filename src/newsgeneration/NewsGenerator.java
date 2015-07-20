@@ -17,6 +17,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import main.Main;
+
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -94,14 +96,18 @@ public class NewsGenerator {
 			newsRefresh=newsgeneration.NewsGenerator.rssParser(url);
 		} catch (ParserConfigurationException e1) {
 			// TODO Auto-generated catch block
+			Main.logger.error(e1.getMessage());
 			e1.printStackTrace();
 		} catch (SAXException e1) {
+			Main.logger.error(e1.getMessage());
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (IOException e1) {
+			Main.logger.error(e1.getMessage());
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (JDOMException e1) {
+			Main.logger.error(e1.getMessage());
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}

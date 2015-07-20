@@ -70,6 +70,7 @@ public class SpeechReco extends Thread{
 	                        MyWindow.jSlider.setValue(0);
 	                        MyWindow.infoMusic.setText("");
 	                    } catch (InterruptedException e1) {
+	                    	Main.logger.error(e1.getMessage());
 	                        e1.printStackTrace();
 	                    }
                     }

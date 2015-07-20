@@ -13,6 +13,7 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
+import main.Main;
 import music.ListMusic;
 import music.Music;
 
@@ -35,7 +36,7 @@ public class MyLoad implements ActionListener {
 				
 			}
 			ListMusic listMusic = new ListMusic(chooserLoadPlaylist.getSelectedFile().getPath(), true);
-			
+			Main.logger.info("Playlist chargée");
 		}
 	}
 

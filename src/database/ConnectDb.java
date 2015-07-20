@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import main.Main;
+
 public class ConnectDb {
 	public static Connection connectDb(String url, String utilisateur, String motDePasse){
 
@@ -15,8 +17,10 @@ public class ConnectDb {
 	    connexion = DriverManager.getConnection( url, utilisateur, motDePasse );
 	    } catch ( ClassNotFoundException e ) {
            e.printStackTrace();
+           Main.logger.error(e.getMessage());
         } catch ( SQLException e ) {
            e.printStackTrace();
+           Main.logger.error(e.getMessage());
         }
         return connexion;
 }

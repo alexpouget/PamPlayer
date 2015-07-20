@@ -1,6 +1,7 @@
 package graphique.evenement;
 
 import graphique.MyWindow;
+import main.Main;
 import mp3tag.Tag;
 import music.Album;
 import music.Artiste;
@@ -91,8 +92,10 @@ public class OpenEvent implements ActionListener {
             }
         } catch (ID3Exception e1) {
             e1.printStackTrace();
+            Main.logger.error(e1.getMessage());
         } catch (Exception e) {
 			e.printStackTrace();
+			Main.logger.error(e.getMessage());
 		}
         if (!isPresent(music)) {
             ListMusic listMusic = new ListMusic();

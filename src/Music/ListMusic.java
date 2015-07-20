@@ -11,6 +11,8 @@ import graphique.MyWindow;
 import java.io.*;
 import java.util.ArrayList;
 
+import main.Main;
+
 /**
  * Created by alex on 11/06/2015.
  *
@@ -47,10 +49,13 @@ import java.util.ArrayList;
             list = mapper.readValue(fileData.toString(), new TypeReference<ArrayList<Music>>() {});
         }catch(JsonProcessingException e){
             e.printStackTrace();
+            Main.logger.error(e.getMessage());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            Main.logger.error(e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
+            Main.logger.error(e.getMessage());
         }
     }
 
@@ -86,10 +91,13 @@ import java.util.ArrayList;
             }
         }catch(JsonProcessingException e){
             e.printStackTrace();
+            Main.logger.error(e.getMessage());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            Main.logger.error(e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
+            Main.logger.error(e.getMessage());
         }
     }
 
@@ -124,6 +132,7 @@ import java.util.ArrayList;
             f = new FileWriter("Ressource/listJson.txt");
         } catch (IOException e1) {
             // TODO Auto-generated catch block
+        	Main.logger.error(e1.getMessage());
             e1.printStackTrace();
         }
 
@@ -136,9 +145,11 @@ import java.util.ArrayList;
             f.flush();
             f.close();
         } catch (JsonProcessingException e) {
+        	Main.logger.error(e.getMessage());
             // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IOException e) {
+        	Main.logger.error(e.getMessage());
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
@@ -153,6 +164,7 @@ import java.util.ArrayList;
             f = new FileWriter(chemin);
         } catch (IOException e1) {
             // TODO Auto-generated catch block
+        	Main.logger.error(e1.getMessage());
             e1.printStackTrace();
         }
 
@@ -166,9 +178,11 @@ import java.util.ArrayList;
             f.close();
         } catch (JsonProcessingException e) {
             // TODO Auto-generated catch block
+        	Main.logger.error(e.getMessage());
             e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch block
+        	Main.logger.error(e.getMessage());
             e.printStackTrace();
         }
     }

@@ -12,6 +12,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import main.Main;
 import synchronisation.SynchroMusic;
 
 // Listener pour la synchronisation de musiques
@@ -62,6 +63,7 @@ public class MySynchro implements ActionListener{
 					MyWindow.labelResultSynchro.setText(resApresTraitement);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
+					Main.logger.error(e1.getMessage());
 					e1.printStackTrace();
 				}
 			}

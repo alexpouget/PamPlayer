@@ -32,6 +32,7 @@ public class PlayerListener {
             Thread.sleep(100);
         } catch (InterruptedException e1) {
             e1.printStackTrace();
+            Main.logger.error(e1.getMessage());
         }
         MyWindow.play.setText("play");
         if(nextSong == null){
@@ -45,6 +46,7 @@ public class PlayerListener {
             Tag t = new Tag(Main.fileName);
             MyWindow.infoMusic.setText(t.getTitle());
         } catch (Exception e1) {
+        	Main.logger.error(e1.getMessage());
             e1.printStackTrace();
         }
         if (MyEvent.player == null) {

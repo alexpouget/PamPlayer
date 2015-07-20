@@ -14,6 +14,7 @@ import java.util.HashMap;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import main.Main;
 import music.Album;
 import music.Artiste;
 import music.ListMusic;
@@ -54,6 +55,7 @@ public class MySharedPlaylist implements ActionListener {
 			
 		} catch (JsonProcessingException e2) {
 			// TODO Auto-generated catch block
+			Main.logger.error(e2.getMessage());
 			e2.printStackTrace();
 		}
 
@@ -64,6 +66,7 @@ public class MySharedPlaylist implements ActionListener {
 			userId = database.UserUtils.recupererIdUser(MyConnect.currentUser.getLogin());
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
+			Main.logger.error(e1.getMessage());
 			e1.printStackTrace();
 		}
 		// insertion dans la table playlist pour ce user
@@ -78,7 +81,7 @@ public class MySharedPlaylist implements ActionListener {
 
 
 		} catch (SQLException ex) {
-
+			Main.logger.error(ex.getMessage());
 			ex.printStackTrace();
 
 		}

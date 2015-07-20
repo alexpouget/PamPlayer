@@ -1,6 +1,7 @@
 package graphique.evenement;
 
 import graphique.MyWindow;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,8 +9,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
+
 import main.Main;
 import mp3player.PlayerController;
 import mp3player.Status;
@@ -17,7 +20,10 @@ import mp3tag.Tag;
 import music.ListMusic;
 import music.Music;
 import speechReco.SpeechReco;
+
 import javax.swing.event.ChangeEvent;
+
+import org.apache.logging.log4j.core.Logger;
 
 /**
  * Created by alex on 26/05/2015.
@@ -53,6 +59,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                     MyWindow.jSlider.setValue(0);
                     MyWindow.infoMusic.setText("");
                 } catch (InterruptedException e1) {
+                	Main.logger.error(e1.getMessage());
                     e1.printStackTrace();
                 }
             }
@@ -65,9 +72,11 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                     return;
                 if (player == null) {
                     startPlayer();
+                    Main.logger.info("Musique jouée "+Main.fileName);
                 }else if (player.getStatus()== Status.PAUSED) {
                     player.resume();
                     MyWindow.play.setText("pause");
+                    Main.logger.info("Musique en pause");
                 } else {
                     player.pause();
                     MyWindow.play.setText("play");
@@ -104,6 +113,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                                 MyWindow.infoMusic.setText("");
                             } catch (InterruptedException e1) {
                                 e1.printStackTrace();
+                                Main.logger.error(e1.getMessage());
                             }
                         }
                         startPlayer();
@@ -126,6 +136,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                                 MyWindow.infoMusic.setText("");
                             } catch (InterruptedException e1) {
                                 e1.printStackTrace();
+                                Main.logger.error(e1.getMessage());
                             }
                         }
                         startPlayer();
@@ -143,6 +154,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
             Tag t = new Tag(Main.fileName);
             MyWindow.infoMusic.setText(t.getTitle());
         } catch (Exception e1) {
+        	Main.logger.error(e1.getMessage());
             notPresent();
             return;
         }
@@ -234,6 +246,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
 
             if (player == null) {
                 startPlayer();
+                Main.logger.info("Musique jouée "+Main.fileName);
             } else if (player.getStatus() == Status.PAUSED) {
                 player.resume();
                 MyWindow.play.setText("pause");
@@ -244,6 +257,7 @@ public class MyEvent  extends WindowAdapter implements ChangeListener,ActionList
                     Thread.sleep(100);
                     MyWindow.jSlider.setValue(0);
                 } catch (InterruptedException e1) {
+                	Main.logger.error(e1.getMessage());
                     e1.printStackTrace();
                 }
                 startPlayer();

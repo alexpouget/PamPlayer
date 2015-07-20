@@ -7,6 +7,8 @@ import javazoom.jl.decoder.JavaLayerException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import main.Main;
+
 
 /**
  * Created by alex on 06/06/2015.
@@ -36,6 +38,7 @@ public class PlayerController implements Runnable {
                 //on fait appel a la method play de songplayer
                 player.play(position, Integer.MAX_VALUE);
         } catch (JavaLayerException e) {
+        	Main.logger.error(e.getMessage());
             e.printStackTrace();
         }
     }
@@ -64,8 +67,10 @@ public class PlayerController implements Runnable {
             player = new SongPlayer(new FileInputStream(music), music);
             player.setListener(new PlayerListener());
         } catch (JavaLayerException e) {
+        	Main.logger.error(e.getMessage());
             e.printStackTrace();
         } catch (FileNotFoundException e) {
+        	Main.logger.error(e.getMessage());
             e.printStackTrace();
         }
         t = new Thread(this);

@@ -118,50 +118,52 @@ public class MyPlaylist extends MouseAdapter{
 					ListMusic listMusic = new ListMusic();
 					listMusic.removeMusic(music);
 					MyWindow.persoTableModel.removeMusic(music);
-					
+
 					DefaultTreeModel model = (DefaultTreeModel)MyWindow.arbre.getModel();
 
 					DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
 					String lartiste = music.getArtiste().getName().toUpperCase().trim();
 					String lalbum = music.getAlbum().getName().trim();
 					int nbrMusicAyantLalbum=0;
-					
+
 					/*parcourt de la listmusic qui impl�mente le JTree et incr�mentation de la vazriable
 					 nbrMusicAyantLalbum afin de savoir si l'album de la chanson suppprim�e contient plusieurs
 					 chansons */
-					
+
 					try{
-					for(Music son : MyWindow.listMusic){
-						if(son.getAlbum().getName().equals(lalbum)){
-							nbrMusicAyantLalbum++;
+						for(Music son : MyWindow.listMusic){
+							if(son.getAlbum().getName().equals(lalbum)){
+								nbrMusicAyantLalbum++;
+							}
 						}
-					}
-					
-					/*Si l'album ne contient qu'une seul chanson alors on parcourt les noeuds de l'arbre
+
+						/*Si l'album ne contient qu'une seul chanson alors on parcourt les noeuds de l'arbre
 					  de facon a s'arreter sur le noeud concernant lartiste de la chanson supprim�e. Si 
 					  lartiste contient plusieurs albums alors on ne supprime que le noeud de l'album concern�.
 					  Si l'artiste ne contient qu'un seul album alors on supprime le noeud de lartiste.*/
-					
-							if(nbrMusicAyantLalbum==1){
-								for (int i = 0; i <= root.getChildCount(); i++){
-									if(root.getChildAt(i).toString().equals(lartiste)){
-										for(int k=0; k < root.getChildAt(i).getChildCount(); k++){
-											if(root.getChildAt(i).getChildCount()==1){
-												model.removeNodeFromParent((MutableTreeNode) root.getChildAt(i));
-											}
-											else{
-												if(root.getChildAt(i).getChildAt(k).toString().equals(lalbum))
-													model.removeNodeFromParent((MutableTreeNode) root.getChildAt(i).getChildAt(k));
-												}
+
+						if(nbrMusicAyantLalbum==1){
+							for (int i = 0; i <= root.getChildCount(); i++){
+								if(root.getChildAt(i).toString().equals(lartiste)){
+									for(int k=0; k < root.getChildAt(i).getChildCount(); k++){
+										if(root.getChildAt(i).getChildCount()==1){
+											model.removeNodeFromParent((MutableTreeNode) root.getChildAt(i));
+										}
+										else{
+											if(root.getChildAt(i).getChildAt(k).toString().equals(lalbum))
+												model.removeNodeFromParent((MutableTreeNode) root.getChildAt(i).getChildAt(k));
 										}
 									}
 								}
 							}
-							//Suppression de la chanson de la listArtist et mise � jour du JTree							
+						}
+						//Suppression de la chanson de la listArtist et mise � jour du JTree							
 						MyWindow.listMusic.remove(music);
-					MyWindow.arbre.updateUI();
-					model.reload(root);
-				}catch(Exception ev){}
+						MyWindow.arbre.updateUI();
+						model.reload(root);
+					}catch(Exception ev){
+						Main.logger.error(ev.getMessage());
+					}
 				}
 			});
 
