@@ -1,4 +1,4 @@
-package mp3Player;
+package mp3player;
 
 
 import graphique.MyWindow;

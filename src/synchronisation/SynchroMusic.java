@@ -120,17 +120,11 @@ public class SynchroMusic {
 				Path file = Files.copy(monFichier, monFichierCopie);
 			}
 		}
-		/*
-		System.out.println(test);
-
-		System.out.println(fichiersAAjouterDossier1Vers2);
-		System.out.println(fichiersAAjouterDossier2Vers1);
-		*/
 			
 		if(fichiersAAjouterDossier1Vers2.size()!=0 )
-			return fichiersAAjouterDossier1Vers2.toString()+"Ajouté(es) dans le dossier 2";
+			return fichiersAAjouterDossier1Vers2.toString()+"<html><br>Ajouté(es) dans "+repertoire2;
 		if(fichiersAAjouterDossier2Vers1.size()!=0 )
-			return fichiersAAjouterDossier2Vers1.toString()+"Ajouté(es) dans le dossier 1";
+			return fichiersAAjouterDossier2Vers1.toString()+"<html><br>Ajouté(es) dans "+repertoire;
 		else
 			return "Aucune musique à synchro";
 			

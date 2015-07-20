@@ -26,8 +26,8 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
 
 import main.Main;
-import mp3Player.PlayerController;
-import mp3Player.Status;
+import mp3player.PlayerController;
+import mp3player.Status;
 import mp3tag.Tag;
 import music.ListMusic;
 import music.Music;
@@ -126,8 +126,8 @@ public class MyPlaylist extends MouseAdapter{
 					String lalbum = music.getAlbum().getName().trim();
 					int nbrMusicAyantLalbum=0;
 					
-					/*parcourt de la listmusic qui implémente le JTree et incrémentation de la vazriable
-					 nbrMusicAyantLalbum afin de savoir si l'album de la chanson suppprimée contient plusieurs
+					/*parcourt de la listmusic qui implï¿½mente le JTree et incrï¿½mentation de la vazriable
+					 nbrMusicAyantLalbum afin de savoir si l'album de la chanson suppprimï¿½e contient plusieurs
 					 chansons */
 					
 					try{
@@ -138,8 +138,8 @@ public class MyPlaylist extends MouseAdapter{
 					}
 					
 					/*Si l'album ne contient qu'une seul chanson alors on parcourt les noeuds de l'arbre
-					  de facon a s'arreter sur le noeud concernant lartiste de la chanson supprimée. Si 
-					  lartiste contient plusieurs albums alors on ne supprime que le noeud de l'album concerné.
+					  de facon a s'arreter sur le noeud concernant lartiste de la chanson supprimï¿½e. Si 
+					  lartiste contient plusieurs albums alors on ne supprime que le noeud de l'album concernï¿½.
 					  Si l'artiste ne contient qu'un seul album alors on supprime le noeud de lartiste.*/
 					
 							if(nbrMusicAyantLalbum==1){
@@ -157,7 +157,7 @@ public class MyPlaylist extends MouseAdapter{
 									}
 								}
 							}
-							//Suppression de la chanson de la listArtist et mise à jour du JTree							
+							//Suppression de la chanson de la listArtist et mise ï¿½ jour du JTree							
 						MyWindow.listMusic.remove(music);
 					MyWindow.arbre.updateUI();
 					model.reload(root);
