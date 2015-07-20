@@ -35,20 +35,6 @@ public static final Logger logger = LogManager.getLogger(Main.class.getName());
     public static void main(String[] args) {
         ListMusic l = new ListMusic();
     
-        
-        /*logger.debug("Hello world - debug log");
-        logger.info("Hello world - info log");
-        logger.warn("Hello world - warn log");
-        logger.error("Hello world - error log");*/
-
-//        SynchroMusic synchroMusic = new SynchroMusic();
-//        try {
-//
-//        	synchroMusic.comparerMusique(new File("Ressource/folder1/"), (new File("Ressource/folder/")));
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         // lancement de la fenetre MyWindow
         try{
         Runnable runnable = new Runnable() {
