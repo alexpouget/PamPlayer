@@ -8,6 +8,7 @@ import music.ListMusic;
 import music.Music;
 import newsgeneration.News;
 import newsgeneration.NewsGenerator;
+
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
 
@@ -16,6 +17,7 @@ import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.xml.parsers.ParserConfigurationException;
+
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,12 +52,14 @@ public class MyWindow extends JFrame {
     public static JTable tableauPlaylist ;
     public static TableRowSorter<TableModel> sorter;
     public static JTextField txtRechercher;
-
+    public static String pathDossier1;
+    public static String pathDossier2;
+    public static JButton buttonSynchro;
 
     public MyWindow() {
         persoTableModel = new PersoTableModel();
         persoTablePlaylist= new PlaylistTableModel();
-
+        
         setTitle("PamPlayer");
         setSize(1000, 725);
         setResizable(false);
@@ -267,7 +271,6 @@ public class MyWindow extends JFrame {
         }
         	
             listAlbums= new JList(news.toArray());
-            double dim=tab1.getWidth();
             Dimension dimension=new Dimension(710, 200);
             listAlbums.setPreferredSize(dimension);
             tab4.add(listAlbums);
@@ -290,14 +293,25 @@ public class MyWindow extends JFrame {
         /*------------------------PANEL SYNCHRO-------------------*/
 
         JPanel panelSynchro= new JPanel();
-        labelResultSynchro= new JLabel();
+        JPanel resultpanelSynchro= new JPanel();
+        panelSynchro.setPreferredSize(new Dimension(700,50));
+        resultpanelSynchro.setPreferredSize(new Dimension(700,520));
 
-        JButton buttonSynchro= new JButton("Lancer Synchro musique");
+        buttonSynchro= new JButton("Lancer Synchro musique");
+        buttonSynchro.setEnabled(false);
+        JButton buttonDossier1= new JButton("Choisir dossier 1");
+        JButton buttonDossier2= new JButton("Choisir dossier 2");
+        labelResultSynchro= new JLabel();
+        buttonDossier1.addActionListener(new MySynchro());
+        buttonDossier2.addActionListener(new MySynchro());
         panelSynchro.add(buttonSynchro);
+        panelSynchro.add(buttonDossier1);
+        panelSynchro.add(buttonDossier2);
+        resultpanelSynchro.add(labelResultSynchro);
         buttonSynchro.addActionListener(new MySynchro());
-        panelSynchro.setLocation(300, 500);
         tab5.add(panelSynchro);
-        tab5.add(labelResultSynchro);
+        tab5.add(resultpanelSynchro);
+        
         /*------------------------FIN PANEL SYNCHRO-------------------*/
         
         /*------------------------LABEL "vous etes connecte en tant que "-----------------*/
@@ -323,7 +337,6 @@ public class MyWindow extends JFrame {
         panelSaveShare.add(buttonSavePlaylist);
         buttonSavePlaylist.addActionListener(new MySavePlaylist());
         panelSaveShare.add(buttonSharePlaylist);
-        panelSaveShare.setBackground(Color.red);
         tab2.add(buttonSavePlaylist);
         tab2.add(buttonSharePlaylist);
         tab2.add(buttonLoad);
